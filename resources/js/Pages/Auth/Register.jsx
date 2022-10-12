@@ -1,8 +1,16 @@
 import React from 'react'
+import AuthLayout from '../../Layout/AuthLayout'
+import { Head } from '@inertiajs/inertia-react'
+
 
 const Register = () => {
   return (
-    <div>Register</div>
+    <>
+    <Head title='Sign up'/>
+    <AuthLayout>
+      Register
+    </AuthLayout>
+    </>
   )
 }
 

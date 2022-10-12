@@ -1,8 +1,16 @@
 import React from 'react'
+import AuthLayout from '../../Layout/AuthLayout'
+import { Head } from '@inertiajs/inertia-react'
+
 
 const Login = () => {
   return (
-    <div>Login</div>
+    <>
+    <Head title='Sign in'/>
+    <AuthLayout>
+      Login
+    </AuthLayout>
+    </>
   )
 }
 
