@@ -9,7 +9,7 @@ import { InertiaProgress } from '@inertiajs/progress'
 InertiaProgress.init()
 
 createInertiaApp({
-  title: (title) => `${title} - E-commerce`,
+  title: (title) => `${title} || E-commerce`,
   resolve: (name) => import(`./Pages/${name}`),
   setup({ App, props }) {
       const root = createRoot(document.getElementById("app"));

@@ -1,11 +1,11 @@
 import React, { useState } from 'react'
 import AuthLayout from '../../Layout/AuthLayout'
 import Form, { FormHeader, FormFooter } from '../../Components/Auth/Form'
-import { Head } from '@inertiajs/inertia-react'
+import { Head, usePage } from '@inertiajs/inertia-react'
 import { TextInput } from '../../Components/FormAndButton/Input'
 import MemoLink from '../../Components/MemoLink'
 import { useFormInput } from '../../Components/HOOKS/useFormInput'
-import { usePage } from '@inertiajs/inertia-react'
+import { Inertia } from '@inertiajs/inertia'
 
 
 const Register = () => {
@@ -20,7 +20,14 @@ const Register = () => {
   const handleSubmit = (event) => {
     event.preventDefault()
     setProcessing(true)
-    console.log('Post register');
+    Inertia.post(route('register'), fields, {
+      onError: () => {
+        setProcessing(false)
+      },
+      onFinish: () => {
+        setProcessing(false)
+      }
+    })
 
   }
 

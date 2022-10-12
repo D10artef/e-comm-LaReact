@@ -22,7 +22,7 @@ Route::middleware(['guest'])->group(function () {
 });
 
 // Home
-Route::get('/', function () {
+Route::get('/home', function () {
     return Inertia::render('Home');
 })->name('home');
 
