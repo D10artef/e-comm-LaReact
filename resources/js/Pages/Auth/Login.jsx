@@ -1,15 +1,32 @@
-import React from 'react'
+import React, {useState} from 'react'
 import AuthLayout from '../../Layout/AuthLayout'
 import Form, { FormHeader, FormFooter } from '../../Components/Auth/Form'
 import { Head } from '@inertiajs/inertia-react'
 import { TextInput } from '../../Components/FormAndButton/Input'
 import MemoLink from '../../Components/MemoLink'
+import { useFormInput } from '../../Components/HOOKS/useFormInput'
+import { usePage } from '@inertiajs/inertia-react'
 
 const Login = () => {
+  const [fields, handleFieldChange] = useFormInput({
+    email: '',
+    password: '',
+    remember: false,
+  })
+  const [processing, setProcessing] = useState(false)
+
+  const { errors } = usePage().props
+
+  const handleSubmit = (event) => {
+    event.preventDefault()
+    setProcessing(true)
+    console.log('Post login');
+
+  }
 
   const header = <FormHeader description='Login to your account'/>
   const footer = <FormFooter 
-                  processing={false} 
+                  processing={processing} 
                   buttontText='Login'
                   >
                     <span className="mr-1 inline-block">Not registred?</span>
@@ -21,19 +38,27 @@ const Login = () => {
     <>
     <Head title='Sign in'/>
     <AuthLayout>
-      <Form header={header} footer={footer}>
+      <Form handleSubmit={handleSubmit} header={header} footer={footer}>
           <main>
             <TextInput
               className="mt-5" label="Email" name="email" type="email" 
+              errors={errors.email}
+              value={fields.email}
+              onChange={handleFieldChange}
             />
             <TextInput
-              className="mt-5" label="Mot de passe" name="password" type="password"
+              className="mt-5" label="Password" name="password" type="password"
+              errors={errors.password}
+              value={fields.password}
+              onChange={handleFieldChange}
             />
             <div className="flex items-center justify-between mt-4">
               <label className="flex items-center select-none" htmlFor="remember"
               >
                 <input
                   name="remember" className="mr-1 accent-slate-500 cursor-pointer" type="checkbox" 
+                  checked={fields.remember} 
+                  onChange={handleFieldChange}
                 />
                 <span className="text-xs text-neutral-700">Remember me</span>
               </label>

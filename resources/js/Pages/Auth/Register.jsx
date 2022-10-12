@@ -1,15 +1,32 @@
-import React from 'react'
+import React, { useState } from 'react'
 import AuthLayout from '../../Layout/AuthLayout'
 import Form, { FormHeader, FormFooter } from '../../Components/Auth/Form'
 import { Head } from '@inertiajs/inertia-react'
 import { TextInput } from '../../Components/FormAndButton/Input'
 import MemoLink from '../../Components/MemoLink'
+import { useFormInput } from '../../Components/HOOKS/useFormInput'
+import { usePage } from '@inertiajs/inertia-react'
 
 
 const Register = () => {
+  const [fields, handleFieldChange] = useFormInput({
+    email: '',
+    password: '',
+    password_confirmation: ''
+  })
+  const [processing, setProcessing] = useState(false)
+  const {errors} = usePage().props
+
+  const handleSubmit = (event) => {
+    event.preventDefault()
+    setProcessing(true)
+    console.log('Post register');
+
+  }
+
   const header = <FormHeader description='Join our community'/>
   const footer = <FormFooter 
-                  processing={false} 
+                  processing={processing} 
                   buttontText='Register'
                   >
                     <span className="mr-1 inline-block">Already have an account?</span>
@@ -20,16 +37,24 @@ const Register = () => {
     <>
     <Head title='Sign up'/>
     <AuthLayout>
-      <Form header={header} footer={footer}>
+      <Form handleSubmit={handleSubmit} header={header} footer={footer}>
         <main>
           <TextInput
               className="mt-5" label="Email" name="email" type="email" 
+              errors={errors.email}
+              value={fields.email}
+              onChange={handleFieldChange}
             />
             <TextInput
               className="mt-5" label="Password" name="password" type="password"
+              errors={errors.password}
+              value={fields.password}
+              onChange={handleFieldChange}
             />
             <TextInput
               className="mt-5" label="Password confirmation" name="password_confirmation" type="password"
+              value={fields.password_confirmation}
+              onChange={handleFieldChange}
             />
         </main>
       </Form>

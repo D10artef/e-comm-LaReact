@@ -38,7 +38,14 @@ export const FormFooter = React.memo(({processing = false, buttontText, children
       }
     </footer>
   )
-})
+}, isEqual)
+
+function isEqual(prev, next){
+  if(prev.processing === next.processing && 
+    prev.buttontText === next.buttontText )
+    return true
+  return false
+}
 
 
 

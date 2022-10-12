@@ -1,6 +1,6 @@
 import React from "react";
 
-export const TextInput = ({ label, name, className, errors = [], ...props }) => {
+export const TextInput = React.memo(({ label, name, className, errors = [], value, ...props }) => {
     return (
         <div className={className}>
             {label && (
@@ -11,11 +11,13 @@ export const TextInput = ({ label, name, className, errors = [], ...props }) => 
             <input
                 id={name}
                 name={name}
+                value={value}
                 {...props}
                 className={`form-input ${errors.length ? "error" : ""}`}
             />
             {errors && <div className="form-error">{errors}</div>}
         </div>
     );
-};
+});
+
 
