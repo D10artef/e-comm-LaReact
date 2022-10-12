@@ -20,7 +20,7 @@ Route::get('/', function () {
 
 Route::get('login', function() {
     return inertia('Auth/Login');
-});
+})->name('login');
 Route::get('register', function () {
     return inertia('Auth/Register');
-});
+})->name('register');
