@@ -146,8 +146,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _UTULITIES_compareFunction__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../UTULITIES/compareFunction */ "./resources/js/UTULITIES/compareFunction.js");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 var _excluded = ["label", "name", "className", "errors", "value"];
 
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); enumerableOnly && (symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; })), keys.push.apply(keys, symbols); } return keys; }
@@ -163,7 +162,6 @@ function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) r
 
 
 
-
 var TextInput = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().memo(function (_ref) {
   var label = _ref.label,
       name = _ref.name,
@@ -173,29 +171,24 @@ var TextInput = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().memo(f
       value = _ref.value,
       props = _objectWithoutProperties(_ref, _excluded);
 
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
     className: className,
-    children: [label && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("label", {
+    children: [label && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("label", {
       className: "form-label",
       htmlFor: name,
       children: [label, ":"]
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("input", _objectSpread(_objectSpread({
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("input", _objectSpread(_objectSpread({
       id: name,
       name: name,
       value: value
     }, props), {}, {
       className: "form-input ".concat(errors.length ? "error" : "")
-    })), errors && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+    })), errors && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
       className: "form-error",
       children: errors
     })]
   });
-}, isEqual);
-
-function isEqual(prev, next) {
-  if (prev.label === next.label && prev.name === next.name && prev.className === next.className && prev.value === next.value && (0,_UTULITIES_compareFunction__WEBPACK_IMPORTED_MODULE_1__.compareTable)(next.errors, prev.errors)) return true;
-  return false;
-}
+});
 
 /***/ }),
 
@@ -511,51 +504,6 @@ var Login = function Login() {
 };
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Login);
-
-/***/ }),
-
-/***/ "./resources/js/UTULITIES/compareFunction.js":
-/*!***************************************************!*\
-  !*** ./resources/js/UTULITIES/compareFunction.js ***!
-  \***************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "compareTable": () => (/* binding */ compareTable),
-/* harmony export */   "deepEqual": () => (/* binding */ deepEqual)
-/* harmony export */ });
-function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (obj) { return typeof obj; } : function (obj) { return obj && "function" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }, _typeof(obj); }
-
-function isObject(object) {
-  return object != null && _typeof(object) === "object";
-}
-
-function deepEqual(itemOne, itemTwo) {
-  var keysOne = Object.keys(itemOne);
-  var keysTwo = Object.keys(itemTwo);
-  if (keysOne.length !== keysTwo.length) return false;
-
-  for (var _i = 0, _keysOne = keysOne; _i < _keysOne.length; _i++) {
-    var key = _keysOne[_i];
-    var firstVal = itemOne[key];
-    var secondVal = itemTwo[key];
-    var areObjects = isObject(firstVal) && isObject(secondVal);
-
-    if (areObjects && !deepEqual(firstVal, secondVal) || !areObjects && firstVal !== secondVal) {
-      return false;
-    }
-  }
-
-  return true;
-}
-function compareTable(tabelOne, tableTwo) {
-  if (tableTwo.length === tabelOne.length && tabelOne.every(function (value, index) {
-    return deepEqual(value, tableTwo[index]);
-  })) return true;
-  return false;
-}
 
 /***/ }),
 

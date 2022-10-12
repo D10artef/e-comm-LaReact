@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\SecurityController;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 
@@ -14,16 +15,18 @@ use Inertia\Inertia;
 |
 */
 
-Route::get('/', function () {
-    return Inertia::render('Home');
+Route::middleware(['guest'])->group(function () {
+    Route::get('login', [SecurityController::class, 'login'])->name('login');
+    Route::get('register', [SecurityController::class, 'register'])->name('register');
+    Route::get('password-reset', [SecurityController::class, 'passwordReset'])->name('password.reset');
 });
 
-Route::get('login', function() {
-    return inertia('Auth/Login');
-})->name('login');
-Route::get('register', function () {
-    return inertia('Auth/Register');
-})->name('register');
-Route::get('password_reset', function() {
-    return inertia('Auth/ResetPassword');
-})->name('password.reset');
+// Home
+Route::get('/', function () {
+    return Inertia::render('Home');
+})->name('home');
+
+Route::get('/', function () {
+    return redirect()->route('home');
+});
+
