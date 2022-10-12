@@ -1,4 +1,5 @@
 import React from 'react'
+import { LoadingButton } from '../../Components/FormAndButton/Button'
 
 const Form = ({header, children, footer, handleSubmit}) => {
   return (
@@ -24,10 +25,12 @@ export const FormHeader = React.memo(({title = 'Welcome', description}) => {
   )
 })
 
-export const FormFooter = React.memo(({children}) => {
+export const FormFooter = React.memo(({processing = false, buttontText, children}) => {
   return (
     <footer className='flex items-center flex-col  justify-center mt-5'>
-      
+      <LoadingButton className="btn bg-secondary hover:bg-slate-800" type="submit" loading={processing}>
+        {buttontText}
+      </LoadingButton>
       { children && 
         <div className="text-center text-xs text-gray-600 mt-3">
           {children}

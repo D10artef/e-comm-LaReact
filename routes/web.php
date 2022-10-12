@@ -24,3 +24,6 @@ Route::get('login', function() {
 Route::get('register', function () {
     return inertia('Auth/Register');
 })->name('register');
+Route::get('password_reset', function() {
+    return inertia('Auth/ResetPassword');
+})->name('password.reset');

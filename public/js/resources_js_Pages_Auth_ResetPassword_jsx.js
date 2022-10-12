@@ -1,4 +1,4 @@
-(self["webpackChunk"] = self["webpackChunk"] || []).push([["resources_js_Pages_Auth_Login_jsx"],{
+(self["webpackChunk"] = self["webpackChunk"] || []).push([["resources_js_Pages_Auth_ResetPassword_jsx"],{
 
 /***/ "./resources/js/Components/Auth/Form.jsx":
 /*!***********************************************!*\
@@ -308,10 +308,10 @@ var AuthLayout = function AuthLayout(_ref) {
 
 /***/ }),
 
-/***/ "./resources/js/Pages/Auth/Login.jsx":
-/*!*******************************************!*\
-  !*** ./resources/js/Pages/Auth/Login.jsx ***!
-  \*******************************************/
+/***/ "./resources/js/Pages/Auth/ResetPassword.jsx":
+/*!***************************************************!*\
+  !*** ./resources/js/Pages/Auth/ResetPassword.jsx ***!
+  \***************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -321,11 +321,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _Layout_AuthLayout__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../Layout/AuthLayout */ "./resources/js/Layout/AuthLayout.jsx");
-/* harmony import */ var _Components_Auth_Form__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../Components/Auth/Form */ "./resources/js/Components/Auth/Form.jsx");
-/* harmony import */ var _inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @inertiajs/inertia-react */ "./node_modules/@inertiajs/inertia-react/dist/index.js");
-/* harmony import */ var _Components_FormAndButton_Input__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../Components/FormAndButton/Input */ "./resources/js/Components/FormAndButton/Input.js");
-/* harmony import */ var _Components_MemoLink__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../Components/MemoLink */ "./resources/js/Components/MemoLink.jsx");
+/* harmony import */ var _inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @inertiajs/inertia-react */ "./node_modules/@inertiajs/inertia-react/dist/index.js");
+/* harmony import */ var _Layout_AuthLayout__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../Layout/AuthLayout */ "./resources/js/Layout/AuthLayout.jsx");
+/* harmony import */ var _Components_Auth_Form__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../Components/Auth/Form */ "./resources/js/Components/Auth/Form.jsx");
+/* harmony import */ var _Components_MemoLink__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../Components/MemoLink */ "./resources/js/Components/MemoLink.jsx");
+/* harmony import */ var _Components_FormAndButton_Input__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../Components/FormAndButton/Input */ "./resources/js/Components/FormAndButton/Input.js");
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 
 
@@ -337,69 +337,43 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var Login = function Login() {
-  var header = /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_Components_Auth_Form__WEBPACK_IMPORTED_MODULE_2__.FormHeader, {
-    description: "Login to your account"
+var ResetPassword = function ResetPassword() {
+  var header = /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_Components_Auth_Form__WEBPACK_IMPORTED_MODULE_3__.FormHeader, {
+    title: "Oupsss!",
+    description: "Reset your password"
   });
 
-  var footer = /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)(_Components_Auth_Form__WEBPACK_IMPORTED_MODULE_2__.FormFooter, {
+  var footer = /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_Components_Auth_Form__WEBPACK_IMPORTED_MODULE_3__.FormFooter, {
     processing: false,
-    buttontText: "Login",
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("span", {
-      className: "mr-1 inline-block",
-      children: "Not registred?"
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_Components_MemoLink__WEBPACK_IMPORTED_MODULE_5__["default"], {
-      href: route('register'),
-      className: "font-semibold cursor-pointer",
-      children: "Create an account"
-    })]
+    buttontText: "Send",
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_Components_MemoLink__WEBPACK_IMPORTED_MODULE_4__["default"], {
+      href: route('login'),
+      className: "font-light cursor-pointer underline hover:text-slate-900",
+      children: "Login on your account"
+    })
   });
 
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.Fragment, {
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_3__.Head, {
-      title: "Sign in"
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_Layout_AuthLayout__WEBPACK_IMPORTED_MODULE_1__["default"], {
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_Components_Auth_Form__WEBPACK_IMPORTED_MODULE_2__["default"], {
-        header: header,
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.Head, {
+      title: "Reset password"
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_Layout_AuthLayout__WEBPACK_IMPORTED_MODULE_2__["default"], {
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_Components_Auth_Form__WEBPACK_IMPORTED_MODULE_3__["default"], {
         footer: footer,
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("main", {
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_Components_FormAndButton_Input__WEBPACK_IMPORTED_MODULE_4__.TextInput, {
+        header: header,
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("main", {
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_Components_FormAndButton_Input__WEBPACK_IMPORTED_MODULE_5__.TextInput, {
             className: "mt-5",
             label: "Email",
             name: "email",
             type: "email"
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_Components_FormAndButton_Input__WEBPACK_IMPORTED_MODULE_4__.TextInput, {
-            className: "mt-5",
-            label: "Mot de passe",
-            name: "password",
-            type: "password"
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
-            className: "flex items-center justify-between mt-4",
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("label", {
-              className: "flex items-center select-none",
-              htmlFor: "remember",
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("input", {
-                name: "remember",
-                className: "mr-1 accent-slate-500 cursor-pointer",
-                type: "checkbox"
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("span", {
-                className: "text-xs text-neutral-700",
-                children: "Remember me"
-              })]
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_Components_MemoLink__WEBPACK_IMPORTED_MODULE_5__["default"], {
-              className: "hover:underline hover:text-gray-700 duration-500 text-xs text-gray-500",
-              tabIndex: "-1",
-              href: route('password.reset'),
-              children: "Forget password?"
-            })]
-          })]
+          })
         })
       })
     })]
   });
 };
 
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Login);
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (ResetPassword);
 
 /***/ }),
 

@@ -1,0 +1,20 @@
+.form-label {
+  @apply mb-1.5 block text-gray-600 select-none text-sm;
+}
+
+.form-input,
+.form-textarea,
+.form-select {
+  @apply px-2 py-1.5 leading-normal text-sm block w-full border border-gray-300 text-gray-700 bg-white font-sans rounded text-left appearance-none relative focus:outline-none focus:ring-1 focus:ring-slate-400 focus:border-slate-400;
+  @apply placeholder-gray-500 placeholder-opacity-100;
+}
+
+.form-error {
+  @apply text-rose-500 mt-1 text-xs;
+}
+
+.form-input.error,
+.form-textarea.error,
+.form-select.error {
+  @apply border-rose-400 focus:border-rose-400 focus:ring-rose-400;
+}

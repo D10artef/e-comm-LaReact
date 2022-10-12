@@ -59005,6 +59005,14 @@ var map = {
 		"./resources/js/Pages/Auth/Register.jsx",
 		"resources_js_Pages_Auth_Register_jsx"
 	],
+	"./Auth/ResetPassword": [
+		"./resources/js/Pages/Auth/ResetPassword.jsx",
+		"resources_js_Pages_Auth_ResetPassword_jsx"
+	],
+	"./Auth/ResetPassword.jsx": [
+		"./resources/js/Pages/Auth/ResetPassword.jsx",
+		"resources_js_Pages_Auth_ResetPassword_jsx"
+	],
 	"./Home": [
 		"./resources/js/Pages/Home.jsx",
 		"resources_js_Pages_Home_jsx"
@@ -59162,7 +59170,7 @@ module.exports = JSON.parse('{"name":"axios","version":"0.21.4","description":"P
 /******/ 		// This function allow to reference async chunks
 /******/ 		__webpack_require__.u = (chunkId) => {
 /******/ 			// return url for filenames not based on template
-/******/ 			if ({"resources_js_Pages_Auth_Login_jsx":1,"resources_js_Pages_Auth_Register_jsx":1,"resources_js_Pages_Home_jsx":1}[chunkId]) return "js/" + chunkId + ".js";
+/******/ 			if ({"resources_js_Pages_Auth_Login_jsx":1,"resources_js_Pages_Auth_Register_jsx":1,"resources_js_Pages_Auth_ResetPassword_jsx":1,"resources_js_Pages_Home_jsx":1}[chunkId]) return "js/" + chunkId + ".js";
 /******/ 			// return url for filenames based on template
 /******/ 			return undefined;
 /******/ 		};
