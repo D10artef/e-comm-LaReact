@@ -1,9 +1,11 @@
 import React from 'react'
 import { Link } from '@inertiajs/inertia-react'
 
-const MemoLink = ({...props}) => {
+const MemoLink = ({children, ...props}) => {
   return (
-    <Link {...props}></Link>
+    <Link {...props}>
+      {children}
+    </Link>
   )
 }
 

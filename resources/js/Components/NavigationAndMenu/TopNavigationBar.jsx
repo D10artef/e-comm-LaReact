@@ -2,6 +2,7 @@ import React from 'react'
 import Logo from '../Logo'
 import { usePage } from '@inertiajs/inertia-react'
 import TopNavigationMenuItem from './TopNavigationMenuItem'
+import UserMenu from './UserMenu'
 
 const TopNavigationBar = ({totalCart = 0}) => {
   const { auth } = usePage().props
@@ -12,12 +13,12 @@ const TopNavigationBar = ({totalCart = 0}) => {
       <div className="flex gap-x-3 md:gap-x-5 mr-4">
         {
           auth.user ?
-          <span>Connecter</span>
+          <UserMenu />
           :
-          <TopNavigationMenuItem text="Mon compte" icon="user" link={route('login')}/>
+          <TopNavigationMenuItem text="My account" icon="user" link={route('login')}/>
         }
         <div className='relative'>
-          <TopNavigationMenuItem text="Panier" icon="cart" link={route('register')}/>
+          <TopNavigationMenuItem text="Cart" icon="cart" link={route('register')}/>
           {
             auth.user && totalCart > 0 &&
             <div className='inline-flex absolute -top-2 -left-3 justify-center items-center w-5 h-5 text-[0.65em] font-medium text-white bg-red-500 rounded-full'>{totalCart}
