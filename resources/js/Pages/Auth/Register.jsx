@@ -4,7 +4,7 @@ import Form, { FormHeader, FormFooter } from '../../Components/Auth/Form'
 import { Head, usePage } from '@inertiajs/inertia-react'
 import { TextInput } from '../../Components/FormAndButton/Input'
 import MemoLink from '../../Components/MemoLink'
-import { useFormInput } from '../../Components/HOOKS/useFormInput'
+import { useFormInput } from '../../Components/HOOKS/useFormField'
 import { Inertia } from '@inertiajs/inertia'
 
 

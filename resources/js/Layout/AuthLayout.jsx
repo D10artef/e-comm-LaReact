@@ -11,7 +11,7 @@ const AuthLayout = ({children}) => {
       </div>
       <div className='w-full max-w-sm mx-4 z-20'>
         <header className='p-4 text-center text-gray-600 uppercase text-xl font-bold'>
-          <Logo color='text-secondary'/>
+          <Logo textColor='text-secondary'/>
         </header>
         {children}
       </div>

@@ -2,15 +2,14 @@ import React from 'react'
 import UserLayout from '../Layout/UserLayout'
 import { Head } from '@inertiajs/inertia-react'
 
-const Home = () => {
+const Services = () => {
   return (
     <>
-      <Head title='Home'/>
+      <Head title='Services'/>
       <UserLayout>
-        Home
+        Services
       </UserLayout>
     </>
   )
 }
-
-export default Home
+export default Services

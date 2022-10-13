@@ -1,8 +1,8 @@
 <?php
 
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\SecurityController;
 use Illuminate\Support\Facades\Route;
-use Inertia\Inertia;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,6 +15,7 @@ use Inertia\Inertia;
 |
 */
 
+// Authetification
 Route::middleware(['guest'])->group(function () {
     Route::get('login', [SecurityController::class, 'login'])->name('login');
     Route::get('register', [SecurityController::class, 'register'])->name('register');
@@ -22,11 +23,23 @@ Route::middleware(['guest'])->group(function () {
 });
 
 // Home
-Route::get('/home', function () {
-    return Inertia::render('Home');
-})->name('home');
-
+Route::get('/home', [HomeController::class, 'index'])->name('home');
 Route::get('/', function () {
     return redirect()->route('home');
 });
 
+
+// Products
+Route::get('/products', function () {
+    return inertia('Products');
+})->name('products');
+
+// Contacts
+Route::get('/contacts', function () {
+    return inertia('Contacts');
+})->name('contacts');
+
+// Service
+Route::get('/services', function () {
+    return inertia('Services');
+})->name('services');

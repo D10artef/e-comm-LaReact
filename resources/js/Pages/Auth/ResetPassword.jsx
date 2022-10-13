@@ -4,7 +4,7 @@ import AuthLayout from '../../Layout/AuthLayout';
 import Form, { FormHeader, FormFooter } from '../../Components/Auth/Form';
 import MemoLink from '../../Components/MemoLink';
 import { TextInput } from '../../Components/FormAndButton/Input';
-import { useFormInput } from '../../Components/HOOKS/useFormInput';
+import { useFormInput } from '../../Components/HOOKS/useFormField';
 import { usePage } from '@inertiajs/inertia-react';
 
 const ResetPassword = () => {
