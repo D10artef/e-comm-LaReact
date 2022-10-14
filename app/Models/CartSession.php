@@ -17,4 +17,14 @@ class CartSession extends Model
     {
         return $this->belongsTo(User::class);
     }
+
+    public function cartItems()
+    {
+        return $this->hasMany(CartItem::class);
+    }
+
+    public function totalItems()
+    {
+        return $this->cartItems()->sum('quantity');
+    }
 }
