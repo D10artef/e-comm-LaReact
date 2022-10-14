@@ -2,17 +2,18 @@ import React from 'react'
 import { usePage } from '@inertiajs/inertia-react'
 import { Inertia } from '@inertiajs/inertia' 
 import { getPriceReduced, showPriceWithCurrency } from '../../UTULITIES/productFunction'
+import AddIconButton from '../HOC/AddIconButton'
 
 const ProductCard = ({product, className}) => {
   const { auth } = usePage().props
   const { name, id, price, offer } = product
-  const showProduct = () => {
+  const showProduct = (id) => {
     Inertia.get(route('products'))
   }
   return (
     <>
       <div className={`border rounded-sm overflow-hidden shadow-sm flex flex-col ${className}`}>
-        <div className="h-44 text-center bg-primary bg-opacity-25 text-white relative cursor-pointer overflow-hidde" onClick={showProduct} >
+        <div className="h-44 text-center bg-primary bg-opacity-25 text-white relative cursor-pointer overflow-hidde" onClick={() => showProduct(id)} >
           <div className="absolute bottom-0 inset-x-0 text-xs px-2 py-1.5 text-white bg-black bg-opacity-20 backdrop-blur-sm">
             <span>{name}</span>
           </div>
@@ -25,7 +26,7 @@ const ProductCard = ({product, className}) => {
         </div>
         <div className="flex justify-between items-center px-3 py-2">
           {
-            offer && offer.active === 1  ? 
+            offer && offer.active  ? 
             <>
               <div className='flex flex-col'>
                 <span className="md:text-xs text-[0.65em] font-bold text-primary line-through">{showPriceWithCurrency(price)}</span>
@@ -38,8 +39,7 @@ const ProductCard = ({product, className}) => {
               </div>
           }
           <div className="flex gap-x-2">
-            {/* <AddIconButton auth={auth} product={product}/> */}
-            <span>Ajouter</span>
+            <AddIconButton auth={auth} product={product}/>
           </div>
         </div>
       </div>
