@@ -875,7 +875,7 @@ var MiddleNavigationBar = function MiddleNavigationBar(_ref) {
     children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
       className: "flex justify-between items-center pt-3 pb-1 text-sm mx-4",
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
-        className: "md:flex hidden lg:gap-x-5 gap-x-3 items-center",
+        className: "md:flex hidden lg:gap-x-6 gap-x-3 items-center",
         children: menuView
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
         className: "max-w-md flex-1",

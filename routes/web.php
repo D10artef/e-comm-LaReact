@@ -1,7 +1,7 @@
 <?php
 
-use App\Http\Controllers\HomeController;
-use App\Http\Controllers\SecurityController;
+use App\Http\Controllers\User\HomeController as UserHomeController;
+use App\Http\Controllers\User\SecurityController as UserSecurityController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -17,13 +17,13 @@ use Illuminate\Support\Facades\Route;
 
 // Authetification
 Route::middleware(['guest'])->group(function () {
-    Route::get('login', [SecurityController::class, 'login'])->name('login');
-    Route::get('register', [SecurityController::class, 'register'])->name('register');
-    Route::get('password-reset', [SecurityController::class, 'passwordReset'])->name('password.reset');
+    Route::get('login', [UserSecurityController::class, 'login'])->name('login');
+    Route::get('register', [UserSecurityController::class, 'register'])->name('register');
+    Route::get('password-reset', [UserSecurityController::class, 'passwordReset'])->name('password.reset');
 });
 
 // Home
-Route::get('/home', [HomeController::class, 'index'])->name('home');
+Route::get('/home', [UserHomeController::class, 'index'])->name('home');
 Route::get('/', function () {
     return redirect()->route('home');
 });
