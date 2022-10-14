@@ -1,7 +1,13 @@
 import React from "react";
 import classnames from "classnames";
+import Icon from "../Icon";
 
-export const LoadingButton = React.memo(({ loading, className, children, ...props }) => {
+export const LoadingButton = React.memo(({ 
+    loading, 
+    className, 
+    children, 
+    ...props 
+    }) => {
     const buttonClass = classnames(
         "flex items-center",
         "focus:outline-none",
@@ -16,3 +22,23 @@ export const LoadingButton = React.memo(({ loading, className, children, ...prop
     );
 })
 
+
+export const SimpleButton = ({
+        className,
+        children,
+        icon,
+        iconRight = true,
+        onClick,
+        disable = false,
+    }) => {
+    const classNames = `flex items-center justify-center px-4 py-2 text-sm gap-x-1 ${className}  disabled:bg-neutral-200 disabled:text-gray-500}`;
+    return (
+        <button disabled={disable} className={classNames} onClick={onClick}>
+            {!iconRight ? <Icon name={icon} /> : ""}
+            <span className="first-letter:uppercase inline-block w-fit">
+                {children}
+            </span>
+            {iconRight ? <Icon name={icon} /> : ""}
+        </button>
+    );
+};

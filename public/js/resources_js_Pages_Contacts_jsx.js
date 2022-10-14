@@ -936,7 +936,10 @@ var MiddleNavigationMenuItem = function MiddleNavigationMenuItem(_ref) {
   });
 };
 
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (MiddleNavigationMenuItem);
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (/*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().memo(MiddleNavigationMenuItem, function (prev, next) {
+  if (prev.active === next.active && prev.link === next.link && prev.text === next.text) return true;
+  return false;
+}));
 
 /***/ }),
 

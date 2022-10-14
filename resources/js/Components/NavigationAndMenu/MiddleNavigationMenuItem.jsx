@@ -12,4 +12,14 @@ const MiddleNavigationMenuItem = ({active, link, text}) => {
   )
 }
 
-export default MiddleNavigationMenuItem
+export default React.memo(MiddleNavigationMenuItem, 
+  (prev, next) => {
+      if(
+        prev.active === next.active &&
+        prev.link === next.link &&
+        prev.text === next.text
+        )
+        return true
+      return false
+  }
+)
