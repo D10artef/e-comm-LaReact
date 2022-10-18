@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\User\HomeController as UserHomeController;
+use App\Http\Controllers\User\ProductController as UserProductController;
 use App\Http\Controllers\User\SecurityController as UserSecurityController;
 use Illuminate\Support\Facades\Route;
 
@@ -30,9 +31,8 @@ Route::get('/', function () {
 
 
 // Products
-Route::get('/products', function () {
-    return inertia('Products');
-})->name('products');
+Route::get('/products', [UserProductController::class, 'allProducts'])->name('products');
+Route::get('products/{product}', [UserProductController::class, 'showProduct'])->name('products.show');
 
 // Contacts
 Route::get('/contacts', function () {

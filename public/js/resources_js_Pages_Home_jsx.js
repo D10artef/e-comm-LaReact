@@ -318,10 +318,10 @@ var SearchForm = function SearchForm(_ref2) {
 
 /***/ }),
 
-/***/ "./resources/js/Components/HOC/AddIconButton.jsx":
-/*!*******************************************************!*\
-  !*** ./resources/js/Components/HOC/AddIconButton.jsx ***!
-  \*******************************************************/
+/***/ "./resources/js/Components/HOC/AddToCartIconButton.jsx":
+/*!*************************************************************!*\
+  !*** ./resources/js/Components/HOC/AddToCartIconButton.jsx ***!
+  \*************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -339,7 +339,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var AddIconButton = function AddIconButton(_ref) {
+var AddToCartIconButton = function AddToCartIconButton(_ref) {
   var disable = _ref.disable,
       onAddToCart = _ref.onAddToCart;
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("button", {
@@ -353,7 +353,7 @@ var AddIconButton = function AddIconButton(_ref) {
   });
 };
 
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ((0,_WithAddToCart__WEBPACK_IMPORTED_MODULE_1__["default"])(AddIconButton));
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ((0,_WithAddToCart__WEBPACK_IMPORTED_MODULE_1__["default"])(AddToCartIconButton));
 
 /***/ }),
 
@@ -1812,7 +1812,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @inertiajs/inertia-react */ "./node_modules/@inertiajs/inertia-react/dist/index.js");
 /* harmony import */ var _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @inertiajs/inertia */ "./node_modules/@inertiajs/inertia/dist/index.js");
 /* harmony import */ var _UTULITIES_productFunction__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../UTULITIES/productFunction */ "./resources/js/UTULITIES/productFunction.js");
-/* harmony import */ var _HOC_AddIconButton__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../HOC/AddIconButton */ "./resources/js/Components/HOC/AddIconButton.jsx");
+/* harmony import */ var _HOC_AddToCartIconButton__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../HOC/AddToCartIconButton */ "./resources/js/Components/HOC/AddToCartIconButton.jsx");
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 
 
@@ -1833,7 +1833,7 @@ var ProductCard = function ProductCard(_ref) {
       offer = product.offer;
 
   var showProduct = function showProduct(id) {
-    _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_2__.Inertia.get(route('products'));
+    _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_2__.Inertia.get(route('products.show', id));
   };
 
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.Fragment, {
@@ -1877,7 +1877,7 @@ var ProductCard = function ProductCard(_ref) {
           })
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
           className: "flex gap-x-2",
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_HOC_AddIconButton__WEBPACK_IMPORTED_MODULE_4__["default"], {
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_HOC_AddToCartIconButton__WEBPACK_IMPORTED_MODULE_4__["default"], {
             auth: auth,
             product: product
           })

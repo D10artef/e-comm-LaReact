@@ -2,13 +2,13 @@ import React from 'react'
 import { usePage } from '@inertiajs/inertia-react'
 import { Inertia } from '@inertiajs/inertia' 
 import { getPriceReduced, showPriceWithCurrency } from '../../UTULITIES/productFunction'
-import AddIconButton from '../HOC/AddIconButton'
+import AddToCartIconButton from '../HOC/AddToCartIconButton'
 
 const ProductCard = ({product, className}) => {
   const { auth } = usePage().props
   const { name, id, price, offer } = product
   const showProduct = (id) => {
-    Inertia.get(route('products'))
+    Inertia.get(route('products.show', id))
   }
   return (
     <>
@@ -39,7 +39,7 @@ const ProductCard = ({product, className}) => {
               </div>
           }
           <div className="flex gap-x-2">
-            <AddIconButton auth={auth} product={product}/>
+            <AddToCartIconButton auth={auth} product={product}/>
           </div>
         </div>
       </div>

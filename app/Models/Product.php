@@ -36,4 +36,10 @@ class Product extends Model
     {
         return $this->hasOne(CartItem::class);
     }
+
+    public function avaible()
+    {
+        return $this->quantity > 0;
+    }
+    
 }
