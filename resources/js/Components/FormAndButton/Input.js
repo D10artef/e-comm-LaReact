@@ -22,15 +22,16 @@ export const TextInput = React.memo(({ label, name, className, errors = [], valu
     );
 });
 
-export const SearchForm = ({children}) => {
+export const SearchForm = ({ children, onSearch }) => {
     const [searchText, handleSearchChange] = useFormInput({
-        search: ''
-    })
+        search: "",
+    });
     const handleSubmit = (event) => {
         event.preventDefault();
+        onSearch(searchText.search);
     };
 
-    return(
+    return (
         <form className="w-full" onSubmit={handleSubmit}>
             <div className="flex bg-gray-100 p-2 rounded-sm items-center overflow-hidden">
                 <label htmlFor="search" className="text-secondary">
@@ -47,7 +48,7 @@ export const SearchForm = ({children}) => {
                 />
             </div>
         </form>
-    )
-}
+    );
+};
 
 

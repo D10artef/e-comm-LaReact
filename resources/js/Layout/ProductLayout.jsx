@@ -8,7 +8,6 @@ const ProductLayout = ({children}) => {
   const categoriesData = useMemo(() => categories.data, [categories]);
   const offersData = useMemo(() => offers.data, [offers]);
 
-
   return (
     <>
       <UserLayout>

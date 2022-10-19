@@ -18,7 +18,7 @@ const TopNavigationBar = ({totalCart = 0}) => {
           <TopNavigationMenuItem text="My account" icon="user" link={route('login')}/>
         }
         <div className='relative'>
-          <TopNavigationMenuItem text="Cart" icon="cart" link={route('register')}/>
+          <TopNavigationMenuItem text="Cart" icon="cart" link={route('user.cart')}/>
           {
             auth.user && totalCart > 0 &&
             <div className='inline-flex absolute -top-2 -left-3 justify-center items-center w-5 h-5 text-[0.65em] font-medium text-white bg-red-500 rounded-full'>{totalCart}

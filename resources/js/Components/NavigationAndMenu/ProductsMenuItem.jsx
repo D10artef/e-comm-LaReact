@@ -19,7 +19,7 @@ const ProductsMenuItem = ({id, text, link, type , classNames, setHideMenu, saveS
   return (
     <>
       <li className={`text-sm ${classNames} block border-b border-white`}>
-        <Link className='block px-3 py-2 cursor-pointer' href={link} 
+        <Link className='block px-3 py-2 cursor-pointer first-letter:uppercase first-letter:font-medium first-letter:text-secondary' href={link} 
         data={data(type, id)} 
         only={['products']} 
         preserveScroll

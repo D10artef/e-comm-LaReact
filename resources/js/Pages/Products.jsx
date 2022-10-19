@@ -4,6 +4,7 @@ import ProductLayout from '../Layout/ProductLayout'
 import ProductsPageHeader from '../Components/Product/ProductsPageHeader'
 import ProductsGrid from '../Components/Product/ProductsGrid'
 import { usePage } from '@inertiajs/inertia-react'
+import Pagination from '../Components/Pagination'
 
 const Products = () => {
   const { products } = usePage().props
@@ -20,8 +21,11 @@ const Products = () => {
     <>
       <Head title='Products'/>
       <ProductLayout>
-        <ProductsPageHeader/>
-        <ProductsGrid products={dataProducts} loading={loading}/> 
+        <ProductsPageHeader showSelect={dataProducts.length > 1 ? true : false}/>
+        <ProductsGrid products={dataProducts} loading={loading}/>
+        <footer className="flex justify-center p-3">
+          <Pagination links={metaData}/>
+        </footer>
       </ProductLayout>
     </>
   )

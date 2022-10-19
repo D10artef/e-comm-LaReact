@@ -6,12 +6,12 @@ const ProductsGrid = ({products, loading}) => {
   if(loading){
     grid = 
     <div className='p-12 flex justify-center items-center'>
-      <span className='text-sm font-neutral-300 font-light'>Chargement ...</span>
+      <span className='text-sm font-neutral-300 font-light'>Loading ...</span>
     </div>
   }
   else if (products.length){
     grid = 
-      <div className='grid grid-cols-1  xs:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4'>
+      <div className='grid grid-cols-1  xs:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-4'>
         { products.map(product => 
         <ProductCard key={product.id} product={product}></ProductCard>)}
       </div>

@@ -1,0 +1,16 @@
+@media screen and (max-width: 768px){
+  .pagination .pagination-item {
+      display: none;
+    }
+  
+    .pagination .pagination-item:first-child,
+    .pagination .pagination-item:nth-child(2),
+    .pagination .pagination-item:nth-last-child(2),
+    .pagination .pagination-item:last-child,
+    .pagination .pagination-item.active,
+    .pagination .pagination-item.active+.pagination-item,
+    .pagination .pagination-item.disabled,
+    .pagination .pagination-item.disabled+.pagination-item {
+      display: block;
+    }
+}

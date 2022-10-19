@@ -234,10 +234,11 @@ var TextInput = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().memo(f
   });
 });
 var SearchForm = function SearchForm(_ref2) {
-  var children = _ref2.children;
+  var children = _ref2.children,
+      onSearch = _ref2.onSearch;
 
   var _useFormInput = (0,_HOOKS_useFormField__WEBPACK_IMPORTED_MODULE_2__.useFormInput)({
-    search: ''
+    search: ""
   }),
       _useFormInput2 = _slicedToArray(_useFormInput, 2),
       searchText = _useFormInput2[0],
@@ -245,6 +246,7 @@ var SearchForm = function SearchForm(_ref2) {
 
   var handleSubmit = function handleSubmit(event) {
     event.preventDefault();
+    onSearch(searchText.search);
   };
 
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("form", {

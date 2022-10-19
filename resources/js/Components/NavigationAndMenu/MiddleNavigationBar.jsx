@@ -2,8 +2,15 @@ import React from 'react'
 import MiddleNavigationMenuItem from './MiddleNavigationMenuItem'
 import Icon from '../Icon'
 import { SearchForm } from '../FormAndButton/Input'
+import { Inertia } from '@inertiajs/inertia'
 
 const MiddleNavigationBar = ({menus}) => {
+  const hanldeSearch = (search) => {
+    Inertia.get(route('products'), { search }, {
+      only: ['products'],
+      preserveScroll: true,
+    })
+  }
 
   const menuView = menus.length > 0 && menus.map(menu => (
                 <MiddleNavigationMenuItem key={menu.text} text={menu.text} link={menu.link} active={menu.active}/>
@@ -18,7 +25,7 @@ const MiddleNavigationBar = ({menus}) => {
           }
         </div>
         <div className="max-w-md flex-1">
-          <SearchForm>Find your product...</SearchForm>
+          <SearchForm onSearch={hanldeSearch}>Find your product...</SearchForm>
         </div>
         <div className="md:hidden flex items-center cursor-pointer p-1 border rounded-sm ml-3 text-gray-200 border-gray-200" >
           <span className="sr-only">Menu</span>

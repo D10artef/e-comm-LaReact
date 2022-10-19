@@ -1,10 +1,13 @@
 <?php
 
+use App\Http\Controllers\User\CartController as UserCartController;
+use App\Http\Controllers\User\ServiceController as UserServiceController;
 use App\Http\Controllers\User\CategoryController as UserCategoryController;
 use App\Http\Controllers\User\HomeController as UserHomeController;
 use App\Http\Controllers\User\ProductController as UserProductController;
 use App\Http\Controllers\User\SecurityController as UserSecurityController;
 use App\Http\Controllers\User\OfferController as UserOfferController;
+use App\Http\Controllers\User\UserController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -31,10 +34,23 @@ Route::get('/', function () {
     return redirect()->route('home');
 });
 
-
 // Products
 Route::get('/products', [UserProductController::class, 'index'])->name('products');
 Route::get('/products/{product}', [UserProductController::class, 'showProduct'])->name('products.show');
+
+// Service
+Route::get('/services', [UserServiceController::class, 'index'])->name('services');
+
+// User and Cart
+Route::middleware(['auth'])->group(function () {
+    Route::get('/user/profil', [UserController::class, 'index'])->name('user.profil');
+    Route::get('/user/setting', [UserController::class, 'showSetting'])->name('user.setting');
+    Route::get('/user/cart', [UserCartController::class, 'index'])->name('user.cart');
+});
+
+
+
+
 
 // User UI Categories
 Route::get('/categories', [UserCategoryController::class, 'allCategory']);
@@ -46,8 +62,3 @@ Route::get('/offers', [UserOfferController::class, 'allActiveOffer']);
 Route::get('/contacts', function () {
     return inertia('Contacts');
 })->name('contacts');
-
-// Service
-Route::get('/services', function () {
-    return inertia('Services');
-})->name('services');
