@@ -8,7 +8,8 @@ const ProductCard = ({product, className}) => {
   const { auth } = usePage().props
   const { name, id, price, offer } = product
   const showProduct = (id) => {
-    Inertia.get(route('products.show', id))
+    Inertia.get(route('products.show', id), 
+    )
   }
   return (
     <>

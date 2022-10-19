@@ -35,6 +35,33 @@ class ProductBuilder extends Builder
 
 
   /**
+   * Scope a query to only product with maxprice
+   * 
+   * @param array $array_request
+   * @return \Illuminate\Database\Eloquent\Builder
+   */
+  public function maxPrice($array_request)
+  {
+    return $this->when($array_request['max'] ?? null, function () use ($array_request) {
+      $this->where('price', '<=', $array_request['max']);
+    });
+  }
+
+  /**
+   * Scope a query to only product with minprice
+   * 
+   * @param array $array_request
+   * @return \Illuminate\Database\Eloquent\Builder
+   */
+  public function minPrice($array_request)
+  {
+    return $this->when($array_request['min'] ?? null, function () use ($array_request) {
+      $this->where('price', '>=', $array_request['min']);
+    });
+  }
+
+
+  /**
    * Scope a query to short the result by key (name or price)
    * 
    * @param array $query_request_array

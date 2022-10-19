@@ -12,7 +12,7 @@ const MiddleNavigationBar = ({menus}) => {
   return (
     <>
       <div className="flex justify-between items-center pt-3 pb-1 text-sm mx-4">
-        <div className="md:flex hidden lg:gap-x-6 gap-x-3 items-center">
+        <div className="md:flex hidden lg:gap-x-8 gap-x-3 items-center">
           {
             menuView
           }
@@ -29,4 +29,4 @@ const MiddleNavigationBar = ({menus}) => {
   )
 }
 
-export default MiddleNavigationBar
+export default React.memo(MiddleNavigationBar)

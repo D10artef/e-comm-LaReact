@@ -8,3 +8,5 @@ export function showPriceWithCurrency(price, currency = 'MGA') {
 export function getPriceReduced(price, discount){
   return price - (price * discount) / 100;
 }
+
+

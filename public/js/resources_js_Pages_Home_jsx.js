@@ -1285,7 +1285,7 @@ var MiddleNavigationBar = function MiddleNavigationBar(_ref) {
     children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
       className: "flex justify-between items-center pt-3 pb-1 text-sm mx-4",
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
-        className: "md:flex hidden lg:gap-x-6 gap-x-3 items-center",
+        className: "md:flex hidden lg:gap-x-8 gap-x-3 items-center",
         children: menuView
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
         className: "max-w-md flex-1",
@@ -1306,7 +1306,7 @@ var MiddleNavigationBar = function MiddleNavigationBar(_ref) {
   });
 };
 
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (MiddleNavigationBar);
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (/*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().memo(MiddleNavigationBar));
 
 /***/ }),
 
