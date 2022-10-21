@@ -1,0 +1,28 @@
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(148 163 184 0.8);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgb(30, 37, 57);
+}
+
+.scroler {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.td-quantity .td-icon {
+  display: none;
+}
+
+.td-quantity:hover .td-icon {
+  display: inline-block;
+}
+
+.portal {
+  position: relative;
+}

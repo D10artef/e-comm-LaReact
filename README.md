@@ -1,12 +1,49 @@
 ## About this project
 
-This is an e-commerce application built with Laravel (Fortify for the authentification), React (with Inertia Js), and Tailwind CSS
+This is a SIMPLE e-commerce application built with [Laravel](https://laravel.com/) (Fortify package for the authentification), [React](https://reactjs.org/) (with [Inertia Js](https://inertiajs.com/)), and [Tailwind CSS](https:://tailwindcss.com)
 
-#### All steps
+### Installation
+
 - Clone the project
-- Set your ".env file" (database, ...)
-- Run composer require to install dependencies
-- Run npm install to install all node package
-- Migrate your project
-- Run the database seeder to create fake data in your database
-- Launch your server, and enjoy !!!
+
+- Set your *** ".env file" *** (database)
+
+- Install PHP dependencies:
+
+```sh
+composer install
+```
+
+- Install NPM dependencies:
+
+```sh
+npm install
+```
+
+- Build assets:
+
+```sh
+npm run dev
+```
+
+- Run database migrations:
+
+```sh
+php artisan migrate
+```
+
+- Run database seeder to create fake data in your database:
+
+```sh
+php artisan db:seed
+```
+
+- Launch your server:
+
+```sh
+php artisan serve
+```
+
+### Credits
+* [react-hot-toast](https://github.com/timolins/react-hot-toast)
+* [react-slick](https://github.com/akiran/react-slick)

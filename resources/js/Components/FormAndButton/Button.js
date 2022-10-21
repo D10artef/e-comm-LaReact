@@ -27,18 +27,20 @@ export const SimpleButton = ({
         className,
         children,
         icon,
+        iconClass,
         iconRight = true,
         onClick,
         disable = false,
     }) => {
     const classNames = `flex items-center justify-center px-4 py-2 text-sm gap-x-1 ${className}  disabled:bg-neutral-200 disabled:text-gray-500}`;
+    const iconView = <Icon name={icon} className={iconClass}/>
     return (
         <button disabled={disable} className={classNames} onClick={onClick}>
-            {!iconRight ? <Icon name={icon} /> : ""}
+            {!iconRight ? iconView : ""}
             <span className="first-letter:uppercase inline-block w-fit">
                 {children}
             </span>
-            {iconRight ? <Icon name={icon} /> : ""}
+            {iconRight ? iconView : ""}
         </button>
     );
 };

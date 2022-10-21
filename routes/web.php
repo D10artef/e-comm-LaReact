@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\User\CartController as UserCartController;
+use App\Http\Controllers\User\CartSessionController as UserCartSessionController;
 use App\Http\Controllers\User\ServiceController as UserServiceController;
 use App\Http\Controllers\User\CategoryController as UserCategoryController;
 use App\Http\Controllers\User\HomeController as UserHomeController;
@@ -41,11 +41,19 @@ Route::get('/products/{product}', [UserProductController::class, 'showProduct'])
 // Service
 Route::get('/services', [UserServiceController::class, 'index'])->name('services');
 
-// User and Cart
+// User
 Route::middleware(['auth'])->group(function () {
     Route::get('/user/profil', [UserController::class, 'index'])->name('user.profil');
     Route::get('/user/setting', [UserController::class, 'showSetting'])->name('user.setting');
-    Route::get('/user/cart', [UserCartController::class, 'index'])->name('user.cart');
+});
+
+// Cart 
+Route::middleware(['auth'])->group(function () {
+    Route::get('/user/cart', [UserCartSessionController::class, 'index'])->name('user.cart');
+    Route::delete('/user/cart', [UserCartSessionController::class, 'deleteAllItem'])->name('user.cart.delete');
+    Route::post('/user/cart/{product}', [UserCartSessionController::class, 'addItemToCart'])->name('user.cart.add-item');
+    Route::put('/user/cart/{cartItem}', [UserCartSessionController::class, 'updateCartItem'])->name('user.cart.update-item');
+    Route::delete('/user/cart/{cartItem}', [UserCartSessionController::class, 'removeItemToCart'])->name('user.cart.remove-item');
 });
 
 

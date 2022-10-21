@@ -13,10 +13,7 @@ const WithAddToCart = (WrappedComponent) => {
         }
 
         addProductToCart = async (id) => {
-            // const response = await axios.post(route("user.cart.add"), {
-            const response = await axios.post("user/cart/add", {
-                product: id,
-            });
+            const response = await axios.post(route("user.cart.add-item", id));
             return response;
         };
 

@@ -1,13 +1,12 @@
 import React from 'react'
 import ProductCard from './ProductCard'
+import Loading from '../Loading';
 
 const ProductsGrid = ({products, loading}) => {
   let grid ;
   if(loading){
     grid = 
-    <div className='p-12 flex justify-center items-center'>
-      <span className='text-sm font-neutral-300 font-light'>Loading ...</span>
-    </div>
+    <Loading />
   }
   else if (products.length){
     grid = 

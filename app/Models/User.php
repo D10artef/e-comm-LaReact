@@ -42,7 +42,6 @@ class User extends Authenticatable
     ];
 
     protected $with = [
-        'cartSession',
         'userInfo'
     ];
 
