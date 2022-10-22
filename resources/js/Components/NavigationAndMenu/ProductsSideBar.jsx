@@ -62,7 +62,7 @@ const ProductsSideBar = ({ categories, offers }) => {
       <div className='flex-col flex'>
         <ProductsMenu activeMenu={activeMenu.category}  menuTitle='Categories' menuList={categories} icon='view-board' type='category' setHideMenu={setHideMenu}>
         </ProductsMenu>
-        <ProductsMenu activeMenu={activeMenu.offer} menuTitle='Offers' color='lime'  menuList={offers} icon='ticket' type='offer' setHideMenu={setHideMenu}></ProductsMenu>
+        <ProductsMenu activeMenu={activeMenu.offer} menuTitle='Offers' color='lime'  menuList={offers} icon='offer' type='offer' setHideMenu={setHideMenu}></ProductsMenu>
       </div>
     </div>
   )

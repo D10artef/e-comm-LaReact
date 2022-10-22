@@ -22,6 +22,7 @@ const Cart = () => {
     setLoading(false)
   }, [user_session])
 
+
   const openModal = () => {
     setShowModal(true)
   }
@@ -63,7 +64,7 @@ const Cart = () => {
     .catch(err => console.log(err))
   }
 
-  const loadingOrEmpty = loading ? <><Loading/></> : 
+  const loadingOrEmpty = loading ? <><Loading/></> :
     <div className='flex flex-1 py-10 text-sm items-center justify-center text-primary'>
       <span>Your cart is empty. Now shop in our site and get your</span>
     </div>
@@ -77,7 +78,7 @@ const Cart = () => {
             <h1 className='font-medium text-neutral-700'>Your cart</h1>
             <p className='font-bold text-neutral-700'>Total: <span className=' text-accent-secondary'>{showPriceWithCurrency(total)}</span></p>
           </div>
-          { cartItems.length > 0 ? 
+          { cartItems.length > 0 ?
           <main className='mt-4 flex flex-col md:flex-row gap-y-3 gap-x-5'>
             <div className='flex-1 overflow-x-auto relative'>
               <CartTable items={cartItems} removeFromCart={removeFromCart} updateItemCart={updateItemCart}/>
@@ -93,7 +94,7 @@ const Cart = () => {
           loadingOrEmpty
           }
         </section>
-        { showModal && 
+        { showModal &&
         <Modal onClose={closeModal}>
           <div className='bg-gray-100 rounded-sm'>
             <header className='px-6 pt-6 pb-3 border-b'>
@@ -104,7 +105,7 @@ const Cart = () => {
               <SimpleButton className='bg-rose-500 text-white hover:bg-red-500 duration-500 font-light rounded-sm' icon='simple-check' onClick={confirmResetCart}>Continue</SimpleButton>
             </footer>
           </div>
-        </Modal> 
+        </Modal>
         }
       </UserLayout>
     </>

@@ -58989,92 +58989,174 @@ module.exports = function getSideChannel() {
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 var map = {
+	"./Admin/Categories": [
+		"./resources/js/Pages/Admin/Categories.jsx",
+		7,
+		"resources_js_Pages_Admin_Categories_jsx"
+	],
+	"./Admin/Categories.jsx": [
+		"./resources/js/Pages/Admin/Categories.jsx",
+		7,
+		"resources_js_Pages_Admin_Categories_jsx"
+	],
+	"./Admin/Dashboard": [
+		"./resources/js/Pages/Admin/Dashboard.jsx",
+		9,
+		"resources_js_Pages_Admin_Dashboard_jsx"
+	],
+	"./Admin/Dashboard.jsx": [
+		"./resources/js/Pages/Admin/Dashboard.jsx",
+		9,
+		"resources_js_Pages_Admin_Dashboard_jsx"
+	],
+	"./Admin/Login": [
+		"./resources/js/Pages/Admin/Login.jsx",
+		9,
+		"resources_js_Pages_Admin_Login_jsx"
+	],
+	"./Admin/Login.jsx": [
+		"./resources/js/Pages/Admin/Login.jsx",
+		9,
+		"resources_js_Pages_Admin_Login_jsx"
+	],
+	"./Admin/Offers": [
+		"./resources/js/Pages/Admin/Offers.jsx",
+		7,
+		"resources_js_Pages_Admin_Offers_jsx"
+	],
+	"./Admin/Offers.jsx": [
+		"./resources/js/Pages/Admin/Offers.jsx",
+		7,
+		"resources_js_Pages_Admin_Offers_jsx"
+	],
+	"./Admin/Orders": [
+		"./resources/js/Pages/Admin/Orders.jsx",
+		7,
+		"resources_js_Pages_Admin_Orders_jsx"
+	],
+	"./Admin/Orders.jsx": [
+		"./resources/js/Pages/Admin/Orders.jsx",
+		7,
+		"resources_js_Pages_Admin_Orders_jsx"
+	],
+	"./Admin/Products": [
+		"./resources/js/Pages/Admin/Products.jsx",
+		7,
+		"resources_js_Pages_Admin_Products_jsx"
+	],
+	"./Admin/Products.jsx": [
+		"./resources/js/Pages/Admin/Products.jsx",
+		7,
+		"resources_js_Pages_Admin_Products_jsx"
+	],
 	"./Auth/Login": [
 		"./resources/js/Pages/Auth/Login.jsx",
+		9,
 		"resources_js_Pages_Auth_Login_jsx"
 	],
 	"./Auth/Login.jsx": [
 		"./resources/js/Pages/Auth/Login.jsx",
+		9,
 		"resources_js_Pages_Auth_Login_jsx"
 	],
 	"./Auth/Register": [
 		"./resources/js/Pages/Auth/Register.jsx",
+		9,
 		"resources_js_Pages_Auth_Register_jsx"
 	],
 	"./Auth/Register.jsx": [
 		"./resources/js/Pages/Auth/Register.jsx",
+		9,
 		"resources_js_Pages_Auth_Register_jsx"
 	],
 	"./Auth/ResetPassword": [
 		"./resources/js/Pages/Auth/ResetPassword.jsx",
+		9,
 		"resources_js_Pages_Auth_ResetPassword_jsx"
 	],
 	"./Auth/ResetPassword.jsx": [
 		"./resources/js/Pages/Auth/ResetPassword.jsx",
+		9,
 		"resources_js_Pages_Auth_ResetPassword_jsx"
 	],
 	"./Cart": [
 		"./resources/js/Pages/Cart.jsx",
+		9,
 		"resources_js_Pages_Cart_jsx"
 	],
 	"./Cart.jsx": [
 		"./resources/js/Pages/Cart.jsx",
+		9,
 		"resources_js_Pages_Cart_jsx"
 	],
 	"./Contacts": [
 		"./resources/js/Pages/Contacts.jsx",
+		9,
 		"resources_js_Pages_Contacts_jsx"
 	],
 	"./Contacts.jsx": [
 		"./resources/js/Pages/Contacts.jsx",
+		9,
 		"resources_js_Pages_Contacts_jsx"
 	],
 	"./Home": [
 		"./resources/js/Pages/Home.jsx",
+		9,
 		"resources_js_Pages_Home_jsx"
 	],
 	"./Home.jsx": [
 		"./resources/js/Pages/Home.jsx",
+		9,
 		"resources_js_Pages_Home_jsx"
 	],
 	"./Product": [
 		"./resources/js/Pages/Product.jsx",
+		9,
 		"resources_js_Pages_Product_jsx"
 	],
 	"./Product.jsx": [
 		"./resources/js/Pages/Product.jsx",
+		9,
 		"resources_js_Pages_Product_jsx"
 	],
 	"./Products": [
 		"./resources/js/Pages/Products.jsx",
+		9,
 		"resources_js_Pages_Products_jsx"
 	],
 	"./Products.jsx": [
 		"./resources/js/Pages/Products.jsx",
+		9,
 		"resources_js_Pages_Products_jsx"
 	],
 	"./Services": [
 		"./resources/js/Pages/Services.jsx",
+		9,
 		"resources_js_Pages_Services_jsx"
 	],
 	"./Services.jsx": [
 		"./resources/js/Pages/Services.jsx",
+		9,
 		"resources_js_Pages_Services_jsx"
 	],
 	"./User/Profil": [
 		"./resources/js/Pages/User/Profil.jsx",
+		9,
 		"resources_js_Pages_User_Profil_jsx"
 	],
 	"./User/Profil.jsx": [
 		"./resources/js/Pages/User/Profil.jsx",
+		9,
 		"resources_js_Pages_User_Profil_jsx"
 	],
 	"./User/Setting": [
 		"./resources/js/Pages/User/Setting.jsx",
+		9,
 		"resources_js_Pages_User_Setting_jsx"
 	],
 	"./User/Setting.jsx": [
 		"./resources/js/Pages/User/Setting.jsx",
+		9,
 		"resources_js_Pages_User_Setting_jsx"
 	]
 };
@@ -59088,8 +59170,8 @@ function webpackAsyncContext(req) {
 	}
 
 	var ids = map[req], id = ids[0];
-	return __webpack_require__.e(ids[1]).then(() => {
-		return __webpack_require__(id);
+	return __webpack_require__.e(ids[2]).then(() => {
+		return __webpack_require__.t(id, ids[1] | 16)
 	});
 }
 webpackAsyncContext.keys = () => (Object.keys(map));
@@ -59196,6 +59278,36 @@ module.exports = JSON.parse('{"name":"axios","version":"0.21.4","description":"P
 /******/ 		};
 /******/ 	})();
 /******/ 	
+/******/ 	/* webpack/runtime/create fake namespace object */
+/******/ 	(() => {
+/******/ 		var getProto = Object.getPrototypeOf ? (obj) => (Object.getPrototypeOf(obj)) : (obj) => (obj.__proto__);
+/******/ 		var leafPrototypes;
+/******/ 		// create a fake namespace object
+/******/ 		// mode & 1: value is a module id, require it
+/******/ 		// mode & 2: merge all properties of value into the ns
+/******/ 		// mode & 4: return value when already ns object
+/******/ 		// mode & 16: return value when it's Promise-like
+/******/ 		// mode & 8|1: behave like require
+/******/ 		__webpack_require__.t = function(value, mode) {
+/******/ 			if(mode & 1) value = this(value);
+/******/ 			if(mode & 8) return value;
+/******/ 			if(typeof value === 'object' && value) {
+/******/ 				if((mode & 4) && value.__esModule) return value;
+/******/ 				if((mode & 16) && typeof value.then === 'function') return value;
+/******/ 			}
+/******/ 			var ns = Object.create(null);
+/******/ 			__webpack_require__.r(ns);
+/******/ 			var def = {};
+/******/ 			leafPrototypes = leafPrototypes || [null, getProto({}), getProto([]), getProto(getProto)];
+/******/ 			for(var current = mode & 2 && value; typeof current == 'object' && !~leafPrototypes.indexOf(current); current = getProto(current)) {
+/******/ 				Object.getOwnPropertyNames(current).forEach((key) => (def[key] = () => (value[key])));
+/******/ 			}
+/******/ 			def['default'] = () => (value);
+/******/ 			__webpack_require__.d(ns, def);
+/******/ 			return ns;
+/******/ 		};
+/******/ 	})();
+/******/ 	
 /******/ 	/* webpack/runtime/define property getters */
 /******/ 	(() => {
 /******/ 		// define getter functions for harmony exports
@@ -59226,7 +59338,7 @@ module.exports = JSON.parse('{"name":"axios","version":"0.21.4","description":"P
 /******/ 		// This function allow to reference async chunks
 /******/ 		__webpack_require__.u = (chunkId) => {
 /******/ 			// return url for filenames not based on template
-/******/ 			if ({"resources_js_Pages_Auth_Login_jsx":1,"resources_js_Pages_Auth_Register_jsx":1,"resources_js_Pages_Auth_ResetPassword_jsx":1,"resources_js_Pages_Cart_jsx":1,"resources_js_Pages_Contacts_jsx":1,"resources_js_Pages_Home_jsx":1,"resources_js_Pages_Product_jsx":1,"resources_js_Pages_Products_jsx":1,"resources_js_Pages_Services_jsx":1,"resources_js_Pages_User_Profil_jsx":1,"resources_js_Pages_User_Setting_jsx":1}[chunkId]) return "js/" + chunkId + ".js";
+/******/ 			if ({"resources_js_Pages_Admin_Categories_jsx":1,"resources_js_Pages_Admin_Dashboard_jsx":1,"resources_js_Pages_Admin_Login_jsx":1,"resources_js_Pages_Admin_Offers_jsx":1,"resources_js_Pages_Admin_Orders_jsx":1,"resources_js_Pages_Admin_Products_jsx":1,"resources_js_Pages_Auth_Login_jsx":1,"resources_js_Pages_Auth_Register_jsx":1,"resources_js_Pages_Auth_ResetPassword_jsx":1,"resources_js_Pages_Cart_jsx":1,"resources_js_Pages_Contacts_jsx":1,"resources_js_Pages_Home_jsx":1,"resources_js_Pages_Product_jsx":1,"resources_js_Pages_Products_jsx":1,"resources_js_Pages_Services_jsx":1,"resources_js_Pages_User_Profil_jsx":1,"resources_js_Pages_User_Setting_jsx":1}[chunkId]) return "js/" + chunkId + ".js";
 /******/ 			// return url for filenames based on template
 /******/ 			return undefined;
 /******/ 		};

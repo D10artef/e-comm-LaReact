@@ -1,4 +1,4 @@
-(self["webpackChunk"] = self["webpackChunk"] || []).push([["resources_js_Pages_Auth_Register_jsx"],{
+(self["webpackChunk"] = self["webpackChunk"] || []).push([["resources_js_Pages_Admin_Login_jsx"],{
 
 /***/ "./resources/js/Components/Auth/Form.jsx":
 /*!***********************************************!*\
@@ -1031,10 +1031,10 @@ var AuthLayout = function AuthLayout(_ref) {
 
 /***/ }),
 
-/***/ "./resources/js/Pages/Auth/Register.jsx":
-/*!**********************************************!*\
-  !*** ./resources/js/Pages/Auth/Register.jsx ***!
-  \**********************************************/
+/***/ "./resources/js/Pages/Admin/Login.jsx":
+/*!********************************************!*\
+  !*** ./resources/js/Pages/Admin/Login.jsx ***!
+  \********************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -1048,9 +1048,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Components_Auth_Form__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../Components/Auth/Form */ "./resources/js/Components/Auth/Form.jsx");
 /* harmony import */ var _inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @inertiajs/inertia-react */ "./node_modules/@inertiajs/inertia-react/dist/index.js");
 /* harmony import */ var _Components_FormAndButton_Input__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../Components/FormAndButton/Input */ "./resources/js/Components/FormAndButton/Input.js");
-/* harmony import */ var _Components_MemoLink__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../Components/MemoLink */ "./resources/js/Components/MemoLink.jsx");
-/* harmony import */ var _Components_HOOKS_useFormField__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../Components/HOOKS/useFormField */ "./resources/js/Components/HOOKS/useFormField.js");
-/* harmony import */ var _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @inertiajs/inertia */ "./node_modules/@inertiajs/inertia/dist/index.js");
+/* harmony import */ var _Components_HOOKS_useFormField__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../Components/HOOKS/useFormField */ "./resources/js/Components/HOOKS/useFormField.js");
+/* harmony import */ var _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @inertiajs/inertia */ "./node_modules/@inertiajs/inertia/dist/index.js");
+/* harmony import */ var _Components_MemoLink__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../Components/MemoLink */ "./resources/js/Components/MemoLink.jsx");
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
 
@@ -1076,11 +1076,11 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 
-var Register = function Register() {
-  var _useFormInput = (0,_Components_HOOKS_useFormField__WEBPACK_IMPORTED_MODULE_6__.useFormInput)({
-    email: '',
+var Login = function Login() {
+  var _useFormInput = (0,_Components_HOOKS_useFormField__WEBPACK_IMPORTED_MODULE_5__.useFormInput)({
+    username: '',
     password: '',
-    password_confirmation: ''
+    remember: false
   }),
       _useFormInput2 = _slicedToArray(_useFormInput, 2),
       fields = _useFormInput2[0],
@@ -1096,7 +1096,7 @@ var Register = function Register() {
   var handleSubmit = function handleSubmit(event) {
     event.preventDefault();
     setProcessing(true);
-    _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_7__.Inertia.post(route('register'), fields, {
+    _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_6__.Inertia.post(route('admin.authenticate'), fields, {
       onError: function onError() {
         setProcessing(false);
       },
@@ -1107,25 +1107,18 @@ var Register = function Register() {
   };
 
   var header = /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_Components_Auth_Form__WEBPACK_IMPORTED_MODULE_2__.FormHeader, {
-    description: "Join our community"
+    title: "Admin Login",
+    description: "Happy to see you again"
   });
 
-  var footer = /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)(_Components_Auth_Form__WEBPACK_IMPORTED_MODULE_2__.FormFooter, {
+  var footer = /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_Components_Auth_Form__WEBPACK_IMPORTED_MODULE_2__.FormFooter, {
     processing: processing,
-    buttontText: "Register",
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("span", {
-      className: "mr-1 inline-block",
-      children: "Already have an account?"
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_Components_MemoLink__WEBPACK_IMPORTED_MODULE_5__["default"], {
-      href: route('login'),
-      className: "font-semibold cursor-pointer",
-      children: "Sign in"
-    })]
+    buttontText: "Login"
   });
 
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.Fragment, {
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_3__.Head, {
-      title: "Sign up"
+      title: "Admin page - Sign in"
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_Layout_AuthLayout__WEBPACK_IMPORTED_MODULE_1__["default"], {
       children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_Components_Auth_Form__WEBPACK_IMPORTED_MODULE_2__["default"], {
         handleSubmit: handleSubmit,
@@ -1134,9 +1127,9 @@ var Register = function Register() {
         children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("main", {
           children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_Components_FormAndButton_Input__WEBPACK_IMPORTED_MODULE_4__.TextInput, {
             className: "mt-5",
-            label: "Email",
-            name: "email",
-            type: "email",
+            label: "Username",
+            name: "username",
+            type: "text",
             errors: errors.email,
             value: fields.email,
             onChange: handleFieldChange
@@ -1148,13 +1141,27 @@ var Register = function Register() {
             errors: errors.password,
             value: fields.password,
             onChange: handleFieldChange
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_Components_FormAndButton_Input__WEBPACK_IMPORTED_MODULE_4__.TextInput, {
-            className: "mt-5",
-            label: "Password confirmation",
-            name: "password_confirmation",
-            type: "password",
-            value: fields.password_confirmation,
-            onChange: handleFieldChange
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+            className: "flex items-center justify-between mt-4",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("label", {
+              className: "flex items-center select-none",
+              htmlFor: "remember",
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("input", {
+                name: "remember",
+                className: "mr-1 accent-slate-500 cursor-pointer",
+                type: "checkbox",
+                checked: fields.remember,
+                onChange: handleFieldChange
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("span", {
+                className: "text-xs text-neutral-700",
+                children: "Remember me"
+              })]
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_Components_MemoLink__WEBPACK_IMPORTED_MODULE_7__["default"], {
+              className: "hover:underline hover:text-gray-700 duration-500 text-xs text-gray-500",
+              tabIndex: "-1",
+              href: route('admin.login'),
+              children: "Forget password?"
+            })]
           })]
         })
       })
@@ -1162,7 +1169,7 @@ var Register = function Register() {
   });
 };
 
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Register);
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Login);
 
 /***/ }),
 

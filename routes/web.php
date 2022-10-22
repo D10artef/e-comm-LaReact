@@ -36,7 +36,7 @@ Route::get('/', function () {
 
 // Products
 Route::get('/products', [UserProductController::class, 'index'])->name('products');
-Route::get('/products/{product}', [UserProductController::class, 'showProduct'])->name('products.show');
+Route::get('/products/{product}', [UserProductController::class, 'showProduct'])->name('products.show')->whereNumber('product');
 
 // Service
 Route::get('/services', [UserServiceController::class, 'index'])->name('services');
@@ -56,6 +56,7 @@ Route::middleware(['auth'])->group(function () {
     Route::delete('/user/cart/{cartItem}', [UserCartSessionController::class, 'removeItemToCart'])->name('user.cart.remove-item');
 });
 
+include_once('admin.php');
 
 
 
