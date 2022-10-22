@@ -1,14 +1,14 @@
 import React from 'react'
 import AdminMenuItem from './AdminMenuItem'
+import { ADMIN_SIDE_MENU_LIST } from './adminMenuList'
 
 const AdminMenu = ({className}) => {
+  const getActive = (link) => route().current(link + '*');
   return (
     <div className={className}>
-      <AdminMenuItem text="Dashboard" link="login" icon="collection" />
-      <AdminMenuItem text="Orders" link="login" icon="shopping-cart" />
-      <AdminMenuItem text="Categories" link="login" icon="view-board" />
-      <AdminMenuItem text="Offers" link="login" icon="offer" />
-      <AdminMenuItem text="Products" link="login" icon="template" />
+      {
+        ADMIN_SIDE_MENU_LIST.map(menu => <AdminMenuItem key={menu.text} text={menu.text} link={menu.route} icon={menu.icon} isActive={getActive(menu.route)}/>)
+      }
     </div>
   )
 }

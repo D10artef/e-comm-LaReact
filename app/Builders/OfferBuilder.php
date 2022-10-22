@@ -2,13 +2,14 @@
 
 namespace App\Builders;
 
-use Illuminate\Database\Eloquent\Builder;
 
-class OfferBuilder extends Builder
+class OfferBuilder extends BaseBuilder
 {
 
   public function active()
   {
     return $this->where('active', true);
   }
+
+
 }

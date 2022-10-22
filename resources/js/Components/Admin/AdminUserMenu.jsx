@@ -3,7 +3,7 @@ import { usePage } from '@inertiajs/inertia-react'
 import { Link } from '@inertiajs/inertia-react';
 import Icon from '../Icon';
 import UserMenuItem from '../NavigationAndMenu/UserMenuItem';
-import { ADMIN_USER_MENU_LIST }  from './adminUserMenuList'
+import { ADMIN_USER_MENU_LIST }  from './adminMenuList'
 
 const AdminUserMenu = () => {
   const { auth } = usePage().props;

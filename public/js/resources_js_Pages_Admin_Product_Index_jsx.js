@@ -1,4 +1,4 @@
-(self["webpackChunk"] = self["webpackChunk"] || []).push([["resources_js_Pages_Admin_Dashboard_jsx"],{
+(self["webpackChunk"] = self["webpackChunk"] || []).push([["resources_js_Pages_Admin_Product_Index_jsx"],{
 
 /***/ "./resources/js/Components/Admin/AdminMenu.jsx":
 /*!*****************************************************!*\
@@ -1113,10 +1113,10 @@ var AdminLayout = function AdminLayout(_ref) {
 
 /***/ }),
 
-/***/ "./resources/js/Pages/Admin/Dashboard.jsx":
-/*!************************************************!*\
-  !*** ./resources/js/Pages/Admin/Dashboard.jsx ***!
-  \************************************************/
+/***/ "./resources/js/Pages/Admin/Product/Index.jsx":
+/*!****************************************************!*\
+  !*** ./resources/js/Pages/Admin/Product/Index.jsx ***!
+  \****************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -1126,26 +1126,26 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _Layout_AdminLayout__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../Layout/AdminLayout */ "./resources/js/Layout/AdminLayout.jsx");
+/* harmony import */ var _Layout_AdminLayout__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../Layout/AdminLayout */ "./resources/js/Layout/AdminLayout.jsx");
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 
 
 
 
-var Dashboard = function Dashboard() {
+var Index = function Index() {
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
-    children: "Dashboard"
+    children: "Products"
   });
 };
 
-Dashboard.layout = function (page) {
+Index.layout = function (page) {
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_Layout_AdminLayout__WEBPACK_IMPORTED_MODULE_1__["default"], {
-    title: "Dashboard",
+    title: "Product",
     children: page
   });
 };
 
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Dashboard);
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Index);
 
 /***/ }),
 

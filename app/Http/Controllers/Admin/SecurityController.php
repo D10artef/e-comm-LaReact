@@ -24,13 +24,6 @@ class SecurityController extends Controller
         }
     }
 
-    public function dashboard()
-    {
-        return inertia('Admin/Dashboard', [
-            
-        ]);
-    }
-
     public function logout()
     {
         Auth::guard('admin')->logout();

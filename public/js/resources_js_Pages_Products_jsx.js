@@ -2151,8 +2151,9 @@ var PageLink = function PageLink(_ref) {
   var active = _ref.active,
       label = _ref.label,
       url = _ref.url;
-  var className = classnames__WEBPACK_IMPORTED_MODULE_2___default()(['px-2 py-1', 'border border-solid border-neutral-500 rounded', 'text-xs', 'hover:bg-neutral-500 hover:text-white duration-300', 'focus:outline-none', 'pagination-item'], {
-    'bg-neutral-500 text-white active': active
+  var className = classnames__WEBPACK_IMPORTED_MODULE_2___default()(['px-2 py-1', // 'border border-solid border-neutral-500 rounded',
+  'rounded-full', 'text-xs', 'hover:bg-secondary hover:text-white duration-300', 'focus:outline-none', 'pagination-item'], {
+    'bg-secondary text-white active': active
   }, {
     'text-neutral-500': !active
   });
@@ -2171,7 +2172,8 @@ var PageLink = function PageLink(_ref) {
 
 var PageInactive = function PageInactive(_ref2) {
   var label = _ref2.label;
-  var className = classnames__WEBPACK_IMPORTED_MODULE_2___default()('px-2 py-1 text-xs border rounded border-solid border-gray-400 opacity-60 text-gray-400 pagination-item disabled');
+  var className = classnames__WEBPACK_IMPORTED_MODULE_2___default()(['px-2 py-1 text-xs', // 'border rounded border-solid border-gray-400', 
+  'opacity-60 text-gray-400 pagination-item disabled']);
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
     className: className,
     dangerouslySetInnerHTML: {
