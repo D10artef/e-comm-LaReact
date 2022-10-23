@@ -1,9 +1,14 @@
 import React from 'react'
 import AdminLayout from '../../../Layout/AdminLayout'
+import PageHeader from '../../../Components/Admin/PageHeader'
 
 const Index = () => {
   return (
-    <div>Orders</div>
+    <>
+      <div>
+        <PageHeader title='Orders'/>
+      </div>
+    </>
   )
 }
 

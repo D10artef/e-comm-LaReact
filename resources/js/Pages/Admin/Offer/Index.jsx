@@ -1,12 +1,9 @@
 import React, { useState, useEffect } from 'react'
 import AdminLayout from '../../../Layout/AdminLayout'
 import { usePage } from '@inertiajs/inertia-react'
-import { Link } from '@inertiajs/inertia-react'
-import { SimpleButton } from '../../../Components/FormAndButton/Button'
-import OfferTableItem from '../../../Components/Admin/OfferTableItem'
+import {OfferTableItem} from '../../../Components/Admin/AdminTableItem'
 import Pagination from '../../../Components/Pagination'
-import {SearchForm} from '../../../Components/FormAndButton/Input'
-import { Inertia } from '@inertiajs/inertia'
+import PageHeader from '../../../Components/Admin/PageHeader'
 
 const Index = () => {
   const { offers } = usePage().props
@@ -17,33 +14,10 @@ const Index = () => {
     setDataOffers(offers.data)
   },[offers])
 
-  const hanldeSearch = (search) => {
-    console.log('search offers', search);
-    Inertia.get(route('admin.offer'), { search }, {
-      only: ['offers'],
-      preserveScroll: true,
-    })
-  }
-
   return (
     <>
       <div>
-        <h1 className="text-2xl mb-1 font-light">Offers</h1>
-        <hr className="w-1/4 border border-gray-500 mb-8"/>
-        <div className="flex items-center justify-between mb-6">
-          <div className='lg:w-72'>
-            <SearchForm onSearch={hanldeSearch}>Find offers ...</SearchForm>
-          </div>
-          <SimpleButton className='bg-accent-secondary hover:bg-accent rounded-sm shadow-sm text-white font-medium'>
-            <Link
-              href={route('admin.offer')}
-            >
-              <span>Create</span>
-              <span className="hidden md:inline"> Offer</span>
-            </Link>
-          </SimpleButton>
-        </div>
-
+        <PageHeader title='offers' link={route('admin.offer')}/>
         <div className="overflow-x-auto bg-white rounded shadow mb-8">
           <table className="w-full">
             <thead>

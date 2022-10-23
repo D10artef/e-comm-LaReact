@@ -44,6 +44,10 @@ php artisan db:seed
 php artisan serve
 ```
 
+### Upcoming feature
+- Admin dashboard
+- User payement
+
 ### Credits
 * [react-hot-toast](https://github.com/timolins/react-hot-toast)
 * [react-slick](https://github.com/akiran/react-slick)

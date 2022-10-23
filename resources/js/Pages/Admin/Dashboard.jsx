@@ -1,9 +1,12 @@
 import React from 'react'
 import AdminLayout from '../../Layout/AdminLayout'
+import PageTitle from '../../Components/Admin/PageTitle'
 
 const Dashboard = () => {
   return (
-    <div>Dashboard</div>
+    <>
+      <PageTitle title='Dashboard'/>
+    </>
   )
 }
 

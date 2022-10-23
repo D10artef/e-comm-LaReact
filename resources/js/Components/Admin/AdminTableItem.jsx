@@ -1,7 +1,7 @@
 import React from 'react'
 import classNames from 'classnames'
 
-const OfferTableItem = ({offer}) => {
+export const OfferTableItem = ({offer}) => {
   const active = offer.active
   const activeClass = classNames('text-sm font-medium text-center',
     {'text-emerald-700': active},
@@ -29,5 +29,3 @@ const OfferTableItem = ({offer}) => {
     </tr>
   )
 }
-
-export default OfferTableItem
