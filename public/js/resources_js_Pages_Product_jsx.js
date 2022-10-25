@@ -9,6 +9,7 @@
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "ButtonBack": () => (/* binding */ ButtonBack),
 /* harmony export */   "LoadingButton": () => (/* binding */ LoadingButton),
 /* harmony export */   "SimpleButton": () => (/* binding */ SimpleButton)
 /* harmony export */ });
@@ -63,7 +64,7 @@ var SimpleButton = function SimpleButton(_ref2) {
       onClick = _ref2.onClick,
       _ref2$disable = _ref2.disable,
       disable = _ref2$disable === void 0 ? false : _ref2$disable;
-  var classNames = "flex items-center justify-center px-4 py-2 text-sm gap-x-1 ".concat(className, "  disabled:bg-neutral-200 disabled:text-gray-500}");
+  var classNames = "flex items-center justify-center px-4 py-2 text-sm gap-x-1 duration-500 ".concat(className, "  disabled:bg-neutral-200 disabled:text-gray-500}");
 
   var iconView = /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_Icon__WEBPACK_IMPORTED_MODULE_2__["default"], {
     name: icon,
@@ -78,6 +79,19 @@ var SimpleButton = function SimpleButton(_ref2) {
       className: "first-letter:uppercase inline-block w-fit",
       children: children
     }), iconRight ? iconView : ""]
+  });
+};
+var ButtonBack = function ButtonBack() {
+  var handleBackClick = function handleBackClick() {
+    window.history.back();
+  };
+
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("button", {
+    className: "flex gap-1 text-sm justify-start items-center font-medium w-fit cursor-pointer",
+    onClick: handleBackClick,
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_Icon__WEBPACK_IMPORTED_MODULE_2__["default"], {
+      name: "chevron-left"
+    }), "Back"]
   });
 };
 
@@ -1005,6 +1019,40 @@ var Icon = function Icon(_ref) {
         strokeLinejoin: "round",
         strokeWidth: 2,
         d: "M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"
+      })
+    }));
+  }
+
+  if (name === 'pencil-alt') {
+    return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("svg", _objectSpread(_objectSpread({
+      xmlns: "http://www.w3.org/2000/svg",
+      className: className,
+      fill: "none",
+      viewBox: "0 0 24 24",
+      stroke: "currentColor"
+    }, props), {}, {
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        strokeLinecap: "round",
+        strokeLinejoin: "round",
+        strokeWidth: 2,
+        d: "M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"
+      })
+    }));
+  }
+
+  if (name === 'switch-vertical') {
+    return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("svg", _objectSpread(_objectSpread({
+      xmlns: "http://www.w3.org/2000/svg",
+      className: className,
+      fill: "none",
+      viewBox: "0 0 24 24",
+      stroke: "currentColor"
+    }, props), {}, {
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        strokeLinecap: "round",
+        strokeLinejoin: "round",
+        strokeWidth: 2,
+        d: "M7 16V4m0 0L3 8m4-4l4 4m6 0v12m0 0l4-4m-4 4l-4-4"
       })
     }));
   }
@@ -2246,9 +2294,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @inertiajs/inertia-react */ "./node_modules/@inertiajs/inertia-react/dist/index.js");
-/* harmony import */ var _Components_Icon__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../Components/Icon */ "./resources/js/Components/Icon.jsx");
-/* harmony import */ var _Components_Product_ProductInfo__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../Components/Product/ProductInfo */ "./resources/js/Components/Product/ProductInfo.jsx");
-/* harmony import */ var _Layout_ProductLayout__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../Layout/ProductLayout */ "./resources/js/Layout/ProductLayout.jsx");
+/* harmony import */ var _Components_Product_ProductInfo__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../Components/Product/ProductInfo */ "./resources/js/Components/Product/ProductInfo.jsx");
+/* harmony import */ var _Layout_ProductLayout__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../Layout/ProductLayout */ "./resources/js/Layout/ProductLayout.jsx");
+/* harmony import */ var _Components_FormAndButton_Button__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../Components/FormAndButton/Button */ "./resources/js/Components/FormAndButton/Button.js");
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 
 
@@ -2262,30 +2310,19 @@ __webpack_require__.r(__webpack_exports__);
 
 var Product = function Product() {
   var product = (0,_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.usePage)().props.product;
-
-  var back = function back() {
-    window.history.back();
-  };
-
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.Fragment, {
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.Head, {
       title: "Product detail"
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_Layout_ProductLayout__WEBPACK_IMPORTED_MODULE_4__["default"], {
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_Layout_ProductLayout__WEBPACK_IMPORTED_MODULE_3__["default"], {
       children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
         className: "flex flex-row",
         children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
           children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
             className: "mb-4",
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("button", {
-              className: "flex gap-1 text-sm justify-start items-center font-medium w-fit cursor-pointer",
-              onClick: back,
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_Components_Icon__WEBPACK_IMPORTED_MODULE_2__["default"], {
-                name: "chevron-left"
-              }), "Back"]
-            })
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_Components_FormAndButton_Button__WEBPACK_IMPORTED_MODULE_4__.ButtonBack, {})
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
             className: "px-4 md:px-8 lg:px-12",
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_Components_Product_ProductInfo__WEBPACK_IMPORTED_MODULE_3__["default"], {
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_Components_Product_ProductInfo__WEBPACK_IMPORTED_MODULE_2__["default"], {
               product: product.data
             })
           })]

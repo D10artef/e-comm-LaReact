@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from '@inertiajs/inertia-react';
 import classNames from 'classnames';
 
-const PageLink = ({ active, label, url }) => {
+const PageLink = ({ active, label, url, arrayOnly }) => {
   const className = classNames(
     [
       'px-2 py-1',
@@ -21,7 +21,7 @@ const PageLink = ({ active, label, url }) => {
     }
   );
   return (
-    <Link className={className} href={url} only={['products']} preserveState>
+    <Link className={className} href={url} only={arrayOnly} preserveState>
       <span dangerouslySetInnerHTML={{ __html: label }}></span>
     </Link>
   );
@@ -39,7 +39,7 @@ const PageInactive = ({ label }) => {
   );
 };
 
-export default ({ links = [] }) => {
+export default ({ links = [] , arrayOnly = [] }) => {
   if (links.length === 3) return null;
   return (
     <div className="flex flex-wrap justify-center gap-2 my-2 pagination">
@@ -47,7 +47,7 @@ export default ({ links = [] }) => {
         return url === null ? (
           <PageInactive key={`${label}-${index}`} label={label} />
         ) : (
-          <PageLink key={`${label}-${index}`}label={label} active={active} url={url} />
+          <PageLink key={`${label}-${index}`}label={label} active={active} url={url} arrayOnly={arrayOnly}/>
         );
       })}
     </div>

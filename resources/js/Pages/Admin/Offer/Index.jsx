@@ -4,43 +4,55 @@ import { usePage } from '@inertiajs/inertia-react'
 import {OfferTableItem} from '../../../Components/Admin/AdminTableItem'
 import Pagination from '../../../Components/Pagination'
 import PageHeader from '../../../Components/Admin/PageHeader'
+import { ORDERS } from '../../../UTULITIES/const'
+import { Inertia } from '@inertiajs/inertia'
+import { TableHead } from '../../../Components/Admin/AdminTableHead'
+import { dataOfferHead } from '../../../Components/Admin/tableHeadList'
+import { useOrderData } from '../../../Components/HOOKS/useOrderData'
 
 const Index = () => {
   const { offers } = usePage().props
   const [ dataOffers, setDataOffers ] = useState([])
-  const { meta: {links} } = offers
+  const [loading, setLoading] = useState(true)
+  const [orderData] = useOrderData(['name', 'active', 'discount_percent'])
+  
+  const { links } = offers.meta 
 
   useEffect(() => {
     setDataOffers(offers.data)
+    setLoading(false)
   },[offers])
+
+  
 
   return (
     <>
       <div>
-        <PageHeader title='offers' link={route('admin.offer')}/>
-        <div className="overflow-x-auto bg-white rounded shadow mb-8">
+        <PageHeader title='Offers' link={route('admin.offer')}/>
+        <div className="overflow-x-auto overflow-y-visible bg-white rounded shadow scroler">
           <table className="w-full">
-            <thead>
-              <tr className="text-sm text-gray-700">
-                <th className="px-6 py-3 text-left">Name</th>
-                <th className="px-6 py-3 max-w-xs">Description</th>
-                <th className="px-6 py-3 pb-4">Status</th>
-                <th className="px-6 py-3 pb-4">Discount</th>
-              </tr>
-            </thead>
+            <TableHead dataHead={dataOfferHead} handleOrder={orderData}/>
             <tbody>
               {
-                dataOffers.map(offer => <OfferTableItem key={offer.id} offer={offer}/>)
+                dataOffers.length > 0 && dataOffers.map(offer => <OfferTableItem key={offer.id} offer={offer}/>)
               }
             </tbody>
           </table>
+          
+          {
+            !loading && dataOffers.length == 0 && 
+            <div className='text-sm font-medium flex flex-row justify-center items-center text-gray-500 p-10 text-center'>
+              <span>No offer</span>
+            </div>
+          }
+
         </div>
-        <Pagination links={links}/>
+        <Pagination links={links} arrayOnly={['offers']}/>
       </div>
     </>
   )
 }
 
-Index.layout = page => <AdminLayout title='Product' children={page}/>
+Index.layout = page => <AdminLayout title='Admin - Offers' children={page}/>
 
 export default Index

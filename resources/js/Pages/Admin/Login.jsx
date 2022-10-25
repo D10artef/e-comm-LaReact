@@ -46,8 +46,8 @@ const Login = () => {
           <main>
             <TextInput
               className="mt-5" label="Username" name="username" type="text" 
-              errors={errors.email}
-              value={fields.email}
+              errors={errors.username}
+              value={fields.username}
               onChange={handleFieldChange}
             />
             <TextInput

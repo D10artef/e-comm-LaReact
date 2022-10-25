@@ -6,7 +6,7 @@ This is a SIMPLE e-commerce application built with [Laravel](https://laravel.com
 
 - Clone the project
 
-- Set your *** ".env file" *** (database)
+- Set your  ".env file"  (database)
 
 - Install PHP dependencies:
 
@@ -44,9 +44,10 @@ php artisan db:seed
 php artisan serve
 ```
 
-### Upcoming feature
+### Upcoming features
 - Admin dashboard
 - User payement
+- Order confirmation
 
 ### Credits
 * [react-hot-toast](https://github.com/timolins/react-hot-toast)

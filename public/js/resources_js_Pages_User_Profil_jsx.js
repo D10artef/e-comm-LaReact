@@ -728,6 +728,40 @@ var Icon = function Icon(_ref) {
     }));
   }
 
+  if (name === 'pencil-alt') {
+    return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("svg", _objectSpread(_objectSpread({
+      xmlns: "http://www.w3.org/2000/svg",
+      className: className,
+      fill: "none",
+      viewBox: "0 0 24 24",
+      stroke: "currentColor"
+    }, props), {}, {
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        strokeLinecap: "round",
+        strokeLinejoin: "round",
+        strokeWidth: 2,
+        d: "M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"
+      })
+    }));
+  }
+
+  if (name === 'switch-vertical') {
+    return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("svg", _objectSpread(_objectSpread({
+      xmlns: "http://www.w3.org/2000/svg",
+      className: className,
+      fill: "none",
+      viewBox: "0 0 24 24",
+      stroke: "currentColor"
+    }, props), {}, {
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        strokeLinecap: "round",
+        strokeLinejoin: "round",
+        strokeWidth: 2,
+        d: "M7 16V4m0 0L3 8m4-4l4 4m6 0v12m0 0l4-4m-4 4l-4-4"
+      })
+    }));
+  }
+
   return null;
 };
 

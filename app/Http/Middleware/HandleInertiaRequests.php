@@ -45,6 +45,11 @@ class HandleInertiaRequests extends Middleware
                     'admin' => Auth::guard('admin')->check() ? new UserResource(Auth::guard('admin')->user()) : null,
                 ];
             },
+            'flash' => function () use ($request) {
+                return [
+                    'success' => $request->session()->get('success'),
+                ];
+            },
         ]);
     }
 }

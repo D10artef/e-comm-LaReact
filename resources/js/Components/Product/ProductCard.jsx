@@ -6,7 +6,7 @@ import AddToCartIconButton from '../HOC/AddToCartIconButton'
 
 const ProductCard = ({product, className}) => {
   const { auth } = usePage().props
-  const { name, id, price, offer } = product
+  const { name, description, id, price, offer } = product
   const showProduct = (id) => {
     Inertia.get(route('products.show', id), 
     )
@@ -14,9 +14,13 @@ const ProductCard = ({product, className}) => {
   return (
     <>
       <div className={`border rounded-sm overflow-hidden shadow-sm flex flex-col ${className}`}>
-        <div className="h-44 text-center bg-primary bg-opacity-25 text-white relative cursor-pointer overflow-hidde" onClick={() => showProduct(id)} >
-          <div className="absolute bottom-0 inset-x-0 text-xs px-2 py-1.5 text-white bg-black bg-opacity-20 backdrop-blur-sm">
-            <span>{name}</span>
+        <div className="h-44 bg-primary bg-opacity-25 text-white relative cursor-pointer overflow-hidde" onClick={() => showProduct(id)} >
+          <div className="absolute bottom-0 inset-x-0  px-2 py-1.5 text-white bg-black bg-opacity-20 backdrop-blur-sm">
+            <span className='text-sm font-medium'>{name}</span>
+            {
+              description && 
+              <p className='text-xs text-neutral-200 line-clamp-1'>{description}</p>
+            }
           </div>
           {
             offer && offer.active && 

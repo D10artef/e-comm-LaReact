@@ -2,6 +2,7 @@
 
 namespace App\Http\Resources;
 
+use App\Models\Product;
 use Illuminate\Http\Resources\Json\JsonResource;
 
 class OfferResource extends JsonResource
@@ -14,6 +15,14 @@ class OfferResource extends JsonResource
      */
     public function toArray($request)
     {
-        return parent::toArray($request);
+        return [
+            'id' => $this->id,
+            'name' => $this->name,
+            'description' => $this->description,
+            'active' => $this->active,
+            'discount_percent' => $this->discount_percent,
+            'illustration' => $this->illustration,
+            'products_count' => $this->products->count(),
+        ];
     }
 }

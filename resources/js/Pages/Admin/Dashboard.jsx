@@ -10,6 +10,6 @@ const Dashboard = () => {
   )
 }
 
-Dashboard.layout = page => <AdminLayout title="Dashboard" children={page} />;
+Dashboard.layout = page => <AdminLayout title="Admin - Dashboard" children={page} />;
 
 export default Dashboard

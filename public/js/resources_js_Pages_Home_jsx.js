@@ -133,6 +133,7 @@ var SectionHeader = function SectionHeader(_ref) {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "ButtonBack": () => (/* binding */ ButtonBack),
 /* harmony export */   "LoadingButton": () => (/* binding */ LoadingButton),
 /* harmony export */   "SimpleButton": () => (/* binding */ SimpleButton)
 /* harmony export */ });
@@ -187,7 +188,7 @@ var SimpleButton = function SimpleButton(_ref2) {
       onClick = _ref2.onClick,
       _ref2$disable = _ref2.disable,
       disable = _ref2$disable === void 0 ? false : _ref2$disable;
-  var classNames = "flex items-center justify-center px-4 py-2 text-sm gap-x-1 ".concat(className, "  disabled:bg-neutral-200 disabled:text-gray-500}");
+  var classNames = "flex items-center justify-center px-4 py-2 text-sm gap-x-1 duration-500 ".concat(className, "  disabled:bg-neutral-200 disabled:text-gray-500}");
 
   var iconView = /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_Icon__WEBPACK_IMPORTED_MODULE_2__["default"], {
     name: icon,
@@ -202,6 +203,19 @@ var SimpleButton = function SimpleButton(_ref2) {
       className: "first-letter:uppercase inline-block w-fit",
       children: children
     }), iconRight ? iconView : ""]
+  });
+};
+var ButtonBack = function ButtonBack() {
+  var handleBackClick = function handleBackClick() {
+    window.history.back();
+  };
+
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("button", {
+    className: "flex gap-1 text-sm justify-start items-center font-medium w-fit cursor-pointer",
+    onClick: handleBackClick,
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_Icon__WEBPACK_IMPORTED_MODULE_2__["default"], {
+      name: "chevron-left"
+    }), "Back"]
   });
 };
 
@@ -1135,6 +1149,40 @@ var Icon = function Icon(_ref) {
     }));
   }
 
+  if (name === 'pencil-alt') {
+    return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("svg", _objectSpread(_objectSpread({
+      xmlns: "http://www.w3.org/2000/svg",
+      className: className,
+      fill: "none",
+      viewBox: "0 0 24 24",
+      stroke: "currentColor"
+    }, props), {}, {
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        strokeLinecap: "round",
+        strokeLinejoin: "round",
+        strokeWidth: 2,
+        d: "M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"
+      })
+    }));
+  }
+
+  if (name === 'switch-vertical') {
+    return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("svg", _objectSpread(_objectSpread({
+      xmlns: "http://www.w3.org/2000/svg",
+      className: className,
+      fill: "none",
+      viewBox: "0 0 24 24",
+      stroke: "currentColor"
+    }, props), {}, {
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        strokeLinecap: "round",
+        strokeLinejoin: "round",
+        strokeWidth: 2,
+        d: "M7 16V4m0 0L3 8m4-4l4 4m6 0v12m0 0l4-4m-4 4l-4-4"
+      })
+    }));
+  }
+
   return null;
 };
 
@@ -2002,6 +2050,7 @@ var ProductCard = function ProductCard(_ref) {
       className = _ref.className;
   var auth = (0,_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.usePage)().props.auth;
   var name = product.name,
+      description = product.description,
       id = product.id,
       price = product.price,
       offer = product.offer;
@@ -2014,15 +2063,19 @@ var ProductCard = function ProductCard(_ref) {
     children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
       className: "border rounded-sm overflow-hidden shadow-sm flex flex-col ".concat(className),
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
-        className: "h-44 text-center bg-primary bg-opacity-25 text-white relative cursor-pointer overflow-hidde",
+        className: "h-44 bg-primary bg-opacity-25 text-white relative cursor-pointer overflow-hidde",
         onClick: function onClick() {
           return showProduct(id);
         },
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
-          className: "absolute bottom-0 inset-x-0 text-xs px-2 py-1.5 text-white bg-black bg-opacity-20 backdrop-blur-sm",
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("span", {
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
+          className: "absolute bottom-0 inset-x-0  px-2 py-1.5 text-white bg-black bg-opacity-20 backdrop-blur-sm",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("span", {
+            className: "text-sm font-medium",
             children: name
-          })
+          }), description && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("p", {
+            className: "text-xs text-neutral-200 line-clamp-1",
+            children: description
+          })]
         }), offer && offer.active && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
           className: "absolute flex items-center justify-center top-3 right-0 w-14 rounded-l-lg h-5 bg-red-600 ",
           children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("span", {

@@ -55,7 +55,7 @@ class ProductBuilder extends BaseBuilder
       $query_request_array['orderby'] ?? null,
       function () use ($query_request_array) {
         $key = $query_request_array['orderby'];
-        if (!in_array($key, ['name', 'price'])) {
+        if (!in_array($key, ['name', 'price', 'created_at'])) {
           $key = 'name';
         }
         $order = 'asc';

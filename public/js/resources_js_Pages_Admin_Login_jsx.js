@@ -89,6 +89,7 @@ function isEqual(prev, next) {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "ButtonBack": () => (/* binding */ ButtonBack),
 /* harmony export */   "LoadingButton": () => (/* binding */ LoadingButton),
 /* harmony export */   "SimpleButton": () => (/* binding */ SimpleButton)
 /* harmony export */ });
@@ -143,7 +144,7 @@ var SimpleButton = function SimpleButton(_ref2) {
       onClick = _ref2.onClick,
       _ref2$disable = _ref2.disable,
       disable = _ref2$disable === void 0 ? false : _ref2$disable;
-  var classNames = "flex items-center justify-center px-4 py-2 text-sm gap-x-1 ".concat(className, "  disabled:bg-neutral-200 disabled:text-gray-500}");
+  var classNames = "flex items-center justify-center px-4 py-2 text-sm gap-x-1 duration-500 ".concat(className, "  disabled:bg-neutral-200 disabled:text-gray-500}");
 
   var iconView = /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_Icon__WEBPACK_IMPORTED_MODULE_2__["default"], {
     name: icon,
@@ -158,6 +159,19 @@ var SimpleButton = function SimpleButton(_ref2) {
       className: "first-letter:uppercase inline-block w-fit",
       children: children
     }), iconRight ? iconView : ""]
+  });
+};
+var ButtonBack = function ButtonBack() {
+  var handleBackClick = function handleBackClick() {
+    window.history.back();
+  };
+
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("button", {
+    className: "flex gap-1 text-sm justify-start items-center font-medium w-fit cursor-pointer",
+    onClick: handleBackClick,
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_Icon__WEBPACK_IMPORTED_MODULE_2__["default"], {
+      name: "chevron-left"
+    }), "Back"]
   });
 };
 
@@ -893,6 +907,40 @@ var Icon = function Icon(_ref) {
     }));
   }
 
+  if (name === 'pencil-alt') {
+    return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("svg", _objectSpread(_objectSpread({
+      xmlns: "http://www.w3.org/2000/svg",
+      className: className,
+      fill: "none",
+      viewBox: "0 0 24 24",
+      stroke: "currentColor"
+    }, props), {}, {
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        strokeLinecap: "round",
+        strokeLinejoin: "round",
+        strokeWidth: 2,
+        d: "M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"
+      })
+    }));
+  }
+
+  if (name === 'switch-vertical') {
+    return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("svg", _objectSpread(_objectSpread({
+      xmlns: "http://www.w3.org/2000/svg",
+      className: className,
+      fill: "none",
+      viewBox: "0 0 24 24",
+      stroke: "currentColor"
+    }, props), {}, {
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        strokeLinecap: "round",
+        strokeLinejoin: "round",
+        strokeWidth: 2,
+        d: "M7 16V4m0 0L3 8m4-4l4 4m6 0v12m0 0l4-4m-4 4l-4-4"
+      })
+    }));
+  }
+
   return null;
 };
 
@@ -1130,8 +1178,8 @@ var Login = function Login() {
             label: "Username",
             name: "username",
             type: "text",
-            errors: errors.email,
-            value: fields.email,
+            errors: errors.username,
+            value: fields.username,
             onChange: handleFieldChange
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_Components_FormAndButton_Input__WEBPACK_IMPORTED_MODULE_4__.TextInput, {
             className: "mt-5",

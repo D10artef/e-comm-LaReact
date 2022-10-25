@@ -58997,6 +58997,14 @@ var map = {
 		"./resources/js/Pages/Admin/Category/Index.jsx",
 		"resources_js_Pages_Admin_Category_Index_jsx"
 	],
+	"./Admin/Category/Show": [
+		"./resources/js/Pages/Admin/Category/Show.jsx",
+		"resources_js_Pages_Admin_Category_Show_jsx"
+	],
+	"./Admin/Category/Show.jsx": [
+		"./resources/js/Pages/Admin/Category/Show.jsx",
+		"resources_js_Pages_Admin_Category_Show_jsx"
+	],
 	"./Admin/Dashboard": [
 		"./resources/js/Pages/Admin/Dashboard.jsx",
 		"resources_js_Pages_Admin_Dashboard_jsx"
@@ -59020,6 +59028,14 @@ var map = {
 	"./Admin/Offer/Index.jsx": [
 		"./resources/js/Pages/Admin/Offer/Index.jsx",
 		"resources_js_Pages_Admin_Offer_Index_jsx"
+	],
+	"./Admin/Offer/Show": [
+		"./resources/js/Pages/Admin/Offer/Show.jsx",
+		"resources_js_Pages_Admin_Offer_Show_jsx"
+	],
+	"./Admin/Offer/Show.jsx": [
+		"./resources/js/Pages/Admin/Offer/Show.jsx",
+		"resources_js_Pages_Admin_Offer_Show_jsx"
 	],
 	"./Admin/Order/Index": [
 		"./resources/js/Pages/Admin/Order/Index.jsx",
@@ -59274,7 +59290,7 @@ module.exports = JSON.parse('{"name":"axios","version":"0.21.4","description":"P
 /******/ 		// This function allow to reference async chunks
 /******/ 		__webpack_require__.u = (chunkId) => {
 /******/ 			// return url for filenames not based on template
-/******/ 			if ({"resources_js_Pages_Admin_Category_Index_jsx":1,"resources_js_Pages_Admin_Dashboard_jsx":1,"resources_js_Pages_Admin_Login_jsx":1,"resources_js_Pages_Admin_Offer_Index_jsx":1,"resources_js_Pages_Admin_Order_Index_jsx":1,"resources_js_Pages_Admin_Product_Index_jsx":1,"resources_js_Pages_Auth_Login_jsx":1,"resources_js_Pages_Auth_Register_jsx":1,"resources_js_Pages_Auth_ResetPassword_jsx":1,"resources_js_Pages_Cart_jsx":1,"resources_js_Pages_Contacts_jsx":1,"resources_js_Pages_Home_jsx":1,"resources_js_Pages_Product_jsx":1,"resources_js_Pages_Products_jsx":1,"resources_js_Pages_Services_jsx":1,"resources_js_Pages_User_Profil_jsx":1,"resources_js_Pages_User_Setting_jsx":1}[chunkId]) return "js/" + chunkId + ".js";
+/******/ 			if ({"resources_js_Pages_Admin_Category_Index_jsx":1,"resources_js_Pages_Admin_Category_Show_jsx":1,"resources_js_Pages_Admin_Dashboard_jsx":1,"resources_js_Pages_Admin_Login_jsx":1,"resources_js_Pages_Admin_Offer_Index_jsx":1,"resources_js_Pages_Admin_Offer_Show_jsx":1,"resources_js_Pages_Admin_Order_Index_jsx":1,"resources_js_Pages_Admin_Product_Index_jsx":1,"resources_js_Pages_Auth_Login_jsx":1,"resources_js_Pages_Auth_Register_jsx":1,"resources_js_Pages_Auth_ResetPassword_jsx":1,"resources_js_Pages_Cart_jsx":1,"resources_js_Pages_Contacts_jsx":1,"resources_js_Pages_Home_jsx":1,"resources_js_Pages_Product_jsx":1,"resources_js_Pages_Products_jsx":1,"resources_js_Pages_Services_jsx":1,"resources_js_Pages_User_Profil_jsx":1,"resources_js_Pages_User_Setting_jsx":1}[chunkId]) return "js/" + chunkId + ".js";
 /******/ 			// return url for filenames based on template
 /******/ 			return undefined;
 /******/ 		};

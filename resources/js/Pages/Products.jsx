@@ -24,7 +24,7 @@ const Products = () => {
         <ProductsPageHeader showSelect={dataProducts.length > 1 ? true : false}/>
         <ProductsGrid products={dataProducts} loading={loading}/>
         <footer className="flex justify-center p-3">
-          <Pagination links={metaData}/>
+          <Pagination links={metaData} arrayOnly={['products']}/>
         </footer>
       </ProductLayout>
     </>

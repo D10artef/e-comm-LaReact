@@ -20,6 +20,7 @@ class ProductCollection extends ResourceCollection
             'price',
             'category_id',
             'name',
+            'description',
             'offer',
         ]);
     }

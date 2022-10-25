@@ -1069,6 +1069,40 @@ var Icon = function Icon(_ref) {
     }));
   }
 
+  if (name === 'pencil-alt') {
+    return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("svg", _objectSpread(_objectSpread({
+      xmlns: "http://www.w3.org/2000/svg",
+      className: className,
+      fill: "none",
+      viewBox: "0 0 24 24",
+      stroke: "currentColor"
+    }, props), {}, {
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        strokeLinecap: "round",
+        strokeLinejoin: "round",
+        strokeWidth: 2,
+        d: "M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"
+      })
+    }));
+  }
+
+  if (name === 'switch-vertical') {
+    return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("svg", _objectSpread(_objectSpread({
+      xmlns: "http://www.w3.org/2000/svg",
+      className: className,
+      fill: "none",
+      viewBox: "0 0 24 24",
+      stroke: "currentColor"
+    }, props), {}, {
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        strokeLinecap: "round",
+        strokeLinejoin: "round",
+        strokeWidth: 2,
+        d: "M7 16V4m0 0L3 8m4-4l4 4m6 0v12m0 0l4-4m-4 4l-4-4"
+      })
+    }));
+  }
+
   return null;
 };
 
@@ -2150,7 +2184,8 @@ __webpack_require__.r(__webpack_exports__);
 var PageLink = function PageLink(_ref) {
   var active = _ref.active,
       label = _ref.label,
-      url = _ref.url;
+      url = _ref.url,
+      arrayOnly = _ref.arrayOnly;
   var className = classnames__WEBPACK_IMPORTED_MODULE_2___default()(['px-2 py-1', // 'border border-solid border-neutral-500 rounded',
   'rounded-full', 'text-xs', 'hover:bg-secondary hover:text-white duration-300', 'focus:outline-none', 'pagination-item'], {
     'bg-secondary text-white active': active
@@ -2160,7 +2195,7 @@ var PageLink = function PageLink(_ref) {
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.Link, {
     className: className,
     href: url,
-    only: ['products'],
+    only: arrayOnly,
     preserveState: true,
     children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("span", {
       dangerouslySetInnerHTML: {
@@ -2184,7 +2219,9 @@ var PageInactive = function PageInactive(_ref2) {
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (function (_ref3) {
   var _ref3$links = _ref3.links,
-      links = _ref3$links === void 0 ? [] : _ref3$links;
+      links = _ref3$links === void 0 ? [] : _ref3$links,
+      _ref3$arrayOnly = _ref3.arrayOnly,
+      arrayOnly = _ref3$arrayOnly === void 0 ? [] : _ref3$arrayOnly;
   if (links.length === 3) return null;
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
     className: "flex flex-wrap justify-center gap-2 my-2 pagination",
@@ -2197,7 +2234,8 @@ var PageInactive = function PageInactive(_ref2) {
       }, "".concat(label, "-").concat(index)) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(PageLink, {
         label: label,
         active: active,
-        url: url
+        url: url,
+        arrayOnly: arrayOnly
       }, "".concat(label, "-").concat(index));
     })
   });
@@ -2237,6 +2275,7 @@ var ProductCard = function ProductCard(_ref) {
       className = _ref.className;
   var auth = (0,_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.usePage)().props.auth;
   var name = product.name,
+      description = product.description,
       id = product.id,
       price = product.price,
       offer = product.offer;
@@ -2249,15 +2288,19 @@ var ProductCard = function ProductCard(_ref) {
     children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
       className: "border rounded-sm overflow-hidden shadow-sm flex flex-col ".concat(className),
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
-        className: "h-44 text-center bg-primary bg-opacity-25 text-white relative cursor-pointer overflow-hidde",
+        className: "h-44 bg-primary bg-opacity-25 text-white relative cursor-pointer overflow-hidde",
         onClick: function onClick() {
           return showProduct(id);
         },
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
-          className: "absolute bottom-0 inset-x-0 text-xs px-2 py-1.5 text-white bg-black bg-opacity-20 backdrop-blur-sm",
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("span", {
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
+          className: "absolute bottom-0 inset-x-0  px-2 py-1.5 text-white bg-black bg-opacity-20 backdrop-blur-sm",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("span", {
+            className: "text-sm font-medium",
             children: name
-          })
+          }), description && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("p", {
+            className: "text-xs text-neutral-200 line-clamp-1",
+            children: description
+          })]
         }), offer && offer.active && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
           className: "absolute flex items-center justify-center top-3 right-0 w-14 rounded-l-lg h-5 bg-red-600 ",
           children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("span", {
@@ -2732,7 +2775,8 @@ var Products = function Products() {
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("footer", {
         className: "flex justify-center p-3",
         children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_Components_Pagination__WEBPACK_IMPORTED_MODULE_5__["default"], {
-          links: metaData
+          links: metaData,
+          arrayOnly: ['products']
         })
       })]
     })]

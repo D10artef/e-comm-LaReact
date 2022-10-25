@@ -32,7 +32,7 @@ export const SimpleButton = ({
         onClick,
         disable = false,
     }) => {
-    const classNames = `flex items-center justify-center px-4 py-2 text-sm gap-x-1 ${className}  disabled:bg-neutral-200 disabled:text-gray-500}`;
+    const classNames = `flex items-center justify-center px-4 py-2 text-sm gap-x-1 duration-500 ${className}  disabled:bg-neutral-200 disabled:text-gray-500}`;
     const iconView = <Icon name={icon} className={iconClass}/>
     return (
         <button disabled={disable} className={classNames} onClick={onClick}>
@@ -44,3 +44,18 @@ export const SimpleButton = ({
         </button>
     );
 };
+
+export const ButtonBack = () => {
+    const handleBackClick = () => {
+        window.history.back();
+    }
+    return (
+        <button
+            className="flex gap-1 text-sm justify-start items-center font-medium w-fit cursor-pointer"
+            onClick={handleBackClick}
+        >
+            <Icon name="chevron-left" />
+            Back
+        </button>
+    );
+}
