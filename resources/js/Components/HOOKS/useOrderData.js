@@ -1,9 +1,9 @@
-import React, {useState, useEffect} from "react";
+import {useState, useEffect} from "react";
 import { usePage } from "@inertiajs/inertia-react";
 import { ORDERS } from "../../UTULITIES/const";
 import { Inertia } from "@inertiajs/inertia";
 
-export const useOrderData = (arrayOfKey) => {
+export const useOrderData = (arrayOfKey, ojectToOrder) => {
   const [urlQuery, seturlQuery] = useState({
       orderby: "",
       order: "",
@@ -38,7 +38,7 @@ export const useOrderData = (arrayOfKey) => {
         };
     }
     Inertia.get(url, data, {
-        only: ["offers"],
+        only: [ojectToOrder],
         preserveScroll: true,
     });
   };

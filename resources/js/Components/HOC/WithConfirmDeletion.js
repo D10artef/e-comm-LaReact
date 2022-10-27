@@ -48,7 +48,7 @@ const WithConfirmDeletion = (WrappedComponent) => {
                             <div className="bg-gray-100 rounded-sm">
                                 <header className="px-6 pt-4 pb-3 border-b">
                                     <h1 className="text-gray-600 text-sm font-medium">
-                                        Are you sure to delete this item?
+                                        {this.props.message}
                                     </h1>
                                 </header>
                                 <footer className="px-6 py-3 flex justify-end items-center gap-3">

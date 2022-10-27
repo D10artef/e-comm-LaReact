@@ -10,7 +10,7 @@ export const LoadingButton = React.memo(({
     }) => {
     const buttonClass = classnames(
         "flex items-center",
-        "focus:outline-none",
+        "focus:outline-none btn",
         { "pointer-events-none bg-opacity-75 select-none": loading },
         className
     );
@@ -31,11 +31,12 @@ export const SimpleButton = ({
         iconRight = true,
         onClick,
         disable = false,
+        type = 'button'
     }) => {
-    const classNames = `flex items-center justify-center px-4 py-2 text-sm gap-x-1 duration-500 ${className}  disabled:bg-neutral-200 disabled:text-gray-500}`;
+    const classNames = `flex items-center justify-center gap-x-1 btn  ${className}  disabled:bg-neutral-200 disabled:text-gray-500 focus:outline-none}`;
     const iconView = <Icon name={icon} className={iconClass}/>
     return (
-        <button disabled={disable} className={classNames} onClick={onClick}>
+        <button disabled={disable} className={classNames} onClick={onClick} type={type}>
             {!iconRight ? iconView : ""}
             <span className="first-letter:uppercase inline-block w-fit">
                 {children}

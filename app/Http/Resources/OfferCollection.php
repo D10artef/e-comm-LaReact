@@ -22,6 +22,7 @@ class OfferCollection extends ResourceCollection
             'illustration',
             'active',
             'discount_percent',
+            'created_at'
         ]);
     }
 }

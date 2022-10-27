@@ -5,18 +5,18 @@ import Icon from '../Icon'
 
 const AdminMenuItem = ({ icon, link, text, isActive }) => {
 
-  const iconClasses = classNames('w-4 h-4 fill-current group-hover:text-accent', {
+  const iconClasses = classNames('w-5 h-5 group-hover:text-accent', {
     'text-accent': isActive,
     'text-white ': !isActive
   });
 
-  const textClasses = classNames('text-sm group-hover:text-accent',
+  const textClasses = classNames('text-sm uppercase group-hover:text-accent',
     {
     'text-accent': isActive,
     'text-white': !isActive
   });
 
-  const divClasses = classNames('px-2 my-1 hover:bg-secondary duration-300',
+  const divClasses = classNames('px-2 my-3 hover:bg-secondary duration-300',
     {
       'bg-secondary': isActive
     }

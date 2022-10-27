@@ -6,24 +6,30 @@ import { TableHead } from '../../../Components/Admin/AdminTableHead'
 import { dataCategoryHead } from '../../../Components/Admin/tableHeadList'
 import { useOrderData } from '../../../Components/HOOKS/useOrderData'
 import { CategoryTableItem } from '../../../Components/Admin/AdminTableItem'
+import Modal from '../../../Components/Portal/Modal'
+import NewCategory from './New'
+import { useModal } from '../../../Components/HOOKS/useModal'
 
 const Index = () => {
   const [dataCategories, setDataCategories] = useState([])
   const { categories } = usePage().props
   const [loading, setLoading] = useState(true)
-  const [orderData] = useOrderData(['name','created_at'])
+  const [orderData] = useOrderData(['name','created_at'], 'categories')
+  const [showModal, openModal, closeModal] = useModal(false)
+  const { links } = categories.meta 
   
   useEffect(() => {
     setDataCategories(categories.data)
     setLoading(false)
   }, [categories])
+
   
   return (
     <>
       <div>
-        <PageHeader title='Categories' link={route('admin.category')}/>
+        <PageHeader title='Categories' createAction={openModal}/>
         <div className="overflow-x-auto overflow-y-visible bg-white rounded shadow scroler">
-          <table className="w-full">
+          <table className="w-full table-fixed">
             <TableHead handleOrder={orderData} dataHead={dataCategoryHead}/>
             <tbody>
               {
@@ -42,10 +48,16 @@ const Index = () => {
 
         </div>
       </div>
+      {
+        showModal && 
+        <Modal onClose={closeModal} >
+          <NewCategory closeModal={closeModal}/>
+        </Modal>
+      }
     </>
   )
 }
 
-Index.layout = page => <AdminLayout title='Product' children={page}/>
+Index.layout = page => <AdminLayout title='Admin - Categories' children={page}/>
 
 export default Index

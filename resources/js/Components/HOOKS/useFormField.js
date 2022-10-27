@@ -10,7 +10,9 @@ export function useFormInput(initialState){
       let value;
       if (event.target.type === "checkbox") 
         value = event.target.checked;
-      else value = event.target.value;
+      else if( event.target.type === "file")
+        value = event.target.files[0]
+      else  value = event.target.value;
       setValues((prev) => ({
           ...prev,
           [name]: value,

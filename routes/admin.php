@@ -19,11 +19,14 @@ Route::prefix('admin')->group(function () {
         Route::get('/dashboard', [DashboardController::class, 'index'])->name('admin.dashboard');
         // Offer routes
         Route::get('/offer', [OfferController::class, 'index'])->name('admin.offer');
+        Route::post('/offer', [OfferController::class, 'create'])->name('admin.offer.create');
         Route::get('/offer/{offer}', [OfferController::class, 'show'])->name('admin.offer.show');
         Route::delete('/offer/{offer}', [OfferController::class, 'delete'])->name('admin.offer.delete');
+        Route::put('/offer/{offer}/product', [OfferController::class, 'removeProduct'])->name('admin.offer.remove.product');
 
         // Category routes
         Route::get('/category', [CategoryController::class, 'index'])->name('admin.category');
+        Route::post('/category', [CategoryController::class, 'create'])->name('admin.category.create');
         Route::get('/category/{category}', [CategoryController::class, 'show'])->name('admin.category.show');
         Route::delete('/category/{category}', [CategoryController::class, 'delete'])->name('admin.category.delete');
 

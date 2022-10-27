@@ -20,6 +20,11 @@ export const dataOfferHead = [
         orderKey: "discount_percent",
     },
     {
+        textHead: "Create at",
+        canOrder: true,
+        orderKey: "created_at",
+    },
+    {
         textHead: "Action",
     },
 ];
@@ -35,6 +40,11 @@ export const dataCategoryHead = [
         textHead: "Description",
         canOrder: false,
         maxWidth: true,
+    },
+    {
+        textHead: "Create at",
+        canOrder: true,
+        orderKey: "created_at",
     },
     {
         textHead: "Action",

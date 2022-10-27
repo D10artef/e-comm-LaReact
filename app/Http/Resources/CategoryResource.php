@@ -20,7 +20,8 @@ class CategoryResource extends JsonResource
             'description' => $this->description,
             'visible_home' => $this->visible_home,
             // 'products' =>  new ProductCollection($this->products)
-            'products' => new ProductCollection($this->whenLoaded('products'))
+            'products' => new ProductCollection($this->whenLoaded('products')),
+            'products_count' => $this->products->count(),
         ];
     }
 }

@@ -166,7 +166,7 @@ var LoadingButton = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().me
       children = _ref.children,
       props = _objectWithoutProperties(_ref, _excluded);
 
-  var buttonClass = classnames__WEBPACK_IMPORTED_MODULE_1___default()("flex items-center", "focus:outline-none", {
+  var buttonClass = classnames__WEBPACK_IMPORTED_MODULE_1___default()("flex items-center", "focus:outline-none btn", {
     "pointer-events-none bg-opacity-75 select-none": loading
   }, className);
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("button", _objectSpread(_objectSpread({
@@ -187,8 +187,10 @@ var SimpleButton = function SimpleButton(_ref2) {
       iconRight = _ref2$iconRight === void 0 ? true : _ref2$iconRight,
       onClick = _ref2.onClick,
       _ref2$disable = _ref2.disable,
-      disable = _ref2$disable === void 0 ? false : _ref2$disable;
-  var classNames = "flex items-center justify-center px-4 py-2 text-sm gap-x-1 duration-500 ".concat(className, "  disabled:bg-neutral-200 disabled:text-gray-500}");
+      disable = _ref2$disable === void 0 ? false : _ref2$disable,
+      _ref2$type = _ref2.type,
+      type = _ref2$type === void 0 ? 'button' : _ref2$type;
+  var classNames = "flex items-center justify-center gap-x-1 btn  ".concat(className, "  disabled:bg-neutral-200 disabled:text-gray-500 focus:outline-none}");
 
   var iconView = /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_Icon__WEBPACK_IMPORTED_MODULE_2__["default"], {
     name: icon,
@@ -199,6 +201,7 @@ var SimpleButton = function SimpleButton(_ref2) {
     disabled: disable,
     className: classNames,
     onClick: onClick,
+    type: type,
     children: [!iconRight ? iconView : "", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("span", {
       className: "first-letter:uppercase inline-block w-fit",
       children: children
@@ -230,7 +233,9 @@ var ButtonBack = function ButtonBack() {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "FileInput": () => (/* binding */ FileInput),
 /* harmony export */   "SearchForm": () => (/* binding */ SearchForm),
+/* harmony export */   "TextAreaInput": () => (/* binding */ TextAreaInput),
 /* harmony export */   "TextInput": () => (/* binding */ TextInput)
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
@@ -238,7 +243,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Icon__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../Icon */ "./resources/js/Components/Icon.jsx");
 /* harmony import */ var _HOOKS_useFormField__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../HOOKS/useFormField */ "./resources/js/Components/HOOKS/useFormField.js");
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
-var _excluded = ["label", "name", "className", "errors", "value"];
+var _excluded = ["label", "name", "className", "errors", "value"],
+    _excluded2 = ["label", "name", "className", "errors", "value"];
 
 function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
 
@@ -267,6 +273,7 @@ function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) r
 
 
 
+
 var TextInput = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().memo(function (_ref) {
   var label = _ref.label,
       name = _ref.name,
@@ -281,7 +288,7 @@ var TextInput = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().memo(f
     children: [label && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("label", {
       className: "form-label",
       htmlFor: name,
-      children: [label, ":"]
+      children: [label, " :"]
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("input", _objectSpread(_objectSpread({
       id: name,
       name: name,
@@ -294,9 +301,39 @@ var TextInput = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().memo(f
     })]
   });
 });
-var SearchForm = function SearchForm(_ref2) {
-  var children = _ref2.children,
-      onSearch = _ref2.onSearch;
+var TextAreaInput = function TextAreaInput(_ref2) {
+  var label = _ref2.label,
+      name = _ref2.name,
+      className = _ref2.className,
+      _ref2$errors = _ref2.errors,
+      errors = _ref2$errors === void 0 ? [] : _ref2$errors,
+      value = _ref2.value,
+      props = _objectWithoutProperties(_ref2, _excluded2);
+
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+    className: className,
+    children: [label && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("label", {
+      className: "form-label",
+      htmlFor: name,
+      children: [label, " :"]
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("textarea", _objectSpread(_objectSpread({
+      id: name,
+      name: name,
+      value: value,
+      rows: 4
+    }, props), {}, {
+      className: "form-textarea ".concat(errors.length ? "error" : "", " resize-none")
+    })), errors && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+      className: "form-error",
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("span", {
+        children: errors
+      })
+    })]
+  });
+};
+var SearchForm = function SearchForm(_ref3) {
+  var children = _ref3.children,
+      onSearch = _ref3.onSearch;
 
   var _useFormInput = (0,_HOOKS_useFormField__WEBPACK_IMPORTED_MODULE_2__.useFormInput)({
     search: ""
@@ -334,6 +371,54 @@ var SearchForm = function SearchForm(_ref2) {
     })
   });
 };
+var FileInput = function FileInput(_ref4) {
+  var className = _ref4.className,
+      text = _ref4.text,
+      name = _ref4.name,
+      file = _ref4.file,
+      handleChange = _ref4.handleChange,
+      clearFile = _ref4.clearFile,
+      errors = _ref4.errors;
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+    className: "my-6",
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+      className: "flex items-center text-sm ".concat(className),
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("label", {
+        className: "flex flex-none justify-center items-center px-3 py-2 gap-x-2 hover:bg-primary hover:text-gray-100 bg-secondary duration-300 text-white rounded-sm cursor-pointer",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("span", {
+          className: "text-sm",
+          children: text
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("input", {
+          className: "hidden",
+          type: "file",
+          name: name,
+          onChange: handleChange,
+          accept: "image/*"
+        })]
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+        className: "flex w-full justify-between items-center gap-x-2 px-3 py-2 border text-gray-600 truncate",
+        children: file ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.Fragment, {
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("span", {
+            className: "truncate",
+            children: file.name
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_Icon__WEBPACK_IMPORTED_MODULE_1__["default"], {
+            name: "x-close",
+            className: "w-4 h-4",
+            onClick: clearFile
+          })]
+        }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("span", {
+          className: "overflow-hidden whitespace-nowrap",
+          children: "No file selected"
+        })
+      })]
+    }), errors && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+      className: "form-error",
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("span", {
+        children: errors
+      })
+    })]
+  });
+};
 
 /***/ }),
 
@@ -365,7 +450,7 @@ var AddToCartIconButton = function AddToCartIconButton(_ref) {
     disabled: disable,
     className: "duration-300 cursor-pointer text-neutral-700 hover:text-accent-secondary disabled:text-neutral-200",
     children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_Icon__WEBPACK_IMPORTED_MODULE_2__["default"], {
-      className: "h-4 w-4 md:w-5 md:h-5 ",
+      className: "h-4 w-4 md:w-5 md:h-5",
       name: "shopping-cart",
       onClick: onAddToCart
     })
@@ -576,7 +661,7 @@ function useFormInput(initialState) {
   return [fields, function (event) {
     var name = event.target.name;
     var value;
-    if (event.target.type === "checkbox") value = event.target.checked;else value = event.target.value;
+    if (event.target.type === "checkbox") value = event.target.checked;else if (event.target.type === "file") value = event.target.files[0];else value = event.target.value;
     setValues(function (prev) {
       return _objectSpread(_objectSpread({}, prev), {}, _defineProperty({}, name, value));
     });
@@ -1932,7 +2017,7 @@ var OfferItem = function OfferItem(_ref) {
       offer = _ref.offer,
       props = _objectWithoutProperties(_ref, _excluded);
 
-  var classNames = "w-full h-96 flex items-center ".concat(className);
+  var classNames = "w-full h-96 flex items-center relative ".concat(className);
 
   var goToTheOffer = function goToTheOffer() {
     _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_2__.Inertia.get(route('products'), {
@@ -1940,10 +2025,14 @@ var OfferItem = function OfferItem(_ref) {
     });
   };
 
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
     className: classNames,
-    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
-      className: "mx-auto p-3 md:p-4  max-w-4xl w-full gap-y-3 lg:gap-y-4 flex flex-col",
+    children: [offer.illustration && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("img", {
+      className: "absolute h-full w-full object-cover object-top",
+      src: "/storage/".concat(offer.illustration),
+      alt: "illustration"
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+      className: "mx-auto p-3 md:p-4  max-w-4xl w-full gap-y-3 lg:gap-y-4 flex flex-col z-20",
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("h1", {
         className: "text-neutral-50 text-xl md:text-2xl lg:text-3xl after:mt-2 tracking-wide after:content-[''] after:w-1/4 after:border after:border-gray-50 after:block first-letter:uppercase",
         children: offer.name
@@ -1957,7 +2046,7 @@ var OfferItem = function OfferItem(_ref) {
       }, props), {}, {
         children: "See the offer"
       }))]
-    })
+    })]
   });
 };
 

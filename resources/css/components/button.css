@@ -1,5 +1,5 @@
 .btn {
-  @apply px-6 py-1.5 rounded-sm text-white text-sm font-semibold whitespace-nowrap;
+  @apply px-4 py-2 rounded-sm text-sm  whitespace-nowrap duration-500;
 }
 
 .btn-spinner,

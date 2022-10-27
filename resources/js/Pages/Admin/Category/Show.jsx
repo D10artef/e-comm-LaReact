@@ -5,9 +5,16 @@ import AdminLayout from '../../../Layout/AdminLayout'
 import { ButtonBack } from '../../../Components/FormAndButton/Button'
 import { SimpleButton } from '../../../Components/FormAndButton/Button'
 import DeleteButtonWithConfirmation from '../../../Components/HOC/Admin/DeleteButtonWithConfirmation'
+import AdminProductCard from '../../../Components/Product/AdminProductCard'
+import Pagination from '../../../Components/Pagination'
 
 const Show = () => {
-  const {category} = usePage().props
+  const {category, products} = usePage().props
+  const {links} = products.meta
+  const removeProductFromCategory = () => {
+
+  }
+
   return (
     <>
       <div>
@@ -23,7 +30,7 @@ const Show = () => {
           <div className='col-span-2 col-start-2'>
             <div className='flex justify-end gap-x-3'>
               <SimpleButton className='bg-cyan-400 hover:bg-cyan-500 text-white rounded-sm' icon='pencil-alt'>Update</SimpleButton>
-              <DeleteButtonWithConfirmation url={route('admin.category.delete', category.data.id)} />  
+              <DeleteButtonWithConfirmation url={route('admin.category.delete', category.data.id)} message='Are you sure you want to delete this category?'/>  
             </div>
           </div>
         </div>
@@ -32,6 +39,13 @@ const Show = () => {
           List of products under this category 
           {/* <span className='font-medium text-gray-800'>{` (${offer.data.products_count} products)`}</span> */}
           </p>
+          <div className='my-3 grid xl:grid-cols-5 lg:grid-cols-4 sm:grid-cols-3 grid-cols-2 gap-1'>
+            {
+              products.data.length > 0 && 
+              products.data.map(product => <AdminProductCard key={product.id} product={product} removeItem={removeProductFromCategory}/>)
+            }
+          </div>
+          <Pagination links={links} arrayOnly={['products']}/>
         </div>
       </div>
     </>

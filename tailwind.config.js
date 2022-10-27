@@ -19,6 +19,9 @@ module.exports = {
                 accent: "#FB923C",
                 "accent-secondary": "#f97316",
             },
+            fontSize: {
+                nxs: "0.81rem",
+            }
         },
     },
     plugins: [],

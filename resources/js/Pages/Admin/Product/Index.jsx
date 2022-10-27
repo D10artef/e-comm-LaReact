@@ -12,6 +12,6 @@ const Index = () => {
   )
 }
 
-Index.layout = page => <AdminLayout title='Product' children={page}/>
+Index.layout = page => <AdminLayout title='Admin - Products' children={page}/>
 
 export default Index

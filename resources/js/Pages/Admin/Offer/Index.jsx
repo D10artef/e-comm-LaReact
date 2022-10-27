@@ -4,17 +4,19 @@ import { usePage } from '@inertiajs/inertia-react'
 import {OfferTableItem} from '../../../Components/Admin/AdminTableItem'
 import Pagination from '../../../Components/Pagination'
 import PageHeader from '../../../Components/Admin/PageHeader'
-import { ORDERS } from '../../../UTULITIES/const'
-import { Inertia } from '@inertiajs/inertia'
 import { TableHead } from '../../../Components/Admin/AdminTableHead'
 import { dataOfferHead } from '../../../Components/Admin/tableHeadList'
 import { useOrderData } from '../../../Components/HOOKS/useOrderData'
+import { useModal } from '../../../Components/HOOKS/useModal'
+import NewOffer from './New'
+import Modal from '../../../Components/Portal/Modal'
 
 const Index = () => {
   const { offers } = usePage().props
   const [ dataOffers, setDataOffers ] = useState([])
   const [loading, setLoading] = useState(true)
-  const [orderData] = useOrderData(['name', 'active', 'discount_percent'])
+  const [orderData] = useOrderData(['name', 'active', 'discount_percent', 'created_at'], 'offers')
+  const [showModal, openModal, closeModal ] = useModal(false);
   
   const { links } = offers.meta 
 
@@ -24,11 +26,10 @@ const Index = () => {
   },[offers])
 
   
-
   return (
     <>
       <div>
-        <PageHeader title='Offers' link={route('admin.offer')}/>
+        <PageHeader title='Offers' createAction={openModal}/>
         <div className="overflow-x-auto overflow-y-visible bg-white rounded shadow scroler">
           <table className="w-full">
             <TableHead dataHead={dataOfferHead} handleOrder={orderData}/>
@@ -49,6 +50,12 @@ const Index = () => {
         </div>
         <Pagination links={links} arrayOnly={['offers']}/>
       </div>
+      {
+        showModal && 
+        <Modal onClose={closeModal} >
+          <NewOffer closeModal={closeModal}/>
+        </Modal>
+      }
     </>
   )
 }

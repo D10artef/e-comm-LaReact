@@ -75,15 +75,15 @@ var AdminMenuItem = function AdminMenuItem(_ref) {
       link = _ref.link,
       text = _ref.text,
       isActive = _ref.isActive;
-  var iconClasses = classnames__WEBPACK_IMPORTED_MODULE_1___default()('w-4 h-4 fill-current group-hover:text-accent', {
+  var iconClasses = classnames__WEBPACK_IMPORTED_MODULE_1___default()('w-5 h-5 group-hover:text-accent', {
     'text-accent': isActive,
     'text-white ': !isActive
   });
-  var textClasses = classnames__WEBPACK_IMPORTED_MODULE_1___default()('text-sm group-hover:text-accent', {
+  var textClasses = classnames__WEBPACK_IMPORTED_MODULE_1___default()('text-sm uppercase group-hover:text-accent', {
     'text-accent': isActive,
     'text-white': !isActive
   });
-  var divClasses = classnames__WEBPACK_IMPORTED_MODULE_1___default()('px-2 my-1 hover:bg-secondary duration-300', {
+  var divClasses = classnames__WEBPACK_IMPORTED_MODULE_1___default()('px-2 my-3 hover:bg-secondary duration-300', {
     'bg-secondary': isActive
   });
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
@@ -333,6 +333,7 @@ var TopNavHeader = function TopNavHeader() {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "ADMIN_SIDE_MENU": () => (/* binding */ ADMIN_SIDE_MENU),
 /* harmony export */   "ADMIN_SIDE_MENU_LIST": () => (/* binding */ ADMIN_SIDE_MENU_LIST),
 /* harmony export */   "ADMIN_USER_MENU_LIST": () => (/* binding */ ADMIN_USER_MENU_LIST)
 /* harmony export */ });
@@ -348,23 +349,57 @@ var ADMIN_USER_MENU_LIST = [{
 var ADMIN_SIDE_MENU_LIST = [{
   text: "Dashboard",
   icon: "collection",
-  route: 'admin.dashboard'
+  route: "admin.dashboard"
 }, {
   text: "Orders",
   icon: "shopping-cart",
-  route: 'admin.order'
-}, {
-  text: "Categories",
-  icon: "view-board",
-  route: 'admin.category'
+  route: "admin.order"
 }, {
   text: "Offers",
   icon: "offer",
-  route: 'admin.offer'
+  route: "admin.offer"
+}, {
+  text: "Categories",
+  icon: "view-board",
+  route: "admin.category"
 }, {
   text: "Products",
   icon: "template",
-  route: 'admin.product'
+  route: "admin.product"
+}];
+var ADMIN_SIDE_MENU = [{
+  text: "Dashboard",
+  route: "admin.dashboard"
+}, {
+  text: "Orders",
+  route: "admin.order"
+}, {
+  text: "Categories",
+  submenu: [{
+    text: "Manage",
+    route: "admin.category"
+  }, {
+    text: "New category",
+    route: "admin.category.create"
+  }]
+}, {
+  text: "Offers",
+  submenu: [{
+    text: "Manage",
+    route: "admin.offer"
+  }, {
+    text: "New offer",
+    route: "admin.offer.create"
+  }]
+}, {
+  text: "Products",
+  submenu: [{
+    text: "Manage",
+    route: "admin.products"
+  }, {
+    text: "New offer",
+    route: "admin.products.create"
+  }]
 }];
 
 /***/ }),
@@ -411,7 +446,7 @@ var LoadingButton = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().me
       children = _ref.children,
       props = _objectWithoutProperties(_ref, _excluded);
 
-  var buttonClass = classnames__WEBPACK_IMPORTED_MODULE_1___default()("flex items-center", "focus:outline-none", {
+  var buttonClass = classnames__WEBPACK_IMPORTED_MODULE_1___default()("flex items-center", "focus:outline-none btn", {
     "pointer-events-none bg-opacity-75 select-none": loading
   }, className);
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("button", _objectSpread(_objectSpread({
@@ -432,8 +467,10 @@ var SimpleButton = function SimpleButton(_ref2) {
       iconRight = _ref2$iconRight === void 0 ? true : _ref2$iconRight,
       onClick = _ref2.onClick,
       _ref2$disable = _ref2.disable,
-      disable = _ref2$disable === void 0 ? false : _ref2$disable;
-  var classNames = "flex items-center justify-center px-4 py-2 text-sm gap-x-1 duration-500 ".concat(className, "  disabled:bg-neutral-200 disabled:text-gray-500}");
+      disable = _ref2$disable === void 0 ? false : _ref2$disable,
+      _ref2$type = _ref2.type,
+      type = _ref2$type === void 0 ? 'button' : _ref2$type;
+  var classNames = "flex items-center justify-center gap-x-1 btn  ".concat(className, "  disabled:bg-neutral-200 disabled:text-gray-500 focus:outline-none}");
 
   var iconView = /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_Icon__WEBPACK_IMPORTED_MODULE_2__["default"], {
     name: icon,
@@ -444,6 +481,7 @@ var SimpleButton = function SimpleButton(_ref2) {
     disabled: disable,
     className: classNames,
     onClick: onClick,
+    type: type,
     children: [!iconRight ? iconView : "", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("span", {
       className: "first-letter:uppercase inline-block w-fit",
       children: children
@@ -617,7 +655,7 @@ var WithConfirmDeletion = function WithConfirmDeletion(WrappedComponent) {
                 className: "px-6 pt-4 pb-3 border-b",
                 children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("h1", {
                   className: "text-gray-600 text-sm font-medium",
-                  children: "Are you sure to delete this item?"
+                  children: this.props.message
                 })
               }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("footer", {
                 className: "px-6 py-3 flex justify-end items-center gap-3",
@@ -1392,6 +1430,90 @@ var UserMenuItem = function UserMenuItem(_ref) {
 
 /***/ }),
 
+/***/ "./resources/js/Components/Pagination.jsx":
+/*!************************************************!*\
+  !*** ./resources/js/Components/Pagination.jsx ***!
+  \************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @inertiajs/inertia-react */ "./node_modules/@inertiajs/inertia-react/dist/index.js");
+/* harmony import */ var classnames__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! classnames */ "./node_modules/classnames/index.js");
+/* harmony import */ var classnames__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(classnames__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
+
+
+
+
+var PageLink = function PageLink(_ref) {
+  var active = _ref.active,
+      label = _ref.label,
+      url = _ref.url,
+      arrayOnly = _ref.arrayOnly;
+  var className = classnames__WEBPACK_IMPORTED_MODULE_2___default()(['px-2 py-1', // 'border border-solid border-neutral-500 rounded',
+  'rounded-full', 'text-xs', 'hover:bg-secondary hover:text-white duration-300', 'focus:outline-none', 'pagination-item'], {
+    'bg-secondary text-white active': active
+  }, {
+    'text-neutral-500': !active
+  });
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.Link, {
+    className: className,
+    href: url,
+    only: arrayOnly,
+    preserveState: true,
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("span", {
+      dangerouslySetInnerHTML: {
+        __html: label
+      }
+    })
+  });
+};
+
+var PageInactive = function PageInactive(_ref2) {
+  var label = _ref2.label;
+  var className = classnames__WEBPACK_IMPORTED_MODULE_2___default()(['px-2 py-1 text-xs', // 'border rounded border-solid border-gray-400', 
+  'opacity-60 text-gray-400 pagination-item disabled']);
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+    className: className,
+    dangerouslySetInnerHTML: {
+      __html: label
+    }
+  });
+};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (function (_ref3) {
+  var _ref3$links = _ref3.links,
+      links = _ref3$links === void 0 ? [] : _ref3$links,
+      _ref3$arrayOnly = _ref3.arrayOnly,
+      arrayOnly = _ref3$arrayOnly === void 0 ? [] : _ref3$arrayOnly;
+  if (links.length === 3) return null;
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+    className: "flex flex-wrap justify-center gap-2 my-2 pagination",
+    children: links.length > 0 && links.map(function (_ref4, index) {
+      var active = _ref4.active,
+          label = _ref4.label,
+          url = _ref4.url;
+      return url === null ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(PageInactive, {
+        label: label
+      }, "".concat(label, "-").concat(index)) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(PageLink, {
+        label: label,
+        active: active,
+        url: url,
+        arrayOnly: arrayOnly
+      }, "".concat(label, "-").concat(index));
+    })
+  });
+});
+
+/***/ }),
+
 /***/ "./resources/js/Components/Portal/Modal.jsx":
 /*!**************************************************!*\
   !*** ./resources/js/Components/Portal/Modal.jsx ***!
@@ -1435,6 +1557,60 @@ var Modal = function Modal(_ref) {
 };
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Modal);
+
+/***/ }),
+
+/***/ "./resources/js/Components/Product/AdminProductCard.jsx":
+/*!**************************************************************!*\
+  !*** ./resources/js/Components/Product/AdminProductCard.jsx ***!
+  \**************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _UTULITIES_productFunction__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../UTULITIES/productFunction */ "./resources/js/UTULITIES/productFunction.js");
+/* harmony import */ var _Icon__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../Icon */ "./resources/js/Components/Icon.jsx");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
+
+
+
+
+
+var AdminProductCard = function AdminProductCard(_ref) {
+  var product = _ref.product,
+      removeItem = _ref.removeItem;
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+    className: "flex flex-col gap-1 text-sm p-2 border shadow-sm m-1 max-w-xs",
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("header", {
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("h1", {
+        className: "font-medium",
+        children: product.name
+      })
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("footer", {
+      className: "pt-1 flex justify-between items-center",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("input", {
+        type: "checkbox"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("span", {
+        className: "text-rose-600",
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_Icon__WEBPACK_IMPORTED_MODULE_2__["default"], {
+          name: "x-close",
+          className: "w-4 h-4",
+          onClick: function onClick() {
+            return removeItem(product.id);
+          }
+        })
+      })]
+    })]
+  });
+};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (AdminProductCard);
 
 /***/ }),
 
@@ -1554,7 +1730,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Layout_AdminLayout__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../Layout/AdminLayout */ "./resources/js/Layout/AdminLayout.jsx");
 /* harmony import */ var _Components_FormAndButton_Button__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../../Components/FormAndButton/Button */ "./resources/js/Components/FormAndButton/Button.js");
 /* harmony import */ var _Components_HOC_Admin_DeleteButtonWithConfirmation__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../../Components/HOC/Admin/DeleteButtonWithConfirmation */ "./resources/js/Components/HOC/Admin/DeleteButtonWithConfirmation.jsx");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/* harmony import */ var _Components_Product_AdminProductCard__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../../Components/Product/AdminProductCard */ "./resources/js/Components/Product/AdminProductCard.jsx");
+/* harmony import */ var _Components_Pagination__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../../Components/Pagination */ "./resources/js/Components/Pagination.jsx");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
+
 
 
 
@@ -1567,57 +1747,100 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var Show = function Show() {
-  var category = (0,_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_2__.usePage)().props.category;
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.Fragment, {
-    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_Components_Admin_PageTitle__WEBPACK_IMPORTED_MODULE_1__["default"], {
+  var _usePage$props = (0,_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_2__.usePage)().props,
+      category = _usePage$props.category,
+      products = _usePage$props.products;
+  var links = products.meta.links;
+
+  var removeProductFromCategory = function removeProductFromCategory() {};
+
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.Fragment, {
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_Components_Admin_PageTitle__WEBPACK_IMPORTED_MODULE_1__["default"], {
         title: "Category"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
         className: "mb-4",
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_Components_FormAndButton_Button__WEBPACK_IMPORTED_MODULE_4__.ButtonBack, {})
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_Components_FormAndButton_Button__WEBPACK_IMPORTED_MODULE_4__.ButtonBack, {})
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
         className: "grid grid-cols-3 gap-2 md:gap-x-5 p-3 border rounded sgadow-sm mb-3",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
           className: "col-span-3",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("h1", {
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("h1", {
             className: "font-medium text-primary",
             children: category.data.name
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("p", {
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("p", {
             className: "my-2 text-sm text-gray-700 text-justify",
             children: category.data.description
           })]
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
           className: "col-span-2 col-start-2",
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
             className: "flex justify-end gap-x-3",
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_Components_FormAndButton_Button__WEBPACK_IMPORTED_MODULE_4__.SimpleButton, {
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_Components_FormAndButton_Button__WEBPACK_IMPORTED_MODULE_4__.SimpleButton, {
               className: "bg-cyan-400 hover:bg-cyan-500 text-white rounded-sm",
               icon: "pencil-alt",
               children: "Update"
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_Components_HOC_Admin_DeleteButtonWithConfirmation__WEBPACK_IMPORTED_MODULE_5__["default"], {
-              url: route('admin.category.delete', category.data.id)
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_Components_HOC_Admin_DeleteButtonWithConfirmation__WEBPACK_IMPORTED_MODULE_5__["default"], {
+              url: route('admin.category.delete', category.data.id),
+              message: "Are you sure you want to delete this category?"
             })]
           })
         })]
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
         className: "text-secondary",
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("p", {
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("p", {
           className: "text-sm",
           children: "List of products under this category"
-        })
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
+          className: "my-3 grid xl:grid-cols-5 lg:grid-cols-4 sm:grid-cols-3 grid-cols-2 gap-1",
+          children: products.data.length > 0 && products.data.map(function (product) {
+            return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_Components_Product_AdminProductCard__WEBPACK_IMPORTED_MODULE_6__["default"], {
+              product: product,
+              removeItem: removeProductFromCategory
+            }, product.id);
+          })
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_Components_Pagination__WEBPACK_IMPORTED_MODULE_7__["default"], {
+          links: links,
+          arrayOnly: ['products']
+        })]
       })]
     })
   });
 };
 
 Show.layout = function (page) {
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_Layout_AdminLayout__WEBPACK_IMPORTED_MODULE_3__["default"], {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_Layout_AdminLayout__WEBPACK_IMPORTED_MODULE_3__["default"], {
     title: "Admin - Category",
     children: page
   });
 };
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Show);
+
+/***/ }),
+
+/***/ "./resources/js/UTULITIES/productFunction.js":
+/*!***************************************************!*\
+  !*** ./resources/js/UTULITIES/productFunction.js ***!
+  \***************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "getPriceReduced": () => (/* binding */ getPriceReduced),
+/* harmony export */   "showPriceWithCurrency": () => (/* binding */ showPriceWithCurrency)
+/* harmony export */ });
+function showPriceWithCurrency(price) {
+  var currency = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 'MGA';
+  return new Intl.NumberFormat("fr-FR", {
+    style: "currency",
+    currency: currency
+  }).format(price);
+}
+function getPriceReduced(price, discount) {
+  return price - price * discount / 100;
+}
 
 /***/ }),
 

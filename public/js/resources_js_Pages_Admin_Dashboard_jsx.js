@@ -75,15 +75,15 @@ var AdminMenuItem = function AdminMenuItem(_ref) {
       link = _ref.link,
       text = _ref.text,
       isActive = _ref.isActive;
-  var iconClasses = classnames__WEBPACK_IMPORTED_MODULE_1___default()('w-4 h-4 fill-current group-hover:text-accent', {
+  var iconClasses = classnames__WEBPACK_IMPORTED_MODULE_1___default()('w-5 h-5 group-hover:text-accent', {
     'text-accent': isActive,
     'text-white ': !isActive
   });
-  var textClasses = classnames__WEBPACK_IMPORTED_MODULE_1___default()('text-sm group-hover:text-accent', {
+  var textClasses = classnames__WEBPACK_IMPORTED_MODULE_1___default()('text-sm uppercase group-hover:text-accent', {
     'text-accent': isActive,
     'text-white': !isActive
   });
-  var divClasses = classnames__WEBPACK_IMPORTED_MODULE_1___default()('px-2 my-1 hover:bg-secondary duration-300', {
+  var divClasses = classnames__WEBPACK_IMPORTED_MODULE_1___default()('px-2 my-3 hover:bg-secondary duration-300', {
     'bg-secondary': isActive
   });
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
@@ -333,6 +333,7 @@ var TopNavHeader = function TopNavHeader() {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "ADMIN_SIDE_MENU": () => (/* binding */ ADMIN_SIDE_MENU),
 /* harmony export */   "ADMIN_SIDE_MENU_LIST": () => (/* binding */ ADMIN_SIDE_MENU_LIST),
 /* harmony export */   "ADMIN_USER_MENU_LIST": () => (/* binding */ ADMIN_USER_MENU_LIST)
 /* harmony export */ });
@@ -348,23 +349,57 @@ var ADMIN_USER_MENU_LIST = [{
 var ADMIN_SIDE_MENU_LIST = [{
   text: "Dashboard",
   icon: "collection",
-  route: 'admin.dashboard'
+  route: "admin.dashboard"
 }, {
   text: "Orders",
   icon: "shopping-cart",
-  route: 'admin.order'
-}, {
-  text: "Categories",
-  icon: "view-board",
-  route: 'admin.category'
+  route: "admin.order"
 }, {
   text: "Offers",
   icon: "offer",
-  route: 'admin.offer'
+  route: "admin.offer"
+}, {
+  text: "Categories",
+  icon: "view-board",
+  route: "admin.category"
 }, {
   text: "Products",
   icon: "template",
-  route: 'admin.product'
+  route: "admin.product"
+}];
+var ADMIN_SIDE_MENU = [{
+  text: "Dashboard",
+  route: "admin.dashboard"
+}, {
+  text: "Orders",
+  route: "admin.order"
+}, {
+  text: "Categories",
+  submenu: [{
+    text: "Manage",
+    route: "admin.category"
+  }, {
+    text: "New category",
+    route: "admin.category.create"
+  }]
+}, {
+  text: "Offers",
+  submenu: [{
+    text: "Manage",
+    route: "admin.offer"
+  }, {
+    text: "New offer",
+    route: "admin.offer.create"
+  }]
+}, {
+  text: "Products",
+  submenu: [{
+    text: "Manage",
+    route: "admin.products"
+  }, {
+    text: "New offer",
+    route: "admin.products.create"
+  }]
 }];
 
 /***/ }),

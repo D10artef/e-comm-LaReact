@@ -15,8 +15,11 @@ class CategoryCollection extends ResourceCollection
     public function toArray($request)
     {
         // return parent::toArray($request);
-        return [
-            'data' => $this->collection,
-        ];
+        return $this->collection->map->only([
+            'id',
+            'name',
+            'description',
+            'created_at'
+        ]);
     }
 }

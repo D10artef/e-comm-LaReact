@@ -15,14 +15,16 @@ class OfferResource extends JsonResource
      */
     public function toArray($request)
     {
-        return [
-            'id' => $this->id,
-            'name' => $this->name,
-            'description' => $this->description,
-            'active' => $this->active,
-            'discount_percent' => $this->discount_percent,
-            'illustration' => $this->illustration,
-            'products_count' => $this->products->count(),
-        ];
+        // return [
+        //     'id' => $this->id,
+        //     'name' => $this->name,
+        //     'description' => $this->description,
+        //     'active' => $this->active,
+        //     'discount_percent' => $this->discount_percent,
+        //     'illustration' => $this->illustration,
+        //     // 'products_count' => $this->products->count(),
+        // ];
+        return parent::toArray($request);
+
     }
 }

@@ -4,6 +4,7 @@ namespace App\Http\Controllers\User;
 
 use App\Http\Controllers\Controller;
 use App\Http\Resources\CategoryCollection;
+use App\Http\Resources\CategoryResource;
 use App\Http\Resources\OfferCollection;
 use App\Http\Resources\ProductCollection;
 use App\Models\Category;
@@ -32,7 +33,7 @@ class HomeController extends Controller
         return inertia('Home', 
         [
             'active_offers' => new OfferCollection($active_offers),
-            'categories' => new CategoryCollection($categories),
+            'categories' => CategoryResource::collection($categories),
         ]
         );
     }

@@ -56,19 +56,22 @@ class ProductBuilder extends BaseBuilder
       function () use ($query_request_array) {
         $key = $query_request_array['orderby'];
         if (!in_array($key, ['name', 'price', 'created_at'])) {
-          $key = 'name';
+          $key = 'created_at';
         }
-        $order = 'asc';
+        $order = '';
         if (array_key_exists('order', $query_request_array)) {
           $order = $query_request_array['order'];
         }
         if (!in_array($order, ['asc', 'desc'])) {
-          $order = 'asc';
+          if($key === 'created_at')
+            $order = 'desc';
+          else
+            $order = 'asc';
         }
         return $this->orderBy($key, $order);
       },
       function () {
-        return $this->orderBy('name', 'asc');
+        return $this->orderBy('created_at', 'desc');
       }
     );
   }
