@@ -10,6 +10,5 @@ class OrderController extends Controller
     public function index()
     {
         return inertia('Admin/Order/Index', []);
-        
     }
 }

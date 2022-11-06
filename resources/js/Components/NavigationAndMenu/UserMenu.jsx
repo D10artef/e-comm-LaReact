@@ -11,11 +11,11 @@ const UserMenu = () => {
 
   
   return (
-    <div className="flex items-center justify-between w-full px-3 text-sm relative">
+    <div className="flex items-center justify-between w-full text-sm relative">
       { auth.user ? 
         <div onClick={() => setMenuOpened(true)} className="flex items-center gap-1 cursor-pointer">
           <div className="w-5 h-5 overflow-hidden rounded bg-gray-200 mr-1"></div>
-          <span className="font-semibold underline">{getUsernameInEmail(auth.user.data.email)}</span>
+          <span className="font-semibold hover:text-orange-100">{getUsernameInEmail(auth.user.data.email)}</span>
           <Icon name="chevron-down" className="w-4 h-4"></Icon>
         </div>
         : ''

@@ -6,7 +6,11 @@ use App\Models\Category;
 use App\Models\Offer;
 use App\Models\Product;
 use App\Models\Service;
+use App\Models\User;
+use App\Models\UserInfo;
+use Database\Factories\UserInfoFactory;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\Hash;
 
 class DatabaseSeeder extends Seeder
 {
@@ -17,8 +21,21 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // \App\Models\User::factory(10)->create();
+        // $user = User::create([
+        //         'email' => 'you_are_user@email.com',
+        //         'password' => Hash::make('your_password'),
+        //     ]);
 
+        // $user = User::find(3);
+        // UserInfo::factory()->for($user, 'user')->create();
+        
+
+        // $users = User::factory(4)->create();
+        // foreach($users as $user){
+        //     UserInfo::factory()->for($user, 'user')->create();
+        // }
+
+        
         // $categories = Category::factory()->count(5)->create();
         // $offers = Offer::factory()->count(4)->create();
 
@@ -35,5 +52,11 @@ class DatabaseSeeder extends Seeder
         // }
 
         // $service = Service::factory()->count(4)->create();
+
+        // $this->call([
+        //     AdminSeeder::class,
+        //     PaymentTypeSeeder::class,
+        // ]);
+        
     }
 }

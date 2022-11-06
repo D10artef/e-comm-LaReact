@@ -25,7 +25,7 @@ const WithConfirmDeletion = (WrappedComponent) => {
         deleteItem = () => {
             Inertia.delete(this.props.url, {
               onSuccess: () => {
-                toast.success('The item is deleted successfully', {
+                toast.success('Deleted successfully', {
                     id: this.toast_id
                 })
               },

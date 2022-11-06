@@ -1,5 +1,5 @@
 import { ORDERS } from '../../UTULITIES/const'
-export const options = [
+export const ORDEROPTIONS = [
     {
         id: 1,
         text: "Newest item",
@@ -25,13 +25,13 @@ export const options = [
         order: ORDERS.desc,
     },
     {
-        id: 4,
+        id: 5,
         text: "Lowest price",
         name: "price",
         order: ORDERS.asc,
     },
     {
-        id: 5,
+        id: 6,
         text: "Highest price",
         name: "price",
         order: ORDERS.desc,

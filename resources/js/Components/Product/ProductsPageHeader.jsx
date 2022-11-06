@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import Select from '../FormAndButton/Select'
-import { options } from './selectOptions'
+import { ORDEROPTIONS } from './selectOptions'
 import { usePage } from '@inertiajs/inertia-react'
 import { Inertia } from '@inertiajs/inertia'
 import MemoLink from '../MemoLink'
@@ -66,7 +66,7 @@ const ProductsPageHeader = ({showSelect}) => {
           <div className='flex justify-start items-center gap-x-3 w-fit py-1.5  text-gray-600'> 
             <span className='text-sm'>Order by </span>     
             <div className='w-48 text-sm'>
-              <Select optionList={options} onOptionSelected={handleOptionSelected} selectedIndex={selectedIndex}></Select>
+              <Select optionList={ORDEROPTIONS} onOptionSelected={handleOptionSelected} selectedIndex={selectedIndex}></Select>
             </div>
           </div>
         }

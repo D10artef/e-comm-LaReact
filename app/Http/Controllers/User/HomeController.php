@@ -16,7 +16,7 @@ class HomeController extends Controller
     public function index()
     {
         // Get all active offers
-        $active_offers = Offer::active()->get();
+        $active_offers = Offer::has('products')->active()->get();
 
         // Get latest product by Category
         $categories = Category::whereHas('products')

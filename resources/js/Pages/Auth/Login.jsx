@@ -9,8 +9,8 @@ import { Inertia } from '@inertiajs/inertia'
 
 const Login = () => {
   const [fields, handleFieldChange] = useFormInput({
-    email: '',
-    password: '',
+    email: 'you_are_user@email.com',
+    password: 'your_password',
     remember: false,
   })
   const [processing, setProcessing] = useState(false)

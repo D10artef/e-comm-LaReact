@@ -73,7 +73,6 @@ const New = ({closeModal}) => {
               errors={errors.illustration}
             />
             
-            
           </form>
         </main>
         <footer className="px-6 py-3 flex justify-end items-center gap-3">

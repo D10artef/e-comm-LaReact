@@ -18,4 +18,9 @@ class UserInfo extends Model
         'country',
         'postal_code',
     ];
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
 }

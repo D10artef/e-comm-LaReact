@@ -41,9 +41,9 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    protected $with = [
-        'userInfo'
-    ];
+    // protected $with = [
+    //     'userInfo'
+    // ];
 
     public function userInfo()
     {
@@ -53,5 +53,10 @@ class User extends Authenticatable
     public function cartSession()
     {
         return $this->hasOne(CartSession::class);
+    }
+
+    public function userPayments()
+    {
+        return $this->hasMany(UserPayment::class);
     }
 }

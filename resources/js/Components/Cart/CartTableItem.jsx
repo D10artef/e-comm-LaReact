@@ -23,8 +23,7 @@ const CartTableItem = ({item, removeFromCart, updateItemCart}) => {
         </div>
       </td>
       <td className="py-1.5 px-5">
-        <button className='flex items-center gap-x-1 font-medium text-rose-500' onClick={() => removeFromCart(item.id)}>
-          <Icon name='x-close' className='w-3 h-3'/>
+        <button className='flex items-center gap-x-1 font-light text-rose-500' onClick={() => removeFromCart(item.id)}>
           <span>Remove</span>
         </button>
       </td>

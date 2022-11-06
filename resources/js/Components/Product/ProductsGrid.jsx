@@ -18,7 +18,7 @@ const ProductsGrid = ({products, loading}) => {
   }
   else{
     grid = <div className='flex flex-col w-full justify-center gap-8 items-center p-12 text-sm'>
-            <p className=' text-gray-400 font-light'>Aucun produit trouvé</p>
+            <p className=' text-gray-400 font-light'>No item found...</p>
           </div>
   }
   return (

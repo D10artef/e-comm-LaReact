@@ -1,9 +1,14 @@
 import React, { useRef, useState } from "react";
 import Icon from "../Icon";
 import { useFormInput } from '../HOOKS/useFormField'
+import classNames from "classnames";
 
 export const TextInput = React.memo(
-    ({ label, name, className, errors = [], value, ...props }) => {
+    ({ label, name, className, errors = [], showError = true, value, ...props }) => {
+        const inputClass = classNames(
+            'form-input',
+            {'error': errors.length > 0 && showError}
+        )
         return (
             <div className={className}>
                 {label && (
@@ -16,9 +21,12 @@ export const TextInput = React.memo(
                     name={name}
                     value={value}
                     {...props}
-                    className={`form-input ${errors.length ? "error" : ""}`}
+                    className={inputClass}
+                    // className={`form-input ${errors.length ? "error" : ""}`}
                 />
-                {errors && <div className="form-error">{errors}</div>}
+                {showError && errors && (
+                    <div className="form-error">{errors}</div>
+                )}
             </div>
         );
     }

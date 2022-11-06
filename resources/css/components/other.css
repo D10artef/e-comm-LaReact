@@ -1,5 +1,5 @@
 ::-webkit-scrollbar {
-  width: 5px;
+  width: 2px;
 }
 
 ::-webkit-scrollbar-track {
@@ -7,7 +7,8 @@
 }
 
 ::-webkit-scrollbar-thumb {
-  background: rgb(30, 37, 57);
+  /* background: rgb(30, 37, 57); */
+  background-color: #4F5470;
 }
 
 .scroler {
@@ -25,4 +26,12 @@
 
 .portal {
   position: relative;
+}
+
+.section-title .section-icon-update{
+  display: none;
+}
+
+.section-title:hover .section-icon-update{
+  display: inline-flex;
 }

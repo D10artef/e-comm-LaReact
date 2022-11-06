@@ -10,12 +10,12 @@ const TopNavigationBar = ({totalCart = 0}) => {
   return (
     <div className="flex justify-between items-center">
       <Logo textColor='text-white'/>
-      <div className="flex gap-x-3 md:gap-x-5 mr-4">
+      <div className="flex gap-x-3 md:gap-x-8 mr-4">
         {
           auth.user ?
           <UserMenu />
           :
-          <TopNavigationMenuItem text="My account" icon="user" link={route('login')}/>
+          <TopNavigationMenuItem text="Sign in" icon="login" link={route('login')}/>
         }
         <div className='relative'>
           <TopNavigationMenuItem text="Cart" icon="cart" link={route('user.cart')}/>

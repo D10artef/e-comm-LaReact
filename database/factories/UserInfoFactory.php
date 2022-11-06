@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 class UserInfoFactory extends Factory
@@ -16,11 +17,12 @@ class UserInfoFactory extends Factory
         return [
             'firstname' => $this->faker->firstName(),
             'lastname' => $this->faker->lastName(),
-            'telephone' => $this->faker->phoneNumber(),
+            'phone' => $this->faker->phoneNumber(),
             'address' => $this->faker->streetAddress(),
             'city' => $this->faker->city(),
             'country' => $this->faker->country(),
             'postal_code' => $this->faker->postcode(),
+            // 'user_id' => User::factory(),
         ];
     }
 }

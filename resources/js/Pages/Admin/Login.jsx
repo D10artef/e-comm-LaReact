@@ -9,8 +9,8 @@ import MemoLink from '../../Components/MemoLink'
 
 const Login = () => {
   const [fields, handleFieldChange] = useFormInput({
-    username: '',
-    password: '',
+    username: 'admin',
+    password: 'adminadmin',
     remember: false,
   })
   const [processing, setProcessing] = useState(false)

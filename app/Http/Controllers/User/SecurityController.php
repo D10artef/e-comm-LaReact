@@ -4,6 +4,8 @@ namespace App\Http\Controllers\User;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 
 class SecurityController extends Controller
 {
@@ -21,4 +23,6 @@ class SecurityController extends Controller
     {
         return inertia('Auth/ResetPassword');
     }
+
+    
 }

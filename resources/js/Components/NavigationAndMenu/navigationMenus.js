@@ -14,9 +14,9 @@ export const menus = [
         link: route("services"),
         rawRoute: "/services",
     },
-    {
-        text: "Contact us",
-        link: route("contacts"),
-        rawRoute: "/contacts",
-    },
+    // {
+    //     text: "Contact us",
+    //     link: route("contacts"),
+    //     rawRoute: "/contacts",
+    // },
 ];

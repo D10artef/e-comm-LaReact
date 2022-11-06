@@ -6,6 +6,7 @@ use App\Actions\SimpleService\CartSessionService;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Redirect;
 use App\Http\Resources\CartSessionResource;
+use App\Http\Resources\UserPaymentResource;
 use App\Models\CartItem;
 use App\Models\Product;
 use Illuminate\Http\Request;
@@ -16,10 +17,13 @@ class CartSessionController extends Controller
     public function index()
     {
         if(auth()->check()){
-            // $cart_service = new CartSessionService(auth()->user());
-            $cart_session = CartSessionService::getOrCreateSession(auth()->user());
+            $user = auth()->user();
+            $cart_session = CartSessionService::getOrCreateSession($user);
+            $user_payments = $user->userPayments;
+            // $user_payments = $user->userPayments()->with('paymentProvider')->get();
             return inertia('Cart', [
                 'user_session' => new CartSessionResource($cart_session),
+                'user_payments' => UserPaymentResource::collection($user_payments),
             ]);
         }
         Redirect::route('login', null, 301);

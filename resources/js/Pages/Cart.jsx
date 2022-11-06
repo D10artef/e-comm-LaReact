@@ -8,6 +8,7 @@ import axios from 'axios'
 import { SimpleButton } from '../Components/FormAndButton/Button'
 import Modal from '../Components/Portal/Modal'
 import Loading from '../Components/Loading'
+import UserPaymentSection from '../Components/Cart/UserPaymentSection'
 
 const Cart = () => {
   const { user_session } = usePage().props
@@ -80,14 +81,16 @@ const Cart = () => {
           </div>
           { cartItems.length > 0 ?
           <main className='mt-4 flex flex-col md:flex-row gap-y-3 gap-x-5'>
-            <div className='flex-1 overflow-x-auto relative'>
-              <CartTable items={cartItems} removeFromCart={removeFromCart} updateItemCart={updateItemCart}/>
+            <div className='flex-1'>
+              <div className='overflow-auto scroler max-h-96 relative'>
+                <CartTable items={cartItems} removeFromCart={removeFromCart} updateItemCart={updateItemCart}/>
+              </div>
               <div className='my-4'>
                 <SimpleButton className='bg-rose-500 text-white hover:bg-red-500 duration-500 font-light rounded-sm' icon='trash' onClick={resetCart}>Empty your cart</SimpleButton>
               </div>
             </div>
             <div className='w-full md:max-w-xs lg:max-w-sm'>
-              {/* <CartPaymentSection/> */}
+              <UserPaymentSection/>
             </div>
           </main>
           :
