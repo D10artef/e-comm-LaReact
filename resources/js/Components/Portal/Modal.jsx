@@ -5,7 +5,7 @@ import Icon from '../Icon'
 const Modal = ({children, onClose}) => {
   return createPortal(
     <>
-      <div className='absolute inset-0 bg-black bg-opacity-10 z-30 backdrop-blur-sm flex justify-center items-center'
+      <div className='fixed inset-0 bg-black bg-opacity-10 z-30 backdrop-blur-sm flex justify-center items-center'
       tabIndex='-1'
       role='dialog'>
         <span className='fixed top-2 right-3 text-white cursor-pointer' onClick={onClose}><Icon name='x-close'/></span>

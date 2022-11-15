@@ -39,7 +39,7 @@ export const OfferTableItem = ({offer}) => {
         </div>
       </td>
       <td className="border-t px-4 py-2">
-        <div className='text-center text-xs text-neutral-500 font-medium'>
+        <div className='text-center text-xs text-my-neutral font-medium'>
           {getDateFormat(offer.created_at)}
         </div>
       </td>
@@ -75,7 +75,7 @@ export const CategoryTableItem = ({category}) => {
         </div>
       </td>
       <td className="border-t px-4 py-2">
-        <div className='text-center text-xs text-neutral-500 font-medium'>
+        <div className='text-center text-xs text-my-neutral font-medium'>
           {getDateFormat(category.created_at)}
         </div>
       </td>

@@ -19,7 +19,7 @@ class HomeController extends Controller
         $active_offers = Offer::has('products')->active()->get();
 
         // Get latest product by Category
-        $categories = Category::whereHas('products')
+        $categories = Category::has('products', '>=', 4)
         ->where('visible_home', 1)
         ->get()
             ->map(function ($category) {
@@ -30,10 +30,14 @@ class HomeController extends Controller
                 return $category;
             });
 
+        // Get random product from database
+        $flash_deals = Product::with('offer:id,discount_percent,active')->inStock()->inRandomOrder()->limit(6)->get() ;
+
         return inertia('Home', 
         [
             'active_offers' => new OfferCollection($active_offers),
             'categories' => CategoryResource::collection($categories),
+            'flash_deal' => new ProductCollection($flash_deals),
         ]
         );
     }

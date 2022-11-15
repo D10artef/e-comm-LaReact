@@ -7,8 +7,8 @@ const ProductsMenu = ({ menuTitle, menuList, activeMenu, icon, color = 'accent',
   const colors = {
     accent:{
       bg: 'bg-accent',
-      bg_item: 'bg-orange-100',
-      bg_item_hover: 'hover:bg-orange-100'
+      bg_item: 'bg-accent/10',
+      bg_item_hover: 'hover:bg-accent/10'
     },
     lime: {
       bg: 'bg-lime-600',
@@ -29,7 +29,7 @@ const ProductsMenu = ({ menuTitle, menuList, activeMenu, icon, color = 'accent',
         <span>{menuTitle}</span>
         <Icon name={icon}/>
       </h1>
-      <ul className='flex flex-col text-sm  text-neutral-800'>
+      <ul className='flex flex-col text-sm  text-primary'>
         {children}
         { menuList.length > 0 && menuList.map(menuItem => 
             <ProductsMenuItem 

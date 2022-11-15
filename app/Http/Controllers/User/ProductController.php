@@ -37,10 +37,10 @@ class ProductController extends Controller
                 return new ProductCollection($products);
             },
             'categories' => function () {
-                return new BaseCollection(Category::where('parent_id', '=', 0)->get());
+                return new BaseCollection(Category::has('products')->where('parent_id', '=', 0)->get());
             },
             'offers' => function () {
-                return new OfferCollection(Offer::active()->get());
+                return new OfferCollection(Offer::has('products')->active()->get());
             },
         ]); 
     }
@@ -50,10 +50,10 @@ class ProductController extends Controller
         return inertia('Product', [
             'product' => new ProductResource($product),
             'categories' => function () {
-                return new BaseCollection(Category::where('parent_id', '=', 0)->get());
+                return new BaseCollection(Category::has('products')->where('parent_id', '=', 0)->get());
             },
             'offers' => function () {
-                return new OfferCollection(Offer::active()->get());
+                return new OfferCollection(Offer::has('products')->active()->get());
             },
         ]);
     }

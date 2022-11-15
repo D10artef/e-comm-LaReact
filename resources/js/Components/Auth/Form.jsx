@@ -28,7 +28,7 @@ export const FormHeader = React.memo(({title = 'Welcome', description}) => {
 export const FormFooter = React.memo(({processing = false, buttontText, children}) => {
   return (
     <footer className='flex items-center flex-col  justify-center mt-5'>
-      <LoadingButton className="btn bg-secondary hover:bg-slate-800 text-white px-6" type="submit" loading={processing}>
+      <LoadingButton className="btn bg-accent hover:bg-accent/90 text-white px-6" type="submit" loading={processing}>
         {buttontText}
       </LoadingButton>
       { children && 

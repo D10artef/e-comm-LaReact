@@ -4,7 +4,7 @@ import { Link } from '@inertiajs/inertia-react'
 const Logo = ({textColor = 'text-primary'}) => {
   return (
     <div className={`px-4 font-semibold text-xl ${textColor}`}>
-      <Link href="/" className='flex items-center justify-center before:content-["\2AD3"] before:inline-block before:text-accent'>E-commerce</Link>
+      <Link href="/" className='flex items-center justify-center before:content-["\2AD3"] before:inline-block before:text-accent before:text-[2.2rem]'>E-commerce</Link>
     </div>
   )
 }

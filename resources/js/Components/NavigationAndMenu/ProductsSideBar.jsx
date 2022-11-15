@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react'
 import classNames from 'classnames'
 import Icon from '../Icon'
 import ProductsMenu from './ProductsMenu'
-import ProductsMenuItem from './ProductsMenuItem'
 
 const ProductsSideBar = ({ categories, offers }) => {
   const [hideMenu, setHideMenu] = useState(true)
@@ -38,14 +37,14 @@ const ProductsSideBar = ({ categories, offers }) => {
   }, [queryString])
 
   const divClassName = classNames(
-    'w-56 shrink-0 h-full fixed lg:relative bg-white z-20',
+    'w-56 shrink-0 h-full fixed bg-white z-20',
     'transition ease-in-out duration-500',
     'lg:translate-x-0',
     {'-translate-x-full': hideMenu },
     {'translate-x-0' : !hideMenu}
   )
   const iconClassName = classNames(
-    'text-gray-500 h-4 w-4 ',
+    'text-light h-5 w-5 ',
     'transition ease-in-out duration-500',
     {'rotate-180': !hideMenu}
   )
@@ -56,13 +55,13 @@ const ProductsSideBar = ({ categories, offers }) => {
 
   return (
     <div className={divClassName}>
-      <button className='absolute -right-8 bg-white p-2 shadow inline-block lg:hidden' onClick={handleClick}>
+      <button className='absolute -right-8 bg-accent rounded-r-full  py-2.5 px-2 shadow inline-block lg:hidden' onClick={handleClick}>
         <Icon name='chevron-double-right' className={iconClassName}/>
       </button>
       <div className='flex-col flex'>
         <ProductsMenu activeMenu={activeMenu.category}  menuTitle='Categories' menuList={categories} icon='view-board' type='category' setHideMenu={setHideMenu}>
         </ProductsMenu>
-        <ProductsMenu activeMenu={activeMenu.offer} menuTitle='Offers' color='lime'  menuList={offers} icon='offer' type='offer' setHideMenu={setHideMenu}></ProductsMenu>
+        <ProductsMenu activeMenu={activeMenu.offer} menuTitle='Offers' color='lime'  menuList={offers} icon='ticket' type='offer' setHideMenu={setHideMenu}></ProductsMenu>
       </div>
     </div>
   )

@@ -15,12 +15,12 @@ const UserMenu = () => {
       { auth.user ? 
         <div onClick={() => setMenuOpened(true)} className="flex items-center gap-1 cursor-pointer">
           <div className="w-5 h-5 overflow-hidden rounded bg-gray-200 mr-1"></div>
-          <span className="font-semibold hover:text-orange-100">{getUsernameInEmail(auth.user.data.email)}</span>
-          <Icon name="chevron-down" className="w-4 h-4"></Icon>
+          <span className="font-semibold hover:text-dark/80 duration-500">{getUsernameInEmail(auth.user.data.email)}</span>
+          <Icon name="chevron-down" className="w-5 h-5"></Icon>
         </div>
         : ''
       }
-      <div className="absolute top-0 right-0 left-auto z-30 py-1 mt-8 text-sm whitespace-nowrap bg-neutral-100 rounded shadow-xl text-neutral-700 ">
+      <div className="absolute top-0 right-0 left-auto z-40 py-1 mt-8 text-sm whitespace-nowrap bg-light rounded shadow-xl text-secondary">
           <div className={`min-w-[150px] ${menuOpened ? '' : 'hidden'}`}>
             {
               USER_MENU_LIST.map(menu => {

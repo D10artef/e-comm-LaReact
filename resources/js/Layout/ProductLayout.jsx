@@ -13,7 +13,7 @@ const ProductLayout = ({children}) => {
       <UserLayout>
         <div className='flex flex-row relative'>
           <ProductsSideBar categories={categoriesData} offers={offersData}/>
-          <div className='grow px-4 py-3 w-full bg-neutral-100 min-h-screen'>
+          <div className='ml-0 lg:ml-56 grow w-full bg-background min-h-screen'>
             { children }
           </div>
         </div>

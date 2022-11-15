@@ -8,9 +8,9 @@ const TopNavigationBar = ({totalCart = 0}) => {
   const { auth } = usePage().props
 
   return (
-    <div className="flex justify-between items-center">
-      <Logo textColor='text-white'/>
-      <div className="flex gap-x-3 md:gap-x-8 mr-4">
+    <div className="flex flex-col md:flex-row justify-between items-center gap-y-3">
+      <Logo textColor='text-dark'/>
+      <div className="flex gap-x-3 md:gap-x-8 px-4">
         {
           auth.user ?
           <UserMenu />

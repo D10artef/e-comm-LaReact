@@ -16,13 +16,13 @@
   -ms-overflow-style: none;
 }
 
-.td-quantity .td-icon {
+/* .td-quantity .td-icon {
   display: none;
 }
 
 .td-quantity:hover .td-icon {
   display: inline-block;
-}
+} */
 
 .portal {
   position: relative;

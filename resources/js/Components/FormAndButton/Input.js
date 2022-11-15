@@ -4,7 +4,7 @@ import { useFormInput } from '../HOOKS/useFormField'
 import classNames from "classnames";
 
 export const TextInput = React.memo(
-    ({ label, name, className, errors = [], showError = true, value, ...props }) => {
+    ({ label, name, className, errors = [], placeholder, showError = true, value, ...props }) => {
         const inputClass = classNames(
             'form-input',
             {'error': errors.length > 0 && showError}
@@ -22,6 +22,7 @@ export const TextInput = React.memo(
                     value={value}
                     {...props}
                     className={inputClass}
+                    placeholder={placeholder}
                     // className={`form-input ${errors.length ? "error" : ""}`}
                 />
                 {showError && errors && (
@@ -80,8 +81,8 @@ export const SearchForm = ({ children, onSearch }) => {
 
     return (
         <form className="w-full" onSubmit={handleSubmit}>
-            <div className="flex bg-gray-100 p-2 rounded-sm items-center overflow-hidden">
-                <label htmlFor="search" className="text-secondary">
+            <div className="flex border border-gray-300 rounded p-2 items-center overflow-hidden">
+                <label htmlFor="search" className="text-my-neutral">
                     <Icon name="search" className="w-5 h-5 fill-current"></Icon>
                 </label>
                 <input
@@ -90,7 +91,7 @@ export const SearchForm = ({ children, onSearch }) => {
                     name="search"
                     value={searchText.search}
                     onChange={handleSearchChange}
-                    className="text-neutral-700 placeholder:font-light focus:outline-none ml-2 text-sm bg-gray-100 w-full"
+                    className="text-dark placeholder:font-light focus:outline-none ml-2 text-sm bg-transparent w-full"
                     placeholder={children}
                 />
             </div>

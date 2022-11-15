@@ -52,3 +52,6 @@ php artisan serve
 ### Credits
 * [react-hot-toast](https://github.com/timolins/react-hot-toast)
 * [react-slick](https://github.com/akiran/react-slick)
+* Illustration made by [storyset](storyset.com)
+* Illustration made by [unDraw](undraw.co)
+* Icons made by [Heroicons](heroicons.com)

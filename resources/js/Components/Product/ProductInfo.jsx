@@ -7,27 +7,33 @@ const ProductInfo = ({ product }) => {
   const { auth } = usePage().props
   const { name, price, description, avaible } = product
   const avaibleClassName = avaible ? 'text-green-500' : 'text-red-500'
+  const defaultSrc = '../images/products/image_not_available.png'
+
   return (
     <>
-      <div className="grid grid-cols-2 gap-x-4">
-        <div className='max-w-xs max-h-96 h-80  bg-gray-200'>Photo</div>
+      <div className="grid sm:grid-cols-2 grid-cols-1 gap-x-8 gap-y-4">
+        <div className='max-w-xs h-64 bg-light shadow justify-self-center'>
+          <img src={product.illustration? product.illustration : defaultSrc} alt="product_illustration"
+            className='h-full object-scale-down'
+          />
+        </div>
         <div>
-          <h1>{name}</h1>
+          <h1 className='font-medium'>{name}</h1>
           <p 
-          className={`text-xs mb-1 font-medium ${avaibleClassName}`}>
+          className={`text-sm font-medium my-1 ${avaibleClassName}`}>
             {avaible ? 'Avaible' : 'Not avaible'}
           </p>
-          <span className='text-neutral-600 text-sm font-semibold'>{showPriceWithCurrency(price)}</span>
+          <span className='text-accent-secondary text-sm font-semibold'>{showPriceWithCurrency(price)}</span>
           <p className='my-4 text-sm text-justify'>{description}</p>
-          <div className="flex items-center justify-center">
-            <div className='max-w-xs'>
-              <AddToCartSimpleButton auth={auth} product={product}/>
+          {
+            avaible && 
+            <div className="flex items-center justify-center">
+              <div className='max-w-xs'>
+                <AddToCartSimpleButton auth={auth} product={product} />
+              </div>
             </div>
-          </div>
+          }
         </div>
-        {/* <div className='pl-4'>
-
-        </div> */}
       </div>
     </>
   )

@@ -20,6 +20,8 @@ class CartItemResource extends JsonResource
             'product_name' => $this->product->name,
             'product_price' => $this->product->price,
             'product_id' => $this->product->id,
+            'product_illustration' => $this->product->illustration,
+            'product_active_price' => $this->product->getActivePrice(),
         ];
     }
 }

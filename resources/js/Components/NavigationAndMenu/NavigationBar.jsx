@@ -4,7 +4,7 @@ import { usePage } from '@inertiajs/inertia-react'
 import { menus } from './navigationMenus'
 import MiddleNavigationBar from './MiddleNavigationBar'
 
-const NavigationBar = () => {
+const NavigationBar = React.forwardRef((props, ref) => {
   const url = usePage().url
   const isMenuActive = (link) => {
     return url.startsWith(link)
@@ -17,13 +17,13 @@ const NavigationBar = () => {
   })
   return (
     <>
-      <nav className='bg-secondary px-3 py-3 text-white'>
+      <nav ref={ref} className='fixed top-0 inset-x-0 bg-light px-1 sm:px-3 py-3 text-dark shadow-indigo-100 shadow-md border-b z-20' id='navigation_bar'>
         <TopNavigationBar/>
-        <hr className='border-slate-400 border-t mx-4 mt-3'/>
+        <hr className='border-neutral-200 border-t m-4'/>
         <MiddleNavigationBar menus={menuNavList} />
       </nav>
     </>
   )
-}
+})
 
 export default NavigationBar

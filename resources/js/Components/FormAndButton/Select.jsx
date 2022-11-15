@@ -33,9 +33,9 @@ const Select = ({optionList, onOptionSelected, selectedIndex}) => {
          aria-expanded={isOpen}
          className={buttonClass}
          >
-          {optionList[selectedOption].text}
+          {optionList[selectedOption]?.text}
         </button>
-        <ul className={`absolute top-10 z-30 w-full bg-neutral-50 border list-none -mt-1 ${isOpen ? 'block': 'hidden'}`} 
+        <ul className={`absolute top-10 z-30 w-full bg-light border shadow list-none -mt-1 ${isOpen ? 'block': 'hidden'}`} 
           tabIndex={-1} 
           role='listbox' 
           aria-activedescendant={optionList[selectedOption].text}
@@ -47,7 +47,7 @@ const Select = ({optionList, onOptionSelected, selectedIndex}) => {
           }
         </ul>
       </div>
-      <div onClick={() => {setIsOpen(false);}} className={`fixed inset-0 z-20 bg-transparent opacity-10 ${isOpen ? '' : 'hidden'}`}></div>
+      <div onClick={() => {setIsOpen(false);}} className={`fixed inset-0 z-30 bg-transparent opacity-10 ${isOpen ? '' : 'hidden'}`}></div>
     </div>
   )
 }

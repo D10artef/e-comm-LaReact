@@ -9,15 +9,15 @@ const PageLink = ({ active, label, url, arrayOnly }) => {
       // 'border border-solid border-neutral-500 rounded',
       'rounded-full',
       'text-xs',
-      'hover:bg-secondary hover:text-white duration-300',
+      'hover:bg-accent hover:text-white duration-300',
       'focus:outline-none',
       'pagination-item',
     ],
     {
-      'bg-secondary text-white active': active
+      'bg-accent text-light active': active
     },
     {
-      'text-neutral-500': !active
+      'text-my-neutral': !active
     }
   );
   return (

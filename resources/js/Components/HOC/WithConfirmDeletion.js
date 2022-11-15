@@ -53,7 +53,7 @@ const WithConfirmDeletion = (WrappedComponent) => {
                                 </header>
                                 <footer className="px-6 py-3 flex justify-end items-center gap-3">
                                     <SimpleButton
-                                        className="bg-gray-500 text-white hover:bg-neutral-500 duration-500 font-light rounded-sm"
+                                        className="bg-gray-500 text-white hover:bg-my-neutral duration-500 font-light rounded-sm"
                                         icon="x-close"
                                         iconClass="w-4 h-4"
                                         onClick={this.closeModal}

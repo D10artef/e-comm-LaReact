@@ -23,16 +23,16 @@ const MiddleNavigationBar = ({menus}) => {
 
   return (
     <>
-      <div className="flex justify-between items-center pt-3 pb-1 text-sm mx-4">
-        <div className="md:flex hidden lg:gap-x-8 gap-x-3 items-center">
+      <div className="flex justify-between items-center text-sm mx-4">
+        <div className="md:flex hidden gap-x-8 lg:gap-x-10 items-center">
           {
             menuView
           }
         </div>
-        <div className="max-w-md flex-1">
+        <div className="max-w-sm lg:max-w-md flex-1">
           <SearchForm onSearch={hanldeSearch}>Find your product...</SearchForm>
         </div>
-        <div className="md:hidden flex items-center cursor-pointer p-0.5 border rounded-sm ml-3 text-gray-200 border-gray-200" onClick={toggleMenu}>
+        <div className="md:hidden flex items-center cursor-pointer p-1 border rounded-sm ml-3 text-my-neutral border-my-neutral" onClick={toggleMenu}>
           <span className="sr-only">Menu</span>
           <Icon name="burger" className="w-6 h-6 fill-current cursor-pointer" ></Icon>
         </div>

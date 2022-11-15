@@ -1,6 +1,7 @@
 import React from 'react'
 import Logo from '../Components/Logo'
 
+// 455569
 const AuthLayout = ({children}) => {
   return (
     <div className='flex min-h-screen w-full justify-center items-center relative'>

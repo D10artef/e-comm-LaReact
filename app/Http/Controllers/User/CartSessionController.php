@@ -19,8 +19,8 @@ class CartSessionController extends Controller
         if(auth()->check()){
             $user = auth()->user();
             $cart_session = CartSessionService::getOrCreateSession($user);
-            $user_payments = $user->userPayments;
-            // $user_payments = $user->userPayments()->with('paymentProvider')->get();
+            // $user_payments = $user->userPayments;
+            $user_payments = $user->userPayments()->with('paymentProvider')->get();
             return inertia('Cart', [
                 'user_session' => new CartSessionResource($cart_session),
                 'user_payments' => UserPaymentResource::collection($user_payments),
@@ -79,10 +79,11 @@ class CartSessionController extends Controller
         $this->returnIfNotConnected();
         $cart_session = CartSessionService::getOrCreateSession(auth()->user());
         $cart_session->deleteAllItem();
-        return response()->json([
-            'message' => 'All items are deleted succesfuly',
-            'data' => new CartSessionResource($cart_session->refresh()),
-        ], 201);
+        // return response()->json([
+        //     'message' => 'All items are deleted succesfuly',
+        //     'data' => new CartSessionResource($cart_session->refresh()),
+        // ], 201);
+        return redirect()->back();
     }
 
     private function returnIfNotConnected()

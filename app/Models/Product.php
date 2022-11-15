@@ -15,6 +15,12 @@ class Product extends Model
         'description',
         'price',
         'quantity',
+        'illustration',
+        'slug',
+    ];
+
+    protected $casts = [
+        'price' => 'float',
     ];
 
     public function newEloquentBuilder($query)
@@ -40,6 +46,16 @@ class Product extends Model
     public function avaible()
     {
         return $this->quantity > 0;
+    }
+
+    public function getActivePrice()
+    {
+        $offer = $this->offer;
+        if($offer && $offer->active){
+            $discount = $offer->discount_percent;
+            return round($this->price  * (100 - $discount) / 100, 2);
+        }
+        return $this->price;
     }
     
 }

@@ -22,6 +22,8 @@ class ProductCollection extends ResourceCollection
             'name',
             'description',
             'offer',
+            'illustration',
+            'slug',
         ]);
     }
 }

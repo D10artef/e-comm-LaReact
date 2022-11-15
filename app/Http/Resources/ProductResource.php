@@ -22,7 +22,9 @@ class ProductResource extends JsonResource
             'price' => $this->price,
             'avaible' => $this->avaible(),
             'offer_percent' => $this->offer->discount_percent,
-            'offer_active' => $this->offer->active
+            'offer_active' => $this->offer->active,
+            'slug' => $this->slug,
+            'illustration' => $this->illustration,
         ];
     }
 }

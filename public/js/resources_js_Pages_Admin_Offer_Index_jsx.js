@@ -75,22 +75,22 @@ var AdminMenuItem = function AdminMenuItem(_ref) {
       link = _ref.link,
       text = _ref.text,
       isActive = _ref.isActive;
-  var iconClasses = classnames__WEBPACK_IMPORTED_MODULE_1___default()('w-5 h-5 group-hover:text-accent', {
+  var iconClasses = classnames__WEBPACK_IMPORTED_MODULE_1___default()('w-5 h-5 group-hover:text-accent duration-500', {
     'text-accent': isActive,
     'text-white ': !isActive
   });
-  var textClasses = classnames__WEBPACK_IMPORTED_MODULE_1___default()('text-sm uppercase group-hover:text-accent', {
+  var textClasses = classnames__WEBPACK_IMPORTED_MODULE_1___default()('text-sm uppercase group-hover:text-accent duration-500', {
     'text-accent': isActive,
     'text-white': !isActive
   });
-  var divClasses = classnames__WEBPACK_IMPORTED_MODULE_1___default()('px-2 my-3 hover:bg-secondary duration-300', {
-    'bg-secondary': isActive
+  var divClasses = classnames__WEBPACK_IMPORTED_MODULE_1___default()('px-2 hover:bg-light duration-500', {
+    'bg-light': isActive
   });
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
     className: divClasses,
     children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_2__.Link, {
       href: route(link),
-      className: "flex items-center group gap-x-5 py-3 px-4",
+      className: "flex items-center group gap-x-5 py-4 px-4",
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_Icon__WEBPACK_IMPORTED_MODULE_3__["default"], {
         name: icon,
         className: iconClasses
@@ -247,7 +247,7 @@ var OfferTableItem = function OfferTableItem(_ref) {
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("td", {
       className: "border-t px-4 py-2",
       children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
-        className: "text-center text-xs text-neutral-500 font-medium",
+        className: "text-center text-xs text-my-neutral font-medium",
         children: (0,_UTULITIES_dateFunction__WEBPACK_IMPORTED_MODULE_4__.getDateFormat)(offer.created_at)
       })
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("td", {
@@ -290,7 +290,7 @@ var CategoryTableItem = function CategoryTableItem(_ref2) {
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("td", {
       className: "border-t px-4 py-2",
       children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
-        className: "text-center text-xs text-neutral-500 font-medium",
+        className: "text-center text-xs text-my-neutral font-medium",
         children: (0,_UTULITIES_dateFunction__WEBPACK_IMPORTED_MODULE_4__.getDateFormat)(category.created_at)
       })
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("td", {
@@ -896,7 +896,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var classnames__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! classnames */ "./node_modules/classnames/index.js");
 /* harmony import */ var classnames__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(classnames__WEBPACK_IMPORTED_MODULE_3__);
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
-var _excluded = ["label", "name", "className", "errors", "showError", "value"],
+var _excluded = ["label", "name", "className", "errors", "placeholder", "showError", "value"],
     _excluded2 = ["label", "name", "className", "errors", "value"];
 
 function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
@@ -934,6 +934,7 @@ var TextInput = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().memo(f
       className = _ref.className,
       _ref$errors = _ref.errors,
       errors = _ref$errors === void 0 ? [] : _ref$errors,
+      placeholder = _ref.placeholder,
       _ref$showError = _ref.showError,
       showError = _ref$showError === void 0 ? true : _ref$showError,
       value = _ref.value,
@@ -953,7 +954,8 @@ var TextInput = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().memo(f
       name: name,
       value: value
     }, props), {}, {
-      className: inputClass // className={`form-input ${errors.length ? "error" : ""}`}
+      className: inputClass,
+      placeholder: placeholder // className={`form-input ${errors.length ? "error" : ""}`}
 
     })), showError && errors && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
       className: "form-error",
@@ -1011,10 +1013,10 @@ var SearchForm = function SearchForm(_ref3) {
     className: "w-full",
     onSubmit: handleSubmit,
     children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
-      className: "flex bg-gray-100 p-2 rounded-sm items-center overflow-hidden",
+      className: "flex border border-gray-300 rounded p-2 items-center overflow-hidden",
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("label", {
         htmlFor: "search",
-        className: "text-secondary",
+        className: "text-my-neutral",
         children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_Icon__WEBPACK_IMPORTED_MODULE_1__["default"], {
           name: "search",
           className: "w-5 h-5 fill-current"
@@ -1025,7 +1027,7 @@ var SearchForm = function SearchForm(_ref3) {
         name: "search",
         value: searchText.search,
         onChange: handleSearchChange,
-        className: "text-neutral-700 placeholder:font-light focus:outline-none ml-2 text-sm bg-gray-100 w-full",
+        className: "text-dark placeholder:font-light focus:outline-none ml-2 text-sm bg-transparent w-full",
         placeholder: children
       })]
     })
@@ -1236,7 +1238,7 @@ var WithConfirmDeletion = function WithConfirmDeletion(WrappedComponent) {
               }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("footer", {
                 className: "px-6 py-3 flex justify-end items-center gap-3",
                 children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_FormAndButton_Button__WEBPACK_IMPORTED_MODULE_3__.SimpleButton, {
-                  className: "bg-gray-500 text-white hover:bg-neutral-500 duration-500 font-light rounded-sm",
+                  className: "bg-gray-500 text-white hover:bg-my-neutral duration-500 font-light rounded-sm",
                   icon: "x-close",
                   iconClass: "w-4 h-4",
                   onClick: this.closeModal,
@@ -1739,21 +1741,6 @@ var Icon = function Icon(_ref) {
     }));
   }
 
-  if (name === 'x-close') {
-    return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("svg", _objectSpread(_objectSpread({
-      xmlns: "http://www.w3.org/2000/svg",
-      className: className,
-      viewBox: "0 0 20 20",
-      fill: "currentColor"
-    }, props), {}, {
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
-        fillRule: "evenodd",
-        d: "M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z",
-        clipRule: "evenodd"
-      })
-    }));
-  }
-
   if (name === 'plus-circle') {
     return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("svg", _objectSpread(_objectSpread({
       xmlns: "http://www.w3.org/2000/svg",
@@ -1839,7 +1826,7 @@ var Icon = function Icon(_ref) {
     }));
   }
 
-  if (name === 'offer') {
+  if (name === 'receipt-tax') {
     return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("svg", _objectSpread(_objectSpread({
       xmlns: "http://www.w3.org/2000/svg",
       className: className,
@@ -2151,6 +2138,193 @@ var Icon = function Icon(_ref) {
     }));
   }
 
+  if (name === 'lightning-bolt') {
+    return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("svg", _objectSpread(_objectSpread({
+      xmlns: "http://www.w3.org/2000/svg",
+      className: className,
+      fill: "none",
+      viewBox: "0 0 24 24",
+      stroke: "currentColor"
+    }, props), {}, {
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        strokeLinecap: "round",
+        strokeLinejoin: "round",
+        strokeWidth: 2,
+        d: "M13 10V3L4 14h7v7l9-11h-7z"
+      })
+    }));
+  }
+
+  if (name === 'color-swatch') {
+    return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("svg", _objectSpread(_objectSpread({
+      xmlns: "http://www.w3.org/2000/svg",
+      className: className,
+      fill: "none",
+      viewBox: "0 0 24 24",
+      stroke: "currentColor"
+    }, props), {}, {
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        strokeLinecap: "round",
+        strokeLinejoin: "round",
+        strokeWidth: 2,
+        d: "M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01"
+      })
+    }));
+  }
+
+  if (name === 'sparkles') {
+    return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("svg", _objectSpread(_objectSpread({
+      xmlns: "http://www.w3.org/2000/svg",
+      className: className,
+      fill: "none",
+      viewBox: "0 0 24 24",
+      stroke: "currentColor"
+    }, props), {}, {
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        strokeLinecap: "round",
+        strokeLinejoin: "round",
+        strokeWidth: 2,
+        d: "M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"
+      })
+    }));
+  }
+
+  if (name === 'plus') {
+    return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("svg", _objectSpread(_objectSpread({
+      xmlns: "http://www.w3.org/2000/svg",
+      className: className,
+      fill: "none",
+      viewBox: "0 0 24 24",
+      stroke: "currentColor"
+    }, props), {}, {
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        strokeLinecap: "round",
+        strokeLinejoin: "round",
+        strokeWidth: 2,
+        d: "M12 4v16m8-8H4"
+      })
+    }));
+  }
+
+  if (name === 'plus-sm') {
+    return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("svg", _objectSpread(_objectSpread({
+      xmlns: "http://www.w3.org/2000/svg",
+      className: className,
+      fill: "none",
+      viewBox: "0 0 24 24",
+      stroke: "currentColor"
+    }, props), {}, {
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        strokeLinecap: "round",
+        strokeLinejoin: "round",
+        strokeWidth: 2,
+        d: "M12 6v6m0 0v6m0-6h6m-6 0H6"
+      })
+    }));
+  }
+
+  if (name === 'minus') {
+    return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("svg", _objectSpread(_objectSpread({
+      xmlns: "http://www.w3.org/2000/svg",
+      className: className,
+      fill: "none",
+      viewBox: "0 0 24 24",
+      stroke: "currentColor"
+    }, props), {}, {
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        strokeLinecap: "round",
+        strokeLinejoin: "round",
+        strokeWidth: 2,
+        d: "M20 12H4"
+      })
+    }));
+  }
+
+  if (name === 'minus-sm') {
+    return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("svg", _objectSpread(_objectSpread({
+      xmlns: "http://www.w3.org/2000/svg",
+      className: className,
+      fill: "none",
+      viewBox: "0 0 24 24",
+      stroke: "currentColor"
+    }, props), {}, {
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        strokeLinecap: "round",
+        strokeLinejoin: "round",
+        strokeWidth: 2,
+        d: "M18 12H6"
+      })
+    }));
+  }
+
+  if (name === 'cash') {
+    return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("svg", _objectSpread(_objectSpread({
+      xmlns: "http://www.w3.org/2000/svg",
+      className: className,
+      fill: "none",
+      viewBox: "0 0 24 24",
+      stroke: "currentColor"
+    }, props), {}, {
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        strokeLinecap: "round",
+        strokeLinejoin: "round",
+        strokeWidth: 2,
+        d: "M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z"
+      })
+    }));
+  }
+
+  if (name === 'truck') {
+    return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("svg", _objectSpread(_objectSpread({
+      xmlns: "http://www.w3.org/2000/svg",
+      fill: "none",
+      viewBox: "0 0 24 24",
+      strokeWidth: 2,
+      stroke: "currentColor",
+      className: className
+    }, props), {}, {
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        strokeLinecap: "round",
+        strokeLinejoin: "round",
+        d: "M8.25 18.75a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m3 0h6m-9 0H3.375a1.125 1.125 0 01-1.125-1.125V14.25m17.25 4.5a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m3 0h1.125c.621 0 1.129-.504 1.09-1.124a17.902 17.902 0 00-3.213-9.193 2.056 2.056 0 00-1.58-.86H14.25M16.5 18.75h-2.25m0-11.177v-.958c0-.568-.422-1.048-.987-1.106a48.554 48.554 0 00-10.026 0 1.106 1.106 0 00-.987 1.106v7.635m12-6.677v6.677m0 4.5v-4.5m0 0h-12"
+      })
+    }));
+  }
+
+  if (name === 'banknotes') {
+    return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("svg", _objectSpread(_objectSpread({
+      xmlns: "http://www.w3.org/2000/svg",
+      fill: "none",
+      viewBox: "0 0 24 24",
+      strokeWidth: 2,
+      stroke: "currentColor",
+      className: className
+    }, props), {}, {
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        strokeLinecap: "round",
+        strokeLinejoin: "round",
+        d: "M2.25 18.75a60.07 60.07 0 0115.797 2.101c.727.198 1.453-.342 1.453-1.096V18.75M3.75 4.5v.75A.75.75 0 013 6h-.75m0 0v-.375c0-.621.504-1.125 1.125-1.125H20.25M2.25 6v9m18-10.5v.75c0 .414.336.75.75.75h.75m-1.5-1.5h.375c.621 0 1.125.504 1.125 1.125v9.75c0 .621-.504 1.125-1.125 1.125h-.375m1.5-1.5H21a.75.75 0 00-.75.75v.75m0 0H3.75m0 0h-.375a1.125 1.125 0 01-1.125-1.125V15m1.5 1.5v-.75A.75.75 0 003 15h-.75M15 10.5a3 3 0 11-6 0 3 3 0 016 0zm3 0h.008v.008H18V10.5zm-12 0h.008v.008H6V10.5z"
+      })
+    }));
+  }
+
+  if (name === 'gift') {
+    return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("svg", _objectSpread(_objectSpread({
+      xmlns: "http://www.w3.org/2000/svg",
+      className: className,
+      fill: "none",
+      viewBox: "0 0 24 24",
+      stroke: "currentColor"
+    }, props), {}, {
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        strokeLinecap: "round",
+        strokeLinejoin: "round",
+        strokeWidth: 2,
+        d: "M12 8v13m0-13V6a2 2 0 112 2h-2zm0 0V5.5A2.5 2.5 0 109.5 8H12zm-7 4h14M5 12a2 2 0 110-4h14a2 2 0 110 4M5 12v7a2 2 0 002 2h10a2 2 0 002-2v-7"
+      })
+    }));
+  }
+
   return null;
 };
 
@@ -2184,7 +2358,7 @@ var Logo = function Logo(_ref) {
     className: "px-4 font-semibold text-xl ".concat(textColor),
     children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.Link, {
       href: "/",
-      className: "flex items-center justify-center before:content-[\"\\2AD3\"] before:inline-block before:text-accent",
+      className: "flex items-center justify-center before:content-[\"\\2AD3\"] before:inline-block before:text-accent before:text-[2.2rem]",
       children: "E-commerce"
     })
   });
@@ -2278,7 +2452,7 @@ var UserMenuItem = function UserMenuItem(_ref) {
       props = _objectWithoutProperties(_ref, _excluded);
 
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(_MemoLink__WEBPACK_IMPORTED_MODULE_1__["default"], _objectSpread(_objectSpread({
-    className: "px-3 py-2.5 w-full flex items-center gap-x-6 hover:bg-secondary hover:text-white duration-300",
+    className: "px-3 py-2.5 w-full flex items-center gap-x-6 hover:bg-primary hover:text-white duration-500",
     href: menu.link,
     onClick: function onClick() {
       return onMenuItemClick(false);
@@ -2286,7 +2460,7 @@ var UserMenuItem = function UserMenuItem(_ref) {
   }, props), {}, {
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_Icon__WEBPACK_IMPORTED_MODULE_2__["default"], {
       name: menu.icon,
-      className: "w-4 h-4"
+      className: "w-5 h-5"
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("span", {
       children: menu.text
     })]
@@ -2325,10 +2499,10 @@ var PageLink = function PageLink(_ref) {
       url = _ref.url,
       arrayOnly = _ref.arrayOnly;
   var className = classnames__WEBPACK_IMPORTED_MODULE_2___default()(['px-2 py-1', // 'border border-solid border-neutral-500 rounded',
-  'rounded-full', 'text-xs', 'hover:bg-secondary hover:text-white duration-300', 'focus:outline-none', 'pagination-item'], {
-    'bg-secondary text-white active': active
+  'rounded-full', 'text-xs', 'hover:bg-accent hover:text-white duration-300', 'focus:outline-none', 'pagination-item'], {
+    'bg-accent text-light active': active
   }, {
-    'text-neutral-500': !active
+    'text-my-neutral': !active
   });
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.Link, {
     className: className,
@@ -2409,7 +2583,7 @@ var Modal = function Modal(_ref) {
       onClose = _ref.onClose;
   return /*#__PURE__*/(0,react_dom__WEBPACK_IMPORTED_MODULE_1__.createPortal)( /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.Fragment, {
     children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
-      className: "absolute inset-0 bg-black bg-opacity-10 z-30 backdrop-blur-sm flex justify-center items-center",
+      className: "fixed inset-0 bg-black bg-opacity-10 z-30 backdrop-blur-sm flex justify-center items-center",
       tabIndex: "-1",
       role: "dialog",
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("span", {

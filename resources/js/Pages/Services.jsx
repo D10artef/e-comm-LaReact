@@ -10,11 +10,11 @@ const Services = () => {
     <>
       <Head title='Services'/>
       <UserLayout>
-        <div className="p-8">
+        <div className="p-8 space-y-12">
           { 
             services && services?.data.map((service, index) => {
               const reverse = index % 2 == 0 ? false : true
-              return <ServiceSection key={service.id} service={service} reverse={reverse}/>
+              return <ServiceSection key={service.id} service={service} index={index} reverse={reverse}/>
             })
           }
         </div>

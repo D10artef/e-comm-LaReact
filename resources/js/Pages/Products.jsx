@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react'
 import { Head } from '@inertiajs/inertia-react'
 import ProductLayout from '../Layout/ProductLayout'
-import ProductsPageHeader from '../Components/Product/ProductsPageHeader'
-import ProductsGrid from '../Components/Product/ProductsGrid'
+import ProductsPageHeader from '../Components/Products/ProductsPageHeader'
+import ProductsGrid from '../Components/Products/ProductsGrid'
 import { usePage } from '@inertiajs/inertia-react'
 import Pagination from '../Components/Pagination'
 

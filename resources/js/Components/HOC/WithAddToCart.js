@@ -36,6 +36,9 @@ const WithAddToCart = (WrappedComponent) => {
                 toast.error("You need to login", {
                     id: this.toast_error_id,
                 });
+                // toast.custom(<AuthNotification />, {
+                //     id: this.toast_error_id,
+                // })
                 this.setState({ disable: false });
             }
         };

@@ -55,7 +55,7 @@ class CartSession extends Model
         $item = new CartItem();
         $item->product()->associate($product);
         $result = $this->cartItems()->save($item);
-        $this->total = $this->total + $product->price;
+        $this->total = $this->total + $product->getActivePrice();
         if($result) $this->save();
         return $this;
     }
@@ -65,7 +65,7 @@ class CartSession extends Model
         if($product->quantity > $item->quantity){
             $item->quantity++;
             $result = $item->save();
-            $this->total = $this->total + $product->price;
+            $this->total = $this->total + $product->getActivePrice();
             if($result) $this->save();
         }
         return $this;
@@ -76,7 +76,7 @@ class CartSession extends Model
         if($item->quantity > 0) {
             $item->quantity--;
             $result = $item->save();
-            $this->total = $this->total - $product->price;
+            $this->total = $this->total - $product->getActivePrice();
             if($item->quantity === 0){
                 $result = $item->delete();
             }
@@ -87,7 +87,7 @@ class CartSession extends Model
 
     public function deleteCartItem(CartItem $item)
     {
-        $valueTominus = $item->quantity * $item->product->price;
+        $valueTominus = $item->quantity * $item->product->getActivePrice();
         $newTotal = $this->total - $valueTominus;
         $result = $item->delete();
         if($result) $this->update(['total' => $newTotal]);

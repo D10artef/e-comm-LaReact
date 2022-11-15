@@ -24,7 +24,8 @@ class Offer extends Model
     ];
 
     protected $casts = [
-        'active' => 'boolean'
+        'active' => 'boolean',
+        'discount_percent' => 'float'
     ];
 
     public function newEloquentBuilder($query)

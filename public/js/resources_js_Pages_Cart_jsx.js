@@ -1,9 +1,9 @@
 (self["webpackChunk"] = self["webpackChunk"] || []).push([["resources_js_Pages_Cart_jsx"],{
 
-/***/ "./resources/js/Components/Cart/CartTable.jsx":
-/*!****************************************************!*\
-  !*** ./resources/js/Components/Cart/CartTable.jsx ***!
-  \****************************************************/
+/***/ "./resources/js/Components/Cart/CartItem.jsx":
+/*!***************************************************!*\
+  !*** ./resources/js/Components/Cart/CartItem.jsx ***!
+  \***************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -13,7 +13,114 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _CartTableItem__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./CartTableItem */ "./resources/js/Components/Cart/CartTableItem.jsx");
+/* harmony import */ var _UTULITIES_productFunction__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../UTULITIES/productFunction */ "./resources/js/UTULITIES/productFunction.js");
+/* harmony import */ var _Icon__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../Icon */ "./resources/js/Components/Icon.jsx");
+/* harmony import */ var _UTULITIES_const__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../UTULITIES/const */ "./resources/js/UTULITIES/const.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
+
+
+
+
+
+
+
+var CartItem = function CartItem(_ref) {
+  var item = _ref.item,
+      updateItemCart = _ref.updateItemCart,
+      removeFromCart = _ref.removeFromCart;
+  var imageSrc = item.product_illustration ? item.product_illustration : '../images/products/image_not_available.png';
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
+    className: "px-1 min-w-[308px] sm:px-4 lg:px-8 border-b border-accent/20 shadow-sm bg-white group",
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
+      className: "flex items-center gap-x-3 md:gap-x-5",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("img", {
+        src: imageSrc,
+        alt: "product image",
+        className: "w-28 sm:w-32 object-scale-down aspect-square text-xs text-my-neutral"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
+        className: "flex flex-col gap-y-1.5 text-sm",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("p", {
+          className: "text-secondary font-medium",
+          children: item.product_name
+        }), item.product_price === item.product_active_price ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.Fragment, {
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", {
+            className: "text-my-neutral text-sm",
+            children: (0,_UTULITIES_productFunction__WEBPACK_IMPORTED_MODULE_1__.showPriceWithCurrency)(item.product_price)
+          })
+        }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
+          className: "flex flex-col",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", {
+            className: "text-my-neutral text-xs line-through",
+            children: (0,_UTULITIES_productFunction__WEBPACK_IMPORTED_MODULE_1__.showPriceWithCurrency)(item.product_price)
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", {
+            className: "text-accent-secondary text-sm",
+            children: (0,_UTULITIES_productFunction__WEBPACK_IMPORTED_MODULE_1__.showPriceWithCurrency)(item.product_active_price)
+          })]
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
+          className: "flex flex-row mt-1 text-my-neutral items-center text-sm md:gap-x-6 gap-x-3 ",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("span", {
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", {
+              className: "inline sm:hidden",
+              children: "Qty: "
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", {
+              className: "hidden sm:inline",
+              children: "Quantity: "
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", {
+              className: "font-medium text-accent",
+              children: " ".concat(item.quantity)
+            })]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
+            className: "gap-x-3 md:gap-x-6 hidden group-hover:flex items-center",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_Icon__WEBPACK_IMPORTED_MODULE_2__["default"], {
+              name: "minus-sm",
+              className: "w-5 h-5 cursor-pointer text-my-neutral/70 hover:text-my-neutral duration-500",
+              onClick: function onClick() {
+                return updateItemCart(item.id, _UTULITIES_const__WEBPACK_IMPORTED_MODULE_3__.OPERATIONS.minus);
+              }
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_Icon__WEBPACK_IMPORTED_MODULE_2__["default"], {
+              name: "plus-sm",
+              className: "w-5 h-5 cursor-pointer text-my-neutral/70 hover:text-my-neutral duration-500",
+              onClick: function onClick() {
+                return updateItemCart(item.id, _UTULITIES_const__WEBPACK_IMPORTED_MODULE_3__.OPERATIONS.add);
+              }
+            })]
+          })]
+        })]
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
+        className: "ml-auto",
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", {
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_Icon__WEBPACK_IMPORTED_MODULE_2__["default"], {
+            name: "x-circle",
+            className: "w-6 h-6 text-accent-secondary/60 group-hover:text-accent-secondary duration-500 cursor-pointer",
+            onClick: function onClick() {
+              return removeFromCart(item.id);
+            }
+          })
+        })
+      })]
+    })
+  });
+};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (CartItem);
+
+/***/ }),
+
+/***/ "./resources/js/Components/Cart/CartItemList.jsx":
+/*!*******************************************************!*\
+  !*** ./resources/js/Components/Cart/CartItemList.jsx ***!
+  \*******************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _CartItem__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./CartItem */ "./resources/js/Components/Cart/CartItem.jsx");
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 var _excluded = ["items"];
 
@@ -32,51 +139,27 @@ function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) r
 
 
 
-var CartTable = function CartTable(_ref) {
+var CartItemList = function CartItemList(_ref) {
   var items = _ref.items,
       props = _objectWithoutProperties(_ref, _excluded);
 
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("table", {
-    className: "w-full text-left text-gray-500",
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("thead", {
-      className: "text-xs text-white uppercase bg-secondary",
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("tr", {
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("th", {
-          scope: "col",
-          className: "py-3 px-5 max-w-[280px] min-w-[200px] sticky top-0 z-10  bg-secondary",
-          children: "Name"
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("th", {
-          scope: "col",
-          className: "py-3 px-5 sticky top-0 z-10  bg-secondary",
-          children: "Price U"
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("th", {
-          scope: "col",
-          className: "py-3 px-5 text-center sticky top-0 z-10  bg-secondary",
-          children: "Quantity"
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("th", {
-          scope: "col",
-          className: "py-3 px-5 sticky top-0 z-10  bg-secondary",
-          children: "Action"
-        })]
-      })
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("tbody", {
-      children: items.map(function (item) {
-        return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_CartTableItem__WEBPACK_IMPORTED_MODULE_1__["default"], _objectSpread({
-          item: item
-        }, props), item.id);
-      })
-    })]
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.Fragment, {
+    children: items.map(function (item) {
+      return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_CartItem__WEBPACK_IMPORTED_MODULE_1__["default"], _objectSpread({
+        item: item
+      }, props), item.id);
+    })
   });
 };
 
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (CartTable);
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (CartItemList);
 
 /***/ }),
 
-/***/ "./resources/js/Components/Cart/CartTableItem.jsx":
-/*!********************************************************!*\
-  !*** ./resources/js/Components/Cart/CartTableItem.jsx ***!
-  \********************************************************/
+/***/ "./resources/js/Components/Cart/CartSummary.jsx":
+/*!******************************************************!*\
+  !*** ./resources/js/Components/Cart/CartSummary.jsx ***!
+  \******************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -86,74 +169,417 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _UTULITIES_compareFunction__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../UTULITIES/compareFunction */ "./resources/js/UTULITIES/compareFunction.js");
+/* harmony import */ var _UTULITIES_productFunction__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../UTULITIES/productFunction */ "./resources/js/UTULITIES/productFunction.js");
 /* harmony import */ var _Icon__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../Icon */ "./resources/js/Components/Icon.jsx");
-/* harmony import */ var _UTULITIES_const__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../UTULITIES/const */ "./resources/js/UTULITIES/const.js");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 
 
 
 
 
 
+var SummaryLabel = function SummaryLabel(_ref) {
+  var icon = _ref.icon,
+      text = _ref.text,
+      children = _ref.children;
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+    className: "flex gap-x-2 items-center",
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_Icon__WEBPACK_IMPORTED_MODULE_2__["default"], {
+      name: icon,
+      className: "w-5 h-5 text-accent-secondary/75"
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("span", {
+      className: "hidden xs:inline-flex text-my-neutral first-letter:uppercase",
+      children: [text, "\xA0", children && children]
+    })]
+  });
+};
 
-var CartTableItem = function CartTableItem(_ref) {
-  var item = _ref.item,
-      removeFromCart = _ref.removeFromCart,
-      updateItemCart = _ref.updateItemCart;
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("tr", {
-    className: "bg-white border-b border-gray-300 text-[0.8em]",
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("td", {
-      className: "py-1.5 px-5 font-semibold text-primary max-w-[280px] min-w-[200px]",
-      children: item.product_name
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("td", {
-      className: "py-1.5 px-5",
-      children: item.product_price
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("td", {
-      className: "py-1.5 px-5 td-quantity",
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
-        className: " flex items-center gap-x-2 justify-center",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
-          className: "w-8 flex justify-center items-center",
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_Icon__WEBPACK_IMPORTED_MODULE_2__["default"], {
-            name: "minus-circle",
-            className: "td-icon w-4 h-4 cursor-pointer duration-300",
-            onClick: function onClick() {
-              return updateItemCart(item.id, _UTULITIES_const__WEBPACK_IMPORTED_MODULE_3__.OPERATIONS.minus);
-            }
+var CartSummary = function CartSummary(_ref2) {
+  var total = _ref2.total,
+      _ref2$taxPercent = _ref2.taxPercent,
+      taxPercent = _ref2$taxPercent === void 0 ? 20 : _ref2$taxPercent,
+      _ref2$discount = _ref2.discount,
+      discount = _ref2$discount === void 0 ? 0 : _ref2$discount,
+      _ref2$shippingCost = _ref2.shippingCost,
+      shippingCost = _ref2$shippingCost === void 0 ? 0 : _ref2$shippingCost;
+  var priceTax = total * taxPercent / 100;
+  var priceWithoutTax = total - priceTax;
+  var priceTotal = total + shippingCost - discount;
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("aside", {
+    className: "lg:w-1/3 w-full bg-white p-4 rounded shadow-xl",
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("h1", {
+      className: "text-accent-secondary text-base font-medium pb-2 border-b border-accent/20",
+      children: "Cart summary"
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("main", {
+      className: "py-3 border-b border-accent/20 text-sm flex flex-col gap-y-4 md:gap-y-6",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+        className: "flex justify-between items-center gap-x-3",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(SummaryLabel, {
+          text: "Price",
+          icon: "banknotes"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("span", {
+          className: "text-secondary font-medium",
+          children: (0,_UTULITIES_productFunction__WEBPACK_IMPORTED_MODULE_1__.showPriceWithCurrency)(priceWithoutTax)
+        })]
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+        className: "flex justify-between items-center gap-x-3",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(SummaryLabel, {
+          text: "VAT",
+          icon: "receipt-tax",
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("span", {
+            className: "font-medium",
+            children: " (".concat(taxPercent, "%)")
           })
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", {
-          className: "flex w-8 justify-center text-center font-medium text-secondary",
-          children: item.quantity
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
-          className: "w-8 flex justify-center items-center",
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_Icon__WEBPACK_IMPORTED_MODULE_2__["default"], {
-            name: "plus-circle",
-            className: "td-icon w-4 h-4 cursor-pointer",
-            onClick: function onClick() {
-              return updateItemCart(item.id, _UTULITIES_const__WEBPACK_IMPORTED_MODULE_3__.OPERATIONS.add);
-            }
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("span", {
+          className: "text-secondary font-medium",
+          children: (0,_UTULITIES_productFunction__WEBPACK_IMPORTED_MODULE_1__.showPriceWithCurrency)(priceTax)
+        })]
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+        className: "flex justify-between items-center gap-x-3",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(SummaryLabel, {
+          text: "Discount",
+          icon: "gift"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("span", {
+          className: "text-secondary font-medium",
+          children: discount ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("span", {
+            className: "text-accent-secondary/75",
+            children: "showPriceWithCurrency(discount)"
+          }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("span", {
+            className: "font-bold",
+            children: "~"
           })
         })]
-      })
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("td", {
-      className: "py-1.5 px-5",
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("button", {
-        className: "flex items-center gap-x-1 font-light text-rose-500",
-        onClick: function onClick() {
-          return removeFromCart(item.id);
-        },
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", {
-          children: "Remove"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+        className: "flex justify-between items-center gap-x-3",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(SummaryLabel, {
+          text: "Shipping cost",
+          icon: "truck"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("span", {
+          className: "text-secondary font-medium",
+          children: shippingCost ? (0,_UTULITIES_productFunction__WEBPACK_IMPORTED_MODULE_1__.showPriceWithCurrency)(shippingCost) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("span", {
+            className: "font-bold uppercase",
+            children: "free"
+          })
+        })]
+      })]
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("footer", {
+      className: "flex justify-between items-center mt-3",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("span", {
+        className: "uppercase font-medium text-accent-secondary text-sm",
+        children: "Total"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("span", {
+        className: "font-bold text-sm text-accent-secondary",
+        children: (0,_UTULITIES_productFunction__WEBPACK_IMPORTED_MODULE_1__.showPriceWithCurrency)(priceTotal)
+      })]
+    })]
+  });
+};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (CartSummary);
+
+/***/ }),
+
+/***/ "./resources/js/Components/Cart/DestinationPaymentSection.jsx":
+/*!********************************************************************!*\
+  !*** ./resources/js/Components/Cart/DestinationPaymentSection.jsx ***!
+  \********************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _FormAndButton_Input__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../FormAndButton/Input */ "./resources/js/Components/FormAndButton/Input.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
+
+
+
+
+
+var DestinationPaymentSection = function DestinationPaymentSection(_ref) {
+  var userInfo = _ref.userInfo,
+      setUserInfo = _ref.setUserInfo;
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.Fragment, {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+      className: "flex gap-x-2",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_FormAndButton_Input__WEBPACK_IMPORTED_MODULE_1__.TextInput, {
+        name: "firstname",
+        type: "text",
+        value: userInfo.firstname,
+        onChange: setUserInfo,
+        placeholder: "Firstname",
+        className: "flex-1",
+        required: true
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_FormAndButton_Input__WEBPACK_IMPORTED_MODULE_1__.TextInput, {
+        name: "lastname",
+        type: "text",
+        value: userInfo.lastname,
+        onChange: setUserInfo,
+        placeholder: "Lastname",
+        className: "flex-1"
+      })]
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+      className: "flex gap-x-2",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_FormAndButton_Input__WEBPACK_IMPORTED_MODULE_1__.TextInput, {
+        name: "address",
+        type: "text",
+        value: userInfo.address,
+        onChange: setUserInfo,
+        placeholder: "Address",
+        className: "flex-1 w-2/3",
+        required: true
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_FormAndButton_Input__WEBPACK_IMPORTED_MODULE_1__.TextInput, {
+        name: "postal_code",
+        type: "text",
+        value: userInfo.postal_code,
+        onChange: setUserInfo,
+        placeholder: "Postal code",
+        className: "w-1/3"
+      })]
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+      className: "flex gap-x-2",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_FormAndButton_Input__WEBPACK_IMPORTED_MODULE_1__.TextInput, {
+        name: "city",
+        type: "text",
+        value: userInfo.city,
+        onChange: setUserInfo,
+        placeholder: "City",
+        className: "flex-1",
+        required: true
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_FormAndButton_Input__WEBPACK_IMPORTED_MODULE_1__.TextInput, {
+        name: "country",
+        type: "text",
+        value: userInfo.country,
+        onChange: setUserInfo,
+        placeholder: "State|Country",
+        className: "flex-1",
+        required: true
+      })]
+    })]
+  });
+};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (DestinationPaymentSection);
+
+/***/ }),
+
+/***/ "./resources/js/Components/Cart/MakeOrderSection.jsx":
+/*!***********************************************************!*\
+  !*** ./resources/js/Components/Cart/MakeOrderSection.jsx ***!
+  \***********************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @inertiajs/inertia-react */ "./node_modules/@inertiajs/inertia-react/dist/index.js");
+/* harmony import */ var _FormAndButton_Button__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../FormAndButton/Button */ "./resources/js/Components/FormAndButton/Button.js");
+/* harmony import */ var _Portal_Modal__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../Portal/Modal */ "./resources/js/Components/Portal/Modal.jsx");
+/* harmony import */ var _FormAndButton_Input__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../FormAndButton/Input */ "./resources/js/Components/FormAndButton/Input.js");
+/* harmony import */ var _HOOKS_useModal__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../HOOKS/useModal */ "./resources/js/Components/HOOKS/useModal.js");
+/* harmony import */ var _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @inertiajs/inertia */ "./node_modules/@inertiajs/inertia/dist/index.js");
+/* harmony import */ var _HOOKS_useFormField__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../HOOKS/useFormField */ "./resources/js/Components/HOOKS/useFormField.js");
+/* harmony import */ var _UserPaymentSection__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./UserPaymentSection */ "./resources/js/Components/Cart/UserPaymentSection.jsx");
+/* harmony import */ var _DestinationPaymentSection__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./DestinationPaymentSection */ "./resources/js/Components/Cart/DestinationPaymentSection.jsx");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]; if (_i == null) return; var _arr = []; var _n = true; var _d = false; var _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+var MakeOrderSection = function MakeOrderSection() {
+  var _usePage$props = (0,_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.usePage)().props,
+      user_payments = _usePage$props.user_payments,
+      errors = _usePage$props.errors;
+
+  var _useModal = (0,_HOOKS_useModal__WEBPACK_IMPORTED_MODULE_5__.useModal)(false),
+      _useModal2 = _slicedToArray(_useModal, 3),
+      showModal = _useModal2[0],
+      openModal = _useModal2[1],
+      closeModal = _useModal2[2];
+
+  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false),
+      _useState2 = _slicedToArray(_useState, 2),
+      showError = _useState2[0],
+      setShowError = _useState2[1];
+
+  var _useState3 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(0),
+      _useState4 = _slicedToArray(_useState3, 2),
+      activeUserPayement = _useState4[0],
+      setActiveUserPayement = _useState4[1];
+
+  var _useFormInput = (0,_HOOKS_useFormField__WEBPACK_IMPORTED_MODULE_7__.useFormInput)({
+    'password': ''
+  }),
+      _useFormInput2 = _slicedToArray(_useFormInput, 2),
+      fields = _useFormInput2[0],
+      handleFieldChange = _useFormInput2[1];
+
+  var _useFormInput3 = (0,_HOOKS_useFormField__WEBPACK_IMPORTED_MODULE_7__.useFormInput)({
+    'firstname': '',
+    'lastname': '',
+    'phone': '',
+    'address': '',
+    'city': '',
+    'country': '',
+    'postal_code': ''
+  }),
+      _useFormInput4 = _slicedToArray(_useFormInput3, 2),
+      userInfo = _useFormInput4[0],
+      setUserInfo = _useFormInput4[1];
+
+  var handleSelectPayment = function handleSelectPayment(id) {
+    setActiveUserPayement(id);
+  };
+
+  var confirmOrder = function confirmOrder() {
+    openModal();
+  };
+
+  var hanldeCloseModal = function hanldeCloseModal() {
+    setShowError(false);
+    closeModal();
+  };
+
+  var createOrder = function createOrder(event) {
+    event.preventDefault();
+    _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_6__.Inertia.post(route('user.order.create'), fields, {
+      onSuccess: function onSuccess() {
+        closeModal();
+      },
+      onError: function onError() {
+        setShowError(true);
+        fields.password = '';
+      }
+    });
+  };
+
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.Fragment, {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsxs)("div", {
+      className: "border p-3 shadow-sm bg-neutral-50",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)("h1", {
+        className: "font-medium text-primary uppercase text-center mb-2",
+        children: "Make your order"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsxs)("main", {
+        className: "flex flex-col md:flex-row lg:flex-col gap-x-6",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsxs)("div", {
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)("h1", {
+            className: "text-accent text-sm mt-3",
+            children: "Please select a payement method"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)("hr", {
+            className: "w-1/2 mb-3 mt-1"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)("div", {
+            className: "my-2",
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(_UserPaymentSection__WEBPACK_IMPORTED_MODULE_8__["default"], {
+              userPayements: user_payments === null || user_payments === void 0 ? void 0 : user_payments.data,
+              activeUserPayement: activeUserPayement,
+              handleSelectPayment: handleSelectPayment
+            })
+          })]
+        }), activeUserPayement !== 0 && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsxs)("div", {
+          className: "flex-1",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)("h1", {
+            className: "text-accent text-sm mt-3",
+            children: "Order destination"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)("hr", {
+            className: "w-1/2 mb-3 mt-1"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)("div", {
+            className: "flex flex-col gap-y-2",
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(_DestinationPaymentSection__WEBPACK_IMPORTED_MODULE_9__["default"], {
+              userInfo: userInfo,
+              setUserInfo: setUserInfo
+            })
+          })]
+        })]
+      }), activeUserPayement !== 0 && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)("div", {
+        className: "flex justify-end mt-3",
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(_FormAndButton_Button__WEBPACK_IMPORTED_MODULE_2__.SimpleButton, {
+          className: "bg-accent hover:bg-accent-secondary text-white",
+          onClick: confirmOrder,
+          children: "Continue"
         })
+      })]
+    }), showModal && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(_Portal_Modal__WEBPACK_IMPORTED_MODULE_3__["default"], {
+      onClose: hanldeCloseModal,
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsxs)("div", {
+        className: "bg-white border shadow p-4",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)("header", {
+          className: "mb-2 pb-2 border-b",
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)("h1", {
+            className: "text-xl font-medium",
+            children: "Confirm order"
+          })
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsxs)("main", {
+          className: "text-sm",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)("p", {
+            className: "text-my-neutral",
+            children: "Before processing, please enter your password"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)("form", {
+            onSubmit: createOrder,
+            id: "confirmform",
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(_FormAndButton_Input__WEBPACK_IMPORTED_MODULE_4__.TextInput, {
+              className: "mt-5",
+              name: "password",
+              type: "password",
+              errors: errors.password,
+              value: fields.password,
+              showError: showError,
+              onChange: handleFieldChange,
+              required: true
+            })
+          })]
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsxs)("footer", {
+          className: "px-4 mt-4 flex justify-end items-center gap-3",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(_FormAndButton_Button__WEBPACK_IMPORTED_MODULE_2__.SimpleButton, {
+            className: "bg-gray-500 text-white hover:bg-my-neutral duration-500 font-light rounded-sm",
+            icon: "x-close",
+            iconClass: "w-4 h-4",
+            type: "reset",
+            onClick: hanldeCloseModal,
+            children: "Cancel"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(_FormAndButton_Button__WEBPACK_IMPORTED_MODULE_2__.LoadingButton, {
+            className: "bg-accent text-white hover:bg-accent-secondary duration-500 font-light rounded-sm",
+            icon: "simple-check",
+            type: "submit",
+            form: "confirmform",
+            children: "Continue"
+          })]
+        })]
       })
     })]
   });
 };
 
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (/*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().memo(CartTableItem, function (prev, next) {
-  return (0,_UTULITIES_compareFunction__WEBPACK_IMPORTED_MODULE_1__.deepEqual)(prev.item, next.item);
-}));
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (MakeOrderSection);
 
 /***/ }),
 
@@ -187,7 +613,7 @@ var UserPaymentItem = function UserPaymentItem(_ref) {
 
   var payment = _ref.payment,
       active = _ref.active,
-      selectPayement = _ref.selectPayement;
+      hanldeSelectPayement = _ref.hanldeSelectPayement;
   var divClass = classnames__WEBPACK_IMPORTED_MODULE_1___default()('flex bg-white rounded-sm flex-row flex-nowrap border border items-center text-sm gap-x-4 my-1  px-3 py-1.5 duration-500', {
     'border-accent': active
   });
@@ -197,7 +623,9 @@ var UserPaymentItem = function UserPaymentItem(_ref) {
       type: "radio",
       name: "user_payement",
       value: payment.id,
-      onChange: selectPayement
+      onChange: function onChange() {
+        return hanldeSelectPayement(parseInt(payment.id, 10));
+      }
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_Icon__WEBPACK_IMPORTED_MODULE_3__["default"], {
       name: "credit-card",
       className: "w-6 h-6 text-gray-500"
@@ -206,7 +634,7 @@ var UserPaymentItem = function UserPaymentItem(_ref) {
       children: [(_payment$provider = payment.provider) !== null && _payment$provider !== void 0 && _payment$provider.name ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("h1", {
         children: payment.provider.name
       }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("h1", {
-        children: "TOjo"
+        children: "Payement method"
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", {
         className: "text-xs  text-gray-400",
         children: (0,_UTULITIES_userFunction__WEBPACK_IMPORTED_MODULE_2__.replaceLastFour)(payment.account)
@@ -232,27 +660,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @inertiajs/inertia-react */ "./node_modules/@inertiajs/inertia-react/dist/index.js");
+/* harmony import */ var _Icon__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../Icon */ "./resources/js/Components/Icon.jsx");
 /* harmony import */ var _UserPaymentItem__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./UserPaymentItem */ "./resources/js/Components/Cart/UserPaymentItem.jsx");
-/* harmony import */ var _Icon__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../Icon */ "./resources/js/Components/Icon.jsx");
-/* harmony import */ var _FormAndButton_Button__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../FormAndButton/Button */ "./resources/js/Components/FormAndButton/Button.js");
-/* harmony import */ var _Portal_Modal__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../Portal/Modal */ "./resources/js/Components/Portal/Modal.jsx");
-/* harmony import */ var _FormAndButton_Input__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../FormAndButton/Input */ "./resources/js/Components/FormAndButton/Input.js");
-/* harmony import */ var _HOOKS_useModal__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../HOOKS/useModal */ "./resources/js/Components/HOOKS/useModal.js");
-/* harmony import */ var _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @inertiajs/inertia */ "./node_modules/@inertiajs/inertia/dist/index.js");
-/* harmony import */ var _HOOKS_useFormField__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../HOOKS/useFormField */ "./resources/js/Components/HOOKS/useFormField.js");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
-function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
-
-function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
-
-function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
-
-function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
-
-function _iterableToArrayLimit(arr, i) { var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]; if (_i == null) return; var _arr = []; var _n = true; var _d = false; var _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
-
-function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 
 
 
@@ -260,149 +670,23 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 
-
-
-
-
-
-
-
-
-var UserPaymentSection = function UserPaymentSection() {
-  var _usePage$props = (0,_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.usePage)().props,
-      user_payments = _usePage$props.user_payments,
-      errors = _usePage$props.errors;
-
-  var _useModal = (0,_HOOKS_useModal__WEBPACK_IMPORTED_MODULE_7__.useModal)(false),
-      _useModal2 = _slicedToArray(_useModal, 3),
-      showModal = _useModal2[0],
-      openModal = _useModal2[1],
-      closeModal = _useModal2[2];
-
-  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false),
-      _useState2 = _slicedToArray(_useState, 2),
-      showError = _useState2[0],
-      setShowError = _useState2[1];
-
-  var _useState3 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(0),
-      _useState4 = _slicedToArray(_useState3, 2),
-      userPayement = _useState4[0],
-      setUserPayement = _useState4[1];
-
-  var _useFormInput = (0,_HOOKS_useFormField__WEBPACK_IMPORTED_MODULE_9__.useFormInput)({
-    password: ''
-  }),
-      _useFormInput2 = _slicedToArray(_useFormInput, 2),
-      fields = _useFormInput2[0],
-      handleFieldChange = _useFormInput2[1];
-
-  var handleSelectPayment = function handleSelectPayment(event) {
-    setUserPayement(parseInt(event.target.value, 10));
-  };
-
-  var confirmOrder = function confirmOrder() {
-    openModal();
-  };
-
-  var hanldeCloseModal = function hanldeCloseModal() {
-    setShowError(false);
-    closeModal();
-  };
-
-  var createOrder = function createOrder(event) {
-    event.preventDefault();
-    _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_8__.Inertia.post(route('user.order.create'), fields, {
-      onSuccess: function onSuccess() {
-        closeModal();
-      },
-      onError: function onError() {
-        setShowError(true);
-        fields.password = '';
-      }
-    });
-  };
-
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.Fragment, {
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsxs)("div", {
-      className: "border p-3 shadow-sm bg-neutral-50",
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)("h1", {
-        className: "font-medium text-primary uppercase text-sm text-center mb-2",
-        children: "Make your order"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)("hr", {
-        className: "w-1/2 m-auto"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)("p", {
-        className: "text-sm text-center text-secondary py-3",
-        children: "Please select a payement method"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsxs)("div", {
-        className: "my-2",
-        children: [user_payments.data.length > 0 && user_payments.data.map(function (payment) {
-          return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(_UserPaymentItem__WEBPACK_IMPORTED_MODULE_2__["default"], {
-            payment: payment,
-            selectPayement: handleSelectPayment,
-            active: userPayement === payment.id
-          }, payment.id);
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsxs)("button", {
-          className: "border bg-white text-gray-500 flex font-light justify-center items-center rounded-sm px-3 py-1.5 text-sm",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(_Icon__WEBPACK_IMPORTED_MODULE_3__["default"], {
-            name: "plus-circle",
-            className: "mr-2 w-4 h-4"
-          }), "Add payment method"]
-        })]
-      }), userPayement !== 0 && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)("div", {
-        className: "flex justify-end",
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(_FormAndButton_Button__WEBPACK_IMPORTED_MODULE_4__.SimpleButton, {
-          className: "bg-accent hover:bg-accent-secondary text-white",
-          onClick: confirmOrder,
-          children: "Continue"
-        })
-      })]
-    }), showModal && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(_Portal_Modal__WEBPACK_IMPORTED_MODULE_5__["default"], {
-      onClose: hanldeCloseModal,
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsxs)("div", {
-        className: "bg-white border shadow p-4",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)("header", {
-          className: "mb-2 pb-2 border-b",
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)("h1", {
-            className: "text-xl font-medium",
-            children: "Confirm order"
-          })
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsxs)("main", {
-          className: "text-sm",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)("p", {
-            className: "text-neutral-600",
-            children: "Before processing, please enter your password"
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)("form", {
-            onSubmit: createOrder,
-            id: "confirmform",
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(_FormAndButton_Input__WEBPACK_IMPORTED_MODULE_6__.TextInput, {
-              className: "mt-5",
-              name: "password",
-              type: "password",
-              errors: errors.password,
-              value: fields.password,
-              showError: showError,
-              onChange: handleFieldChange,
-              required: true
-            })
-          })]
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsxs)("footer", {
-          className: "px-4 mt-4 flex justify-end items-center gap-3",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(_FormAndButton_Button__WEBPACK_IMPORTED_MODULE_4__.SimpleButton, {
-            className: "bg-gray-500 text-white hover:bg-neutral-500 duration-500 font-light rounded-sm",
-            icon: "x-close",
-            iconClass: "w-4 h-4",
-            type: "reset",
-            onClick: hanldeCloseModal,
-            children: "Cancel"
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(_FormAndButton_Button__WEBPACK_IMPORTED_MODULE_4__.LoadingButton, {
-            className: "bg-accent text-white hover:bg-accent-secondary duration-500 font-light rounded-sm",
-            icon: "simple-check",
-            type: "submit",
-            form: "confirmform",
-            children: "Continue"
-          })]
-        })]
-      })
+var UserPaymentSection = function UserPaymentSection(_ref) {
+  var userPayements = _ref.userPayements,
+      handleSelectPayment = _ref.handleSelectPayment,
+      activeUserPayement = _ref.activeUserPayement;
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.Fragment, {
+    children: [userPayements.length > 0 && userPayements.map(function (payment) {
+      return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_UserPaymentItem__WEBPACK_IMPORTED_MODULE_2__["default"], {
+        payment: payment,
+        hanldeSelectPayement: handleSelectPayment,
+        active: activeUserPayement === payment.id
+      }, payment.id);
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("button", {
+      className: "border bg-white text-gray-500 flex font-light justify-center items-center rounded-sm px-3 py-1.5 text-sm",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_Icon__WEBPACK_IMPORTED_MODULE_1__["default"], {
+        name: "plus-circle",
+        className: "mr-2 w-4 h-4"
+      }), "Add payment method"]
     })]
   });
 };
@@ -532,7 +816,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var classnames__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! classnames */ "./node_modules/classnames/index.js");
 /* harmony import */ var classnames__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(classnames__WEBPACK_IMPORTED_MODULE_3__);
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
-var _excluded = ["label", "name", "className", "errors", "showError", "value"],
+var _excluded = ["label", "name", "className", "errors", "placeholder", "showError", "value"],
     _excluded2 = ["label", "name", "className", "errors", "value"];
 
 function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
@@ -570,6 +854,7 @@ var TextInput = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().memo(f
       className = _ref.className,
       _ref$errors = _ref.errors,
       errors = _ref$errors === void 0 ? [] : _ref$errors,
+      placeholder = _ref.placeholder,
       _ref$showError = _ref.showError,
       showError = _ref$showError === void 0 ? true : _ref$showError,
       value = _ref.value,
@@ -589,7 +874,8 @@ var TextInput = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().memo(f
       name: name,
       value: value
     }, props), {}, {
-      className: inputClass // className={`form-input ${errors.length ? "error" : ""}`}
+      className: inputClass,
+      placeholder: placeholder // className={`form-input ${errors.length ? "error" : ""}`}
 
     })), showError && errors && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
       className: "form-error",
@@ -647,10 +933,10 @@ var SearchForm = function SearchForm(_ref3) {
     className: "w-full",
     onSubmit: handleSubmit,
     children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
-      className: "flex bg-gray-100 p-2 rounded-sm items-center overflow-hidden",
+      className: "flex border border-gray-300 rounded p-2 items-center overflow-hidden",
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("label", {
         htmlFor: "search",
-        className: "text-secondary",
+        className: "text-my-neutral",
         children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_Icon__WEBPACK_IMPORTED_MODULE_1__["default"], {
           name: "search",
           className: "w-5 h-5 fill-current"
@@ -661,7 +947,7 @@ var SearchForm = function SearchForm(_ref3) {
         name: "search",
         value: searchText.search,
         onChange: handleSearchChange,
-        className: "text-neutral-700 placeholder:font-light focus:outline-none ml-2 text-sm bg-gray-100 w-full",
+        className: "text-dark placeholder:font-light focus:outline-none ml-2 text-sm bg-transparent w-full",
         placeholder: children
       })]
     })
@@ -715,6 +1001,190 @@ var FileInput = function FileInput(_ref4) {
     })]
   });
 };
+
+/***/ }),
+
+/***/ "./resources/js/Components/HOC/Admin/DeleteButtonWithConfirmation.jsx":
+/*!****************************************************************************!*\
+  !*** ./resources/js/Components/HOC/Admin/DeleteButtonWithConfirmation.jsx ***!
+  \****************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _WithConfirmDeletion__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../WithConfirmDeletion */ "./resources/js/Components/HOC/WithConfirmDeletion.js");
+/* harmony import */ var _FormAndButton_Button__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../FormAndButton/Button */ "./resources/js/Components/FormAndButton/Button.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
+
+
+
+
+var DeleteButtonWithConfirmation = function DeleteButtonWithConfirmation(_ref) {
+  var openConfirmation = _ref.openConfirmation,
+      _ref$text = _ref.text,
+      text = _ref$text === void 0 ? 'Delete' : _ref$text;
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_FormAndButton_Button__WEBPACK_IMPORTED_MODULE_2__.SimpleButton, {
+    className: "bg-rose-500 text-white hover:bg-red-500  rounded-sm",
+    icon: "trash",
+    onClick: openConfirmation,
+    children: text
+  });
+};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ((0,_WithConfirmDeletion__WEBPACK_IMPORTED_MODULE_1__["default"])(DeleteButtonWithConfirmation));
+
+/***/ }),
+
+/***/ "./resources/js/Components/HOC/WithConfirmDeletion.js":
+/*!************************************************************!*\
+  !*** ./resources/js/Components/HOC/WithConfirmDeletion.js ***!
+  \************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @inertiajs/inertia */ "./node_modules/@inertiajs/inertia/dist/index.js");
+/* harmony import */ var _Portal_Modal__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../Portal/Modal */ "./resources/js/Components/Portal/Modal.jsx");
+/* harmony import */ var _FormAndButton_Button__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../FormAndButton/Button */ "./resources/js/Components/FormAndButton/Button.js");
+/* harmony import */ var react_hot_toast__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react-hot-toast */ "./node_modules/react-hot-toast/dist/index.mjs");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (obj) { return typeof obj; } : function (obj) { return obj && "function" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }, _typeof(obj); }
+
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); enumerableOnly && (symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; })), keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = null != arguments[i] ? arguments[i] : {}; i % 2 ? ownKeys(Object(source), !0).forEach(function (key) { _defineProperty(target, key, source[key]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)) : ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } return target; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); Object.defineProperty(Constructor, "prototype", { writable: false }); return Constructor; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); Object.defineProperty(subClass, "prototype", { writable: false }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf ? Object.setPrototypeOf.bind() : function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = _getPrototypeOf(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = _getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return _possibleConstructorReturn(this, result); }; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } else if (call !== void 0) { throw new TypeError("Derived constructors may only return object or undefined"); } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {})); return true; } catch (e) { return false; } }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf.bind() : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+
+
+
+
+
+
+
+
+
+var WithConfirmDeletion = function WithConfirmDeletion(WrappedComponent) {
+  return /*#__PURE__*/function (_Component) {
+    _inherits(_class2, _Component);
+
+    var _super = _createSuper(_class2);
+
+    function _class2(props) {
+      var _this;
+
+      _classCallCheck(this, _class2);
+
+      _this = _super.call(this, props);
+
+      _defineProperty(_assertThisInitialized(_this), "openModal", function () {
+        _this.setState({
+          showModal: true
+        });
+      });
+
+      _defineProperty(_assertThisInitialized(_this), "closeModal", function () {
+        _this.setState({
+          showModal: false
+        });
+      });
+
+      _defineProperty(_assertThisInitialized(_this), "deleteItem", function () {
+        _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_1__.Inertia["delete"](_this.props.url, {
+          onSuccess: function onSuccess() {
+            react_hot_toast__WEBPACK_IMPORTED_MODULE_4__.toast.success('Deleted successfully', {
+              id: _this.toast_id
+            });
+          },
+          onError: function onError() {
+            console.log('Deletion error');
+          }
+        });
+
+        _this.closeModal();
+      });
+
+      _this.state = {
+        showModal: false
+      };
+      _this.toast_id = 'toast_success_id';
+      return _this;
+    }
+
+    _createClass(_class2, [{
+      key: "render",
+      value: function render() {
+        return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.Fragment, {
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(WrappedComponent, _objectSpread({
+            openConfirmation: this.openModal
+          }, this.props)), this.state.showModal && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_Portal_Modal__WEBPACK_IMPORTED_MODULE_2__["default"], {
+            onClose: this.closeModal,
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
+              className: "bg-gray-100 rounded-sm",
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("header", {
+                className: "px-6 pt-4 pb-3 border-b",
+                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("h1", {
+                  className: "text-gray-600 text-sm font-medium",
+                  children: this.props.message
+                })
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("footer", {
+                className: "px-6 py-3 flex justify-end items-center gap-3",
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_FormAndButton_Button__WEBPACK_IMPORTED_MODULE_3__.SimpleButton, {
+                  className: "bg-gray-500 text-white hover:bg-my-neutral duration-500 font-light rounded-sm",
+                  icon: "x-close",
+                  iconClass: "w-4 h-4",
+                  onClick: this.closeModal,
+                  children: "Cancel"
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_FormAndButton_Button__WEBPACK_IMPORTED_MODULE_3__.SimpleButton, {
+                  className: "bg-rose-500 text-white hover:bg-red-500 duration-500 font-light rounded-sm",
+                  icon: "simple-check",
+                  onClick: this.deleteItem,
+                  children: "Continue"
+                })]
+              })]
+            })
+          })]
+        });
+      }
+    }]);
+
+    return _class2;
+  }(react__WEBPACK_IMPORTED_MODULE_0__.Component);
+};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (WithConfirmDeletion);
 
 /***/ }),
 
@@ -1108,21 +1578,6 @@ var Icon = function Icon(_ref) {
     }));
   }
 
-  if (name === 'x-close') {
-    return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("svg", _objectSpread(_objectSpread({
-      xmlns: "http://www.w3.org/2000/svg",
-      className: className,
-      viewBox: "0 0 20 20",
-      fill: "currentColor"
-    }, props), {}, {
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
-        fillRule: "evenodd",
-        d: "M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z",
-        clipRule: "evenodd"
-      })
-    }));
-  }
-
   if (name === 'plus-circle') {
     return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("svg", _objectSpread(_objectSpread({
       xmlns: "http://www.w3.org/2000/svg",
@@ -1208,7 +1663,7 @@ var Icon = function Icon(_ref) {
     }));
   }
 
-  if (name === 'offer') {
+  if (name === 'receipt-tax') {
     return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("svg", _objectSpread(_objectSpread({
       xmlns: "http://www.w3.org/2000/svg",
       className: className,
@@ -1520,6 +1975,193 @@ var Icon = function Icon(_ref) {
     }));
   }
 
+  if (name === 'lightning-bolt') {
+    return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("svg", _objectSpread(_objectSpread({
+      xmlns: "http://www.w3.org/2000/svg",
+      className: className,
+      fill: "none",
+      viewBox: "0 0 24 24",
+      stroke: "currentColor"
+    }, props), {}, {
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        strokeLinecap: "round",
+        strokeLinejoin: "round",
+        strokeWidth: 2,
+        d: "M13 10V3L4 14h7v7l9-11h-7z"
+      })
+    }));
+  }
+
+  if (name === 'color-swatch') {
+    return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("svg", _objectSpread(_objectSpread({
+      xmlns: "http://www.w3.org/2000/svg",
+      className: className,
+      fill: "none",
+      viewBox: "0 0 24 24",
+      stroke: "currentColor"
+    }, props), {}, {
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        strokeLinecap: "round",
+        strokeLinejoin: "round",
+        strokeWidth: 2,
+        d: "M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01"
+      })
+    }));
+  }
+
+  if (name === 'sparkles') {
+    return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("svg", _objectSpread(_objectSpread({
+      xmlns: "http://www.w3.org/2000/svg",
+      className: className,
+      fill: "none",
+      viewBox: "0 0 24 24",
+      stroke: "currentColor"
+    }, props), {}, {
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        strokeLinecap: "round",
+        strokeLinejoin: "round",
+        strokeWidth: 2,
+        d: "M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"
+      })
+    }));
+  }
+
+  if (name === 'plus') {
+    return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("svg", _objectSpread(_objectSpread({
+      xmlns: "http://www.w3.org/2000/svg",
+      className: className,
+      fill: "none",
+      viewBox: "0 0 24 24",
+      stroke: "currentColor"
+    }, props), {}, {
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        strokeLinecap: "round",
+        strokeLinejoin: "round",
+        strokeWidth: 2,
+        d: "M12 4v16m8-8H4"
+      })
+    }));
+  }
+
+  if (name === 'plus-sm') {
+    return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("svg", _objectSpread(_objectSpread({
+      xmlns: "http://www.w3.org/2000/svg",
+      className: className,
+      fill: "none",
+      viewBox: "0 0 24 24",
+      stroke: "currentColor"
+    }, props), {}, {
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        strokeLinecap: "round",
+        strokeLinejoin: "round",
+        strokeWidth: 2,
+        d: "M12 6v6m0 0v6m0-6h6m-6 0H6"
+      })
+    }));
+  }
+
+  if (name === 'minus') {
+    return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("svg", _objectSpread(_objectSpread({
+      xmlns: "http://www.w3.org/2000/svg",
+      className: className,
+      fill: "none",
+      viewBox: "0 0 24 24",
+      stroke: "currentColor"
+    }, props), {}, {
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        strokeLinecap: "round",
+        strokeLinejoin: "round",
+        strokeWidth: 2,
+        d: "M20 12H4"
+      })
+    }));
+  }
+
+  if (name === 'minus-sm') {
+    return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("svg", _objectSpread(_objectSpread({
+      xmlns: "http://www.w3.org/2000/svg",
+      className: className,
+      fill: "none",
+      viewBox: "0 0 24 24",
+      stroke: "currentColor"
+    }, props), {}, {
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        strokeLinecap: "round",
+        strokeLinejoin: "round",
+        strokeWidth: 2,
+        d: "M18 12H6"
+      })
+    }));
+  }
+
+  if (name === 'cash') {
+    return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("svg", _objectSpread(_objectSpread({
+      xmlns: "http://www.w3.org/2000/svg",
+      className: className,
+      fill: "none",
+      viewBox: "0 0 24 24",
+      stroke: "currentColor"
+    }, props), {}, {
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        strokeLinecap: "round",
+        strokeLinejoin: "round",
+        strokeWidth: 2,
+        d: "M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z"
+      })
+    }));
+  }
+
+  if (name === 'truck') {
+    return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("svg", _objectSpread(_objectSpread({
+      xmlns: "http://www.w3.org/2000/svg",
+      fill: "none",
+      viewBox: "0 0 24 24",
+      strokeWidth: 2,
+      stroke: "currentColor",
+      className: className
+    }, props), {}, {
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        strokeLinecap: "round",
+        strokeLinejoin: "round",
+        d: "M8.25 18.75a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m3 0h6m-9 0H3.375a1.125 1.125 0 01-1.125-1.125V14.25m17.25 4.5a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m3 0h1.125c.621 0 1.129-.504 1.09-1.124a17.902 17.902 0 00-3.213-9.193 2.056 2.056 0 00-1.58-.86H14.25M16.5 18.75h-2.25m0-11.177v-.958c0-.568-.422-1.048-.987-1.106a48.554 48.554 0 00-10.026 0 1.106 1.106 0 00-.987 1.106v7.635m12-6.677v6.677m0 4.5v-4.5m0 0h-12"
+      })
+    }));
+  }
+
+  if (name === 'banknotes') {
+    return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("svg", _objectSpread(_objectSpread({
+      xmlns: "http://www.w3.org/2000/svg",
+      fill: "none",
+      viewBox: "0 0 24 24",
+      strokeWidth: 2,
+      stroke: "currentColor",
+      className: className
+    }, props), {}, {
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        strokeLinecap: "round",
+        strokeLinejoin: "round",
+        d: "M2.25 18.75a60.07 60.07 0 0115.797 2.101c.727.198 1.453-.342 1.453-1.096V18.75M3.75 4.5v.75A.75.75 0 013 6h-.75m0 0v-.375c0-.621.504-1.125 1.125-1.125H20.25M2.25 6v9m18-10.5v.75c0 .414.336.75.75.75h.75m-1.5-1.5h.375c.621 0 1.125.504 1.125 1.125v9.75c0 .621-.504 1.125-1.125 1.125h-.375m1.5-1.5H21a.75.75 0 00-.75.75v.75m0 0H3.75m0 0h-.375a1.125 1.125 0 01-1.125-1.125V15m1.5 1.5v-.75A.75.75 0 003 15h-.75M15 10.5a3 3 0 11-6 0 3 3 0 016 0zm3 0h.008v.008H18V10.5zm-12 0h.008v.008H6V10.5z"
+      })
+    }));
+  }
+
+  if (name === 'gift') {
+    return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("svg", _objectSpread(_objectSpread({
+      xmlns: "http://www.w3.org/2000/svg",
+      className: className,
+      fill: "none",
+      viewBox: "0 0 24 24",
+      stroke: "currentColor"
+    }, props), {}, {
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        strokeLinecap: "round",
+        strokeLinejoin: "round",
+        strokeWidth: 2,
+        d: "M12 8v13m0-13V6a2 2 0 112 2h-2zm0 0V5.5A2.5 2.5 0 109.5 8H12zm-7 4h14M5 12a2 2 0 110-4h14a2 2 0 110 4M5 12v7a2 2 0 002 2h10a2 2 0 002-2v-7"
+      })
+    }));
+  }
+
   return null;
 };
 
@@ -1550,7 +2192,7 @@ var Loading = function Loading() {
     children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
       className: "p-12 flex justify-center items-center",
       children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("span", {
-        className: "text-sm font-neutral-300 font-light",
+        className: "text-sm text-neutral-300 font-light",
         children: "Loading ..."
       })
     })
@@ -1587,7 +2229,7 @@ var Logo = function Logo(_ref) {
     className: "px-4 font-semibold text-xl ".concat(textColor),
     children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.Link, {
       href: "/",
-      className: "flex items-center justify-center before:content-[\"\\2AD3\"] before:inline-block before:text-accent",
+      className: "flex items-center justify-center before:content-[\"\\2AD3\"] before:inline-block before:text-accent before:text-[2.2rem]",
       children: "E-commerce"
     })
   });
@@ -1669,25 +2311,25 @@ __webpack_require__.r(__webpack_exports__);
 
 var Footer = function Footer() {
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
-    className: "w-full bg-secondary px-4 py-3  text-white gap-x-6",
+    className: "w-full bg-secondary p-4  text-white gap-x-6",
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
-      className: "sm:flex sm:items-center sm:justify-between",
+      className: "flex items-center jusitfy-items-center sm:justify-between flex-col sm:flex-row gap-4",
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_Logo__WEBPACK_IMPORTED_MODULE_1__["default"], {
         textColor: "text-white"
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("ul", {
-        className: "flex flex-wrap justify-center items-center mb-6 text-sm font-light text-white sm:mb-0",
+        className: "flex flex-wrap justify-center items-center mb-3 gap-8 text-sm font-light text-white sm:mb-0",
         children: _navigationMenus__WEBPACK_IMPORTED_MODULE_4__.menus.length > 0 && _navigationMenus__WEBPACK_IMPORTED_MODULE_4__.menus.map(function (menu) {
           return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("li", {
             children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_MemoLink__WEBPACK_IMPORTED_MODULE_2__["default"], {
               href: menu.link,
-              className: "mr-4 hover:underline hover:text-gray-100 md:mr-6",
+              className: "hover:underline hover:text-gray-100",
               children: menu.text
             })
           }, menu.text);
         })
       })]
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
-      className: "mt-3 mb-2 border-b border-gray-50 border-opacity-20 sm:mx-auto"
+      className: "mt-4 mb-2 border-b border-gray-50 border-opacity-20 sm:mx-auto"
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
       className: "flex items-center justify-center gap-x-6 py-2",
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("span", {
@@ -1804,18 +2446,18 @@ var MiddleNavigationBar = function MiddleNavigationBar(_ref) {
   });
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.Fragment, {
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
-      className: "flex justify-between items-center pt-3 pb-1 text-sm mx-4",
+      className: "flex justify-between items-center text-sm mx-4",
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
-        className: "md:flex hidden lg:gap-x-8 gap-x-3 items-center",
+        className: "md:flex hidden gap-x-8 lg:gap-x-10 items-center",
         children: menuView
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
-        className: "max-w-md flex-1",
+        className: "max-w-sm lg:max-w-md flex-1",
         children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_FormAndButton_Input__WEBPACK_IMPORTED_MODULE_3__.SearchForm, {
           onSearch: hanldeSearch,
           children: "Find your product..."
         })
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
-        className: "md:hidden flex items-center cursor-pointer p-0.5 border rounded-sm ml-3 text-gray-200 border-gray-200",
+        className: "md:hidden flex items-center cursor-pointer p-1 border rounded-sm ml-3 text-my-neutral border-my-neutral",
         onClick: toggleMenu,
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("span", {
           className: "sr-only",
@@ -1859,14 +2501,14 @@ var MiddleNavigationMenuItem = function MiddleNavigationMenuItem(_ref) {
   var active = _ref.active,
       link = _ref.link,
       text = _ref.text;
-  var className = active ? 'text-accent ' : 'text-white';
+  var className = active ? 'text-accent ' : 'text-dark';
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("li", {
     className: "inline-block",
     children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_MemoLink__WEBPACK_IMPORTED_MODULE_1__["default"], {
       href: link,
       className: "flex items-center hover:text-accent ".concat(className),
       children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
-        className: "ml-1 text-sm font-light first-letter:uppercase",
+        className: "text-sm font-medium first-letter:uppercase",
         children: text
       })
     })
@@ -1912,8 +2554,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 
 
-
-var NavigationBar = function NavigationBar() {
+var NavigationBar = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().forwardRef(function (props, ref) {
   var url = (0,_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_2__.usePage)().url;
 
   var isMenuActive = function isMenuActive(link) {
@@ -1927,16 +2568,17 @@ var NavigationBar = function NavigationBar() {
   });
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.Fragment, {
     children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("nav", {
-      className: "bg-secondary px-3 py-3 text-white",
+      ref: ref,
+      className: "fixed top-0 inset-x-0 bg-light px-1 sm:px-3 py-3 text-dark shadow-indigo-100 shadow-md border-b z-20",
+      id: "navigation_bar",
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_TopNavigationBar__WEBPACK_IMPORTED_MODULE_1__["default"], {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("hr", {
-        className: "border-slate-400 border-t mx-4 mt-3"
+        className: "border-neutral-200 border-t m-4"
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_MiddleNavigationBar__WEBPACK_IMPORTED_MODULE_4__["default"], {
         menus: menuNavList
       })]
     })
   });
-};
-
+});
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (NavigationBar);
 
 /***/ }),
@@ -1972,11 +2614,11 @@ var TopNavigationBar = function TopNavigationBar(_ref) {
       totalCart = _ref$totalCart === void 0 ? 0 : _ref$totalCart;
   var auth = (0,_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_2__.usePage)().props.auth;
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
-    className: "flex justify-between items-center",
+    className: "flex flex-col md:flex-row justify-between items-center gap-y-3",
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_Logo__WEBPACK_IMPORTED_MODULE_1__["default"], {
-      textColor: "text-white"
+      textColor: "text-dark"
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
-      className: "flex gap-x-3 md:gap-x-8 mr-4",
+      className: "flex gap-x-3 md:gap-x-8 px-4",
       children: [auth.user ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_UserMenu__WEBPACK_IMPORTED_MODULE_4__["default"], {}) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_TopNavigationMenuItem__WEBPACK_IMPORTED_MODULE_3__["default"], {
         text: "Sign in",
         icon: "login",
@@ -2029,12 +2671,13 @@ var TopNavigationMenuItem = function TopNavigationMenuItem(_ref) {
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
     children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(_MemoLink__WEBPACK_IMPORTED_MODULE_1__["default"], {
       href: link,
-      className: "hover:text-neutral-200 flex items-center",
+      className: "hover:text-dark/80 flex items-center",
+      preserveState: true,
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_Icon__WEBPACK_IMPORTED_MODULE_2__["default"], {
         name: icon,
-        className: "w-5 h-5"
+        className: "w-6 h-6 sm:w-5 sm:h-5"
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("span", {
-        className: "hidden sm:inline-block ml-2 text-sm font-semibold",
+        className: "hidden sm:inline-block ml-2 text-sm font-medium",
         children: text
       })]
     })
@@ -2106,14 +2749,14 @@ var UserMenu = function UserMenu() {
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
         className: "w-5 h-5 overflow-hidden rounded bg-gray-200 mr-1"
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("span", {
-        className: "font-semibold hover:text-orange-100",
+        className: "font-semibold hover:text-dark/80 duration-500",
         children: (0,_UTULITIES_userFunction__WEBPACK_IMPORTED_MODULE_3__.getUsernameInEmail)(auth.user.data.email)
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_Icon__WEBPACK_IMPORTED_MODULE_2__["default"], {
         name: "chevron-down",
-        className: "w-4 h-4"
+        className: "w-5 h-5"
       })]
     }) : '', /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
-      className: "absolute top-0 right-0 left-auto z-30 py-1 mt-8 text-sm whitespace-nowrap bg-neutral-100 rounded shadow-xl text-neutral-700 ",
+      className: "absolute top-0 right-0 left-auto z-40 py-1 mt-8 text-sm whitespace-nowrap bg-light rounded shadow-xl text-secondary",
       children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
         className: "min-w-[150px] ".concat(menuOpened ? '' : 'hidden'),
         children: _userMenuList__WEBPACK_IMPORTED_MODULE_4__.USER_MENU_LIST.map(function (menu) {
@@ -2186,7 +2829,7 @@ var UserMenuItem = function UserMenuItem(_ref) {
       props = _objectWithoutProperties(_ref, _excluded);
 
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(_MemoLink__WEBPACK_IMPORTED_MODULE_1__["default"], _objectSpread(_objectSpread({
-    className: "px-3 py-2.5 w-full flex items-center gap-x-6 hover:bg-secondary hover:text-white duration-300",
+    className: "px-3 py-2.5 w-full flex items-center gap-x-6 hover:bg-primary hover:text-white duration-500",
     href: menu.link,
     onClick: function onClick() {
       return onMenuItemClick(false);
@@ -2194,7 +2837,7 @@ var UserMenuItem = function UserMenuItem(_ref) {
   }, props), {}, {
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_Icon__WEBPACK_IMPORTED_MODULE_2__["default"], {
       name: menu.icon,
-      className: "w-4 h-4"
+      className: "w-5 h-5"
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("span", {
       children: menu.text
     })]
@@ -2292,7 +2935,7 @@ var Modal = function Modal(_ref) {
       onClose = _ref.onClose;
   return /*#__PURE__*/(0,react_dom__WEBPACK_IMPORTED_MODULE_1__.createPortal)( /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.Fragment, {
     children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
-      className: "absolute inset-0 bg-black bg-opacity-10 z-30 backdrop-blur-sm flex justify-center items-center",
+      className: "fixed inset-0 bg-black bg-opacity-10 z-30 backdrop-blur-sm flex justify-center items-center",
       tabIndex: "-1",
       role: "dialog",
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("span", {
@@ -2329,6 +2972,18 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_hot_toast__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react-hot-toast */ "./node_modules/react-hot-toast/dist/index.mjs");
 /* harmony import */ var _Components_Icon__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../Components/Icon */ "./resources/js/Components/Icon.jsx");
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]; if (_i == null) return; var _arr = []; var _n = true; var _d = false; var _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
 
 
 
@@ -2342,38 +2997,54 @@ __webpack_require__.r(__webpack_exports__);
 var UserLayout = function UserLayout(_ref) {
   var children = _ref.children;
   var auth = (0,_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_3__.usePage)().props.auth;
+  var navRef = (0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)();
+
+  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)('124px'),
+      _useState2 = _slicedToArray(_useState, 2),
+      marginTop = _useState2[0],
+      setMarginTop = _useState2[1];
+
+  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
+    var offsetHeight = navRef.current.offsetHeight;
+    setMarginTop("".concat(offsetHeight, "px"));
+  }, []);
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.Fragment, {
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_Components_NavigationAndMenu_NavigationBar__WEBPACK_IMPORTED_MODULE_1__["default"], {
+      ref: navRef,
       auth: auth
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
-      className: "min-h-screen w-full",
+      className: "min-h-screen w-full pb-4 bg-background overflow-x-hidden",
+      style: {
+        marginTop: marginTop
+      },
       children: children
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_Components_NavigationAndMenu_Footer__WEBPACK_IMPORTED_MODULE_2__["default"], {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(react_hot_toast__WEBPACK_IMPORTED_MODULE_4__.Toaster, {
       toastOptions: {
         position: "bottom-right",
         style: {
-          fontSize: '0.75em'
+          fontSize: '0.75em',
+          padding: '0.75rem 1.2rem'
         },
         success: {
           icon: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_Components_Icon__WEBPACK_IMPORTED_MODULE_5__["default"], {
             name: "check-circle",
-            className: "w-5 h-5 text-teal-500"
+            className: "w-5 h-5 md:w-6 md:h-6 text-[#14B8A6]"
           }),
           style: {
             borderBottom: '2px solid #14B8A6',
             borderLeft: '1px solid #14B8A6',
-            borderRadius: '1px'
+            borderRadius: '0.5rem'
           }
         },
         error: {
           icon: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_Components_Icon__WEBPACK_IMPORTED_MODULE_5__["default"], {
             name: "x-circle",
-            className: "w-5 h-5 text-rose-500"
+            className: "w-5 h-5 md:w-6 md:h-6 text-accent-secondary"
           }),
           style: {
             borderBottom: '2px solid #E11D48',
             borderRight: '1px solid #E11D48',
-            borderRadius: '1px'
+            borderRadius: '0.5rem'
           }
         }
       }
@@ -2400,15 +3071,16 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _Layout_UserLayout__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../Layout/UserLayout */ "./resources/js/Layout/UserLayout.jsx");
 /* harmony import */ var _inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @inertiajs/inertia-react */ "./node_modules/@inertiajs/inertia-react/dist/index.js");
-/* harmony import */ var _UTULITIES_productFunction__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../UTULITIES/productFunction */ "./resources/js/UTULITIES/productFunction.js");
-/* harmony import */ var _Components_Cart_CartTable__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../Components/Cart/CartTable */ "./resources/js/Components/Cart/CartTable.jsx");
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_5__);
-/* harmony import */ var _Components_FormAndButton_Button__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../Components/FormAndButton/Button */ "./resources/js/Components/FormAndButton/Button.js");
-/* harmony import */ var _Components_Portal_Modal__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../Components/Portal/Modal */ "./resources/js/Components/Portal/Modal.jsx");
-/* harmony import */ var _Components_Loading__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../Components/Loading */ "./resources/js/Components/Loading.jsx");
-/* harmony import */ var _Components_Cart_UserPaymentSection__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../Components/Cart/UserPaymentSection */ "./resources/js/Components/Cart/UserPaymentSection.jsx");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _Components_FormAndButton_Button__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../Components/FormAndButton/Button */ "./resources/js/Components/FormAndButton/Button.js");
+/* harmony import */ var _Components_Portal_Modal__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../Components/Portal/Modal */ "./resources/js/Components/Portal/Modal.jsx");
+/* harmony import */ var _Components_Loading__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../Components/Loading */ "./resources/js/Components/Loading.jsx");
+/* harmony import */ var _Components_Cart_MakeOrderSection__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../Components/Cart/MakeOrderSection */ "./resources/js/Components/Cart/MakeOrderSection.jsx");
+/* harmony import */ var _Components_Cart_CartSummary__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../Components/Cart/CartSummary */ "./resources/js/Components/Cart/CartSummary.jsx");
+/* harmony import */ var _Components_Cart_CartItemList__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../Components/Cart/CartItemList */ "./resources/js/Components/Cart/CartItemList.jsx");
+/* harmony import */ var _Components_HOC_Admin_DeleteButtonWithConfirmation__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../Components/HOC/Admin/DeleteButtonWithConfirmation */ "./resources/js/Components/HOC/Admin/DeleteButtonWithConfirmation.jsx");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (obj) { return typeof obj; } : function (obj) { return obj && "function" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }, _typeof(obj); }
 
 function _regeneratorRuntime() { "use strict"; /*! regenerator-runtime -- Copyright (c) 2014-present, Facebook, Inc. -- license (MIT): https://github.com/facebook/regenerator/blob/main/LICENSE */ _regeneratorRuntime = function _regeneratorRuntime() { return exports; }; var exports = {}, Op = Object.prototype, hasOwn = Op.hasOwnProperty, $Symbol = "function" == typeof Symbol ? Symbol : {}, iteratorSymbol = $Symbol.iterator || "@@iterator", asyncIteratorSymbol = $Symbol.asyncIterator || "@@asyncIterator", toStringTagSymbol = $Symbol.toStringTag || "@@toStringTag"; function define(obj, key, value) { return Object.defineProperty(obj, key, { value: value, enumerable: !0, configurable: !0, writable: !0 }), obj[key]; } try { define({}, ""); } catch (err) { define = function define(obj, key, value) { return obj[key] = value; }; } function wrap(innerFn, outerFn, self, tryLocsList) { var protoGenerator = outerFn && outerFn.prototype instanceof Generator ? outerFn : Generator, generator = Object.create(protoGenerator.prototype), context = new Context(tryLocsList || []); return generator._invoke = function (innerFn, self, context) { var state = "suspendedStart"; return function (method, arg) { if ("executing" === state) throw new Error("Generator is already running"); if ("completed" === state) { if ("throw" === method) throw arg; return doneResult(); } for (context.method = method, context.arg = arg;;) { var delegate = context.delegate; if (delegate) { var delegateResult = maybeInvokeDelegate(delegate, context); if (delegateResult) { if (delegateResult === ContinueSentinel) continue; return delegateResult; } } if ("next" === context.method) context.sent = context._sent = context.arg;else if ("throw" === context.method) { if ("suspendedStart" === state) throw state = "completed", context.arg; context.dispatchException(context.arg); } else "return" === context.method && context.abrupt("return", context.arg); state = "executing"; var record = tryCatch(innerFn, self, context); if ("normal" === record.type) { if (state = context.done ? "completed" : "suspendedYield", record.arg === ContinueSentinel) continue; return { value: record.arg, done: context.done }; } "throw" === record.type && (state = "completed", context.method = "throw", context.arg = record.arg); } }; }(innerFn, self, context), generator; } function tryCatch(fn, obj, arg) { try { return { type: "normal", arg: fn.call(obj, arg) }; } catch (err) { return { type: "throw", arg: err }; } } exports.wrap = wrap; var ContinueSentinel = {}; function Generator() {} function GeneratorFunction() {} function GeneratorFunctionPrototype() {} var IteratorPrototype = {}; define(IteratorPrototype, iteratorSymbol, function () { return this; }); var getProto = Object.getPrototypeOf, NativeIteratorPrototype = getProto && getProto(getProto(values([]))); NativeIteratorPrototype && NativeIteratorPrototype !== Op && hasOwn.call(NativeIteratorPrototype, iteratorSymbol) && (IteratorPrototype = NativeIteratorPrototype); var Gp = GeneratorFunctionPrototype.prototype = Generator.prototype = Object.create(IteratorPrototype); function defineIteratorMethods(prototype) { ["next", "throw", "return"].forEach(function (method) { define(prototype, method, function (arg) { return this._invoke(method, arg); }); }); } function AsyncIterator(generator, PromiseImpl) { function invoke(method, arg, resolve, reject) { var record = tryCatch(generator[method], generator, arg); if ("throw" !== record.type) { var result = record.arg, value = result.value; return value && "object" == _typeof(value) && hasOwn.call(value, "__await") ? PromiseImpl.resolve(value.__await).then(function (value) { invoke("next", value, resolve, reject); }, function (err) { invoke("throw", err, resolve, reject); }) : PromiseImpl.resolve(value).then(function (unwrapped) { result.value = unwrapped, resolve(result); }, function (error) { return invoke("throw", error, resolve, reject); }); } reject(record.arg); } var previousPromise; this._invoke = function (method, arg) { function callInvokeWithMethodAndArg() { return new PromiseImpl(function (resolve, reject) { invoke(method, arg, resolve, reject); }); } return previousPromise = previousPromise ? previousPromise.then(callInvokeWithMethodAndArg, callInvokeWithMethodAndArg) : callInvokeWithMethodAndArg(); }; } function maybeInvokeDelegate(delegate, context) { var method = delegate.iterator[context.method]; if (undefined === method) { if (context.delegate = null, "throw" === context.method) { if (delegate.iterator["return"] && (context.method = "return", context.arg = undefined, maybeInvokeDelegate(delegate, context), "throw" === context.method)) return ContinueSentinel; context.method = "throw", context.arg = new TypeError("The iterator does not provide a 'throw' method"); } return ContinueSentinel; } var record = tryCatch(method, delegate.iterator, context.arg); if ("throw" === record.type) return context.method = "throw", context.arg = record.arg, context.delegate = null, ContinueSentinel; var info = record.arg; return info ? info.done ? (context[delegate.resultName] = info.value, context.next = delegate.nextLoc, "return" !== context.method && (context.method = "next", context.arg = undefined), context.delegate = null, ContinueSentinel) : info : (context.method = "throw", context.arg = new TypeError("iterator result is not an object"), context.delegate = null, ContinueSentinel); } function pushTryEntry(locs) { var entry = { tryLoc: locs[0] }; 1 in locs && (entry.catchLoc = locs[1]), 2 in locs && (entry.finallyLoc = locs[2], entry.afterLoc = locs[3]), this.tryEntries.push(entry); } function resetTryEntry(entry) { var record = entry.completion || {}; record.type = "normal", delete record.arg, entry.completion = record; } function Context(tryLocsList) { this.tryEntries = [{ tryLoc: "root" }], tryLocsList.forEach(pushTryEntry, this), this.reset(!0); } function values(iterable) { if (iterable) { var iteratorMethod = iterable[iteratorSymbol]; if (iteratorMethod) return iteratorMethod.call(iterable); if ("function" == typeof iterable.next) return iterable; if (!isNaN(iterable.length)) { var i = -1, next = function next() { for (; ++i < iterable.length;) { if (hasOwn.call(iterable, i)) return next.value = iterable[i], next.done = !1, next; } return next.value = undefined, next.done = !0, next; }; return next.next = next; } } return { next: doneResult }; } function doneResult() { return { value: undefined, done: !0 }; } return GeneratorFunction.prototype = GeneratorFunctionPrototype, define(Gp, "constructor", GeneratorFunctionPrototype), define(GeneratorFunctionPrototype, "constructor", GeneratorFunction), GeneratorFunction.displayName = define(GeneratorFunctionPrototype, toStringTagSymbol, "GeneratorFunction"), exports.isGeneratorFunction = function (genFun) { var ctor = "function" == typeof genFun && genFun.constructor; return !!ctor && (ctor === GeneratorFunction || "GeneratorFunction" === (ctor.displayName || ctor.name)); }, exports.mark = function (genFun) { return Object.setPrototypeOf ? Object.setPrototypeOf(genFun, GeneratorFunctionPrototype) : (genFun.__proto__ = GeneratorFunctionPrototype, define(genFun, toStringTagSymbol, "GeneratorFunction")), genFun.prototype = Object.create(Gp), genFun; }, exports.awrap = function (arg) { return { __await: arg }; }, defineIteratorMethods(AsyncIterator.prototype), define(AsyncIterator.prototype, asyncIteratorSymbol, function () { return this; }), exports.AsyncIterator = AsyncIterator, exports.async = function (innerFn, outerFn, self, tryLocsList, PromiseImpl) { void 0 === PromiseImpl && (PromiseImpl = Promise); var iter = new AsyncIterator(wrap(innerFn, outerFn, self, tryLocsList), PromiseImpl); return exports.isGeneratorFunction(outerFn) ? iter : iter.next().then(function (result) { return result.done ? result.value : iter.next(); }); }, defineIteratorMethods(Gp), define(Gp, toStringTagSymbol, "Generator"), define(Gp, iteratorSymbol, function () { return this; }), define(Gp, "toString", function () { return "[object Generator]"; }), exports.keys = function (object) { var keys = []; for (var key in object) { keys.push(key); } return keys.reverse(), function next() { for (; keys.length;) { var key = keys.pop(); if (key in object) return next.value = key, next.done = !1, next; } return next.done = !0, next; }; }, exports.values = values, Context.prototype = { constructor: Context, reset: function reset(skipTempReset) { if (this.prev = 0, this.next = 0, this.sent = this._sent = undefined, this.done = !1, this.delegate = null, this.method = "next", this.arg = undefined, this.tryEntries.forEach(resetTryEntry), !skipTempReset) for (var name in this) { "t" === name.charAt(0) && hasOwn.call(this, name) && !isNaN(+name.slice(1)) && (this[name] = undefined); } }, stop: function stop() { this.done = !0; var rootRecord = this.tryEntries[0].completion; if ("throw" === rootRecord.type) throw rootRecord.arg; return this.rval; }, dispatchException: function dispatchException(exception) { if (this.done) throw exception; var context = this; function handle(loc, caught) { return record.type = "throw", record.arg = exception, context.next = loc, caught && (context.method = "next", context.arg = undefined), !!caught; } for (var i = this.tryEntries.length - 1; i >= 0; --i) { var entry = this.tryEntries[i], record = entry.completion; if ("root" === entry.tryLoc) return handle("end"); if (entry.tryLoc <= this.prev) { var hasCatch = hasOwn.call(entry, "catchLoc"), hasFinally = hasOwn.call(entry, "finallyLoc"); if (hasCatch && hasFinally) { if (this.prev < entry.catchLoc) return handle(entry.catchLoc, !0); if (this.prev < entry.finallyLoc) return handle(entry.finallyLoc); } else if (hasCatch) { if (this.prev < entry.catchLoc) return handle(entry.catchLoc, !0); } else { if (!hasFinally) throw new Error("try statement without catch or finally"); if (this.prev < entry.finallyLoc) return handle(entry.finallyLoc); } } } }, abrupt: function abrupt(type, arg) { for (var i = this.tryEntries.length - 1; i >= 0; --i) { var entry = this.tryEntries[i]; if (entry.tryLoc <= this.prev && hasOwn.call(entry, "finallyLoc") && this.prev < entry.finallyLoc) { var finallyEntry = entry; break; } } finallyEntry && ("break" === type || "continue" === type) && finallyEntry.tryLoc <= arg && arg <= finallyEntry.finallyLoc && (finallyEntry = null); var record = finallyEntry ? finallyEntry.completion : {}; return record.type = type, record.arg = arg, finallyEntry ? (this.method = "next", this.next = finallyEntry.finallyLoc, ContinueSentinel) : this.complete(record); }, complete: function complete(record, afterLoc) { if ("throw" === record.type) throw record.arg; return "break" === record.type || "continue" === record.type ? this.next = record.arg : "return" === record.type ? (this.rval = this.arg = record.arg, this.method = "return", this.next = "end") : "normal" === record.type && afterLoc && (this.next = afterLoc), ContinueSentinel; }, finish: function finish(finallyLoc) { for (var i = this.tryEntries.length - 1; i >= 0; --i) { var entry = this.tryEntries[i]; if (entry.finallyLoc === finallyLoc) return this.complete(entry.completion, entry.afterLoc), resetTryEntry(entry), ContinueSentinel; } }, "catch": function _catch(tryLoc) { for (var i = this.tryEntries.length - 1; i >= 0; --i) { var entry = this.tryEntries[i]; if (entry.tryLoc === tryLoc) { var record = entry.completion; if ("throw" === record.type) { var thrown = record.arg; resetTryEntry(entry); } return thrown; } } throw new Error("illegal catch attempt"); }, delegateYield: function delegateYield(iterable, resultName, nextLoc) { return this.delegate = { iterator: values(iterable), resultName: resultName, nextLoc: nextLoc }, "next" === this.method && (this.arg = undefined), ContinueSentinel; } }, exports; }
@@ -2444,6 +3116,18 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 
+
+var EmptyCart = function EmptyCart(_ref) {
+  var _ref$text = _ref.text,
+      text = _ref$text === void 0 ? 'Your cart is empty. Now shop in our site' : _ref$text;
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)("div", {
+    className: "flex flex-1 py-10 text-sm font-medium items-center justify-center text-primary/70",
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)("span", {
+      children: text
+    })
+  });
+};
+
 var Cart = function Cart() {
   var user_session = (0,_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_2__.usePage)().props.user_session;
 
@@ -2455,40 +3139,33 @@ var Cart = function Cart() {
   var _useState3 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(0),
       _useState4 = _slicedToArray(_useState3, 2),
       total = _useState4[0],
-      setTotal = _useState4[1];
+      setTotal = _useState4[1]; // const [showModal, setShowModal] = useState(false)
 
-  var _useState5 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false),
+
+  var _useState5 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(true),
       _useState6 = _slicedToArray(_useState5, 2),
-      showModal = _useState6[0],
-      setShowModal = _useState6[1];
-
-  var _useState7 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(true),
-      _useState8 = _slicedToArray(_useState7, 2),
-      loading = _useState8[0],
-      setLoading = _useState8[1];
+      loading = _useState6[0],
+      setLoading = _useState6[1];
 
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
     setTotal(user_session.data.total);
     setCartItems(user_session.data.cart_items);
     setLoading(false);
-  }, [user_session]);
-
-  var openModal = function openModal() {
-    setShowModal(true);
-  };
-
-  var closeModal = function closeModal() {
-    setShowModal(false);
-  };
+  }, [user_session]); // const openModal = () => {
+  //   setShowModal(true)
+  // }
+  // const closeModal = () => {
+  //   setShowModal(false)
+  // }
 
   var updateItemCart = /*#__PURE__*/function () {
-    var _ref = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee(id, operation) {
+    var _ref2 = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee(id, operation) {
       return _regeneratorRuntime().wrap(function _callee$(_context) {
         while (1) {
           switch (_context.prev = _context.next) {
             case 0:
               _context.next = 2;
-              return axios__WEBPACK_IMPORTED_MODULE_5___default().put(route('user.cart.update-item', id), {
+              return axios__WEBPACK_IMPORTED_MODULE_3___default().put(route('user.cart.update-item', id), {
                 operation: operation
               }).then(function (res) {
                 setCartItems(function () {
@@ -2510,18 +3187,18 @@ var Cart = function Cart() {
     }));
 
     return function updateItemCart(_x, _x2) {
-      return _ref.apply(this, arguments);
+      return _ref2.apply(this, arguments);
     };
   }();
 
   var removeFromCart = /*#__PURE__*/function () {
-    var _ref2 = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee2(id) {
+    var _ref3 = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee2(id) {
       return _regeneratorRuntime().wrap(function _callee2$(_context2) {
         while (1) {
           switch (_context2.prev = _context2.next) {
             case 0:
               _context2.next = 2;
-              return axios__WEBPACK_IMPORTED_MODULE_5___default()["delete"](route('user.cart.remove-item', id)).then(function (res) {
+              return axios__WEBPACK_IMPORTED_MODULE_3___default()["delete"](route('user.cart.remove-item', id)).then(function (res) {
                 setCartItems(function () {
                   return res.data.data.cart_items;
                 });
@@ -2541,174 +3218,50 @@ var Cart = function Cart() {
     }));
 
     return function removeFromCart(_x3) {
-      return _ref2.apply(this, arguments);
-    };
-  }();
-
-  var resetCart = function resetCart() {
-    openModal();
-  };
-
-  var confirmResetCart = /*#__PURE__*/function () {
-    var _ref3 = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee3() {
-      return _regeneratorRuntime().wrap(function _callee3$(_context3) {
-        while (1) {
-          switch (_context3.prev = _context3.next) {
-            case 0:
-              _context3.next = 2;
-              return axios__WEBPACK_IMPORTED_MODULE_5___default()["delete"](route('user.cart.delete')).then(function (res) {
-                setCartItems(function () {
-                  return res.data.data.cart_items;
-                });
-                setTotal(function () {
-                  return res.data.data.total;
-                });
-                closeModal();
-              })["catch"](function (err) {
-                return console.log(err);
-              });
-
-            case 2:
-            case "end":
-              return _context3.stop();
-          }
-        }
-      }, _callee3);
-    }));
-
-    return function confirmResetCart() {
       return _ref3.apply(this, arguments);
     };
   }();
 
-  var loadingOrEmpty = loading ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.Fragment, {
-    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(_Components_Loading__WEBPACK_IMPORTED_MODULE_8__["default"], {})
-  }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)("div", {
-    className: "flex flex-1 py-10 text-sm items-center justify-center text-primary",
-    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)("span", {
-      children: "Your cart is empty. Now shop in our site and get your"
-    })
+  var loadingOrEmpty = loading ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.Fragment, {
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)(_Components_Loading__WEBPACK_IMPORTED_MODULE_6__["default"], {})
+  }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.Fragment, {
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)(EmptyCart, {})
   });
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.Fragment, {
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_2__.Head, {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.Fragment, {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_2__.Head, {
       title: "Your cart"
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsxs)(_Layout_UserLayout__WEBPACK_IMPORTED_MODULE_1__["default"], {
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsxs)("section", {
-        className: "px-4 md:px-8 lg:px-12 py-4 md:py-6",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsxs)("div", {
-          className: "flex justify-between items-center pb-2 border-b-2 border-slate-200 text-sm",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)("h1", {
-            className: "font-medium text-neutral-700",
-            children: "Your cart"
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsxs)("p", {
-            className: "font-bold text-neutral-700",
-            children: ["Total: ", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)("span", {
-              className: " text-accent-secondary",
-              children: (0,_UTULITIES_productFunction__WEBPACK_IMPORTED_MODULE_3__.showPriceWithCurrency)(total)
-            })]
-          })]
-        }), cartItems.length > 0 ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsxs)("main", {
-          className: "mt-4 flex flex-col md:flex-row gap-y-3 gap-x-5",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsxs)("div", {
-            className: "flex-1",
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)("div", {
-              className: "overflow-auto scroler max-h-96 relative",
-              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(_Components_Cart_CartTable__WEBPACK_IMPORTED_MODULE_4__["default"], {
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)(_Layout_UserLayout__WEBPACK_IMPORTED_MODULE_1__["default"], {
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)("section", {
+        className: "px-6 md:px-8 lg:px-12 py-4 mt-8 md:mt-2 md:py-6",
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsxs)("div", {
+          className: "flex lg:flex-row lg:items-start flex-col lg:gap-x-10 gap-4",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsxs)("section", {
+            className: "lg:w-2/3 w-full",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)("main", {
+              className: "overflow-auto scroler max-h-[43rem] py-1 space-y-2 bg-white rounded shadow-xl",
+              children: cartItems.length > 0 ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)(_Components_Cart_CartItemList__WEBPACK_IMPORTED_MODULE_9__["default"], {
                 items: cartItems,
                 removeFromCart: removeFromCart,
                 updateItemCart: updateItemCart
-              })
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)("div", {
+              }) : loadingOrEmpty
+            }), cartItems.length > 0 && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)("div", {
               className: "my-4",
-              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(_Components_FormAndButton_Button__WEBPACK_IMPORTED_MODULE_6__.SimpleButton, {
-                className: "bg-rose-500 text-white hover:bg-red-500 duration-500 font-light rounded-sm",
-                icon: "trash",
-                onClick: resetCart,
-                children: "Empty your cart"
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)(_Components_HOC_Admin_DeleteButtonWithConfirmation__WEBPACK_IMPORTED_MODULE_10__["default"], {
+                text: "Empty your cart",
+                url: route('user.cart.delete'),
+                message: "Are you sure to delete all items in your cart?"
               })
             })]
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)("div", {
-            className: "w-full md:max-w-xs lg:max-w-sm",
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(_Components_Cart_UserPaymentSection__WEBPACK_IMPORTED_MODULE_9__["default"], {})
-          })]
-        }) : loadingOrEmpty]
-      }), showModal && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(_Components_Portal_Modal__WEBPACK_IMPORTED_MODULE_7__["default"], {
-        onClose: closeModal,
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsxs)("div", {
-          className: "bg-gray-100 rounded-sm",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)("header", {
-            className: "px-6 pt-6 pb-3 border-b",
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)("h1", {
-              className: "text-gray-600 text-sm font-medium",
-              children: "You try to remove all items in your cart, are you sure ?"
-            })
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsxs)("footer", {
-            className: "px-6 py-3 flex justify-end items-center gap-3",
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(_Components_FormAndButton_Button__WEBPACK_IMPORTED_MODULE_6__.SimpleButton, {
-              className: "bg-gray-500 text-white hover:bg-neutral-500 duration-500 font-light rounded-sm",
-              icon: "x-close",
-              iconClass: "w-4 h-4",
-              onClick: closeModal,
-              children: "Cancel"
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(_Components_FormAndButton_Button__WEBPACK_IMPORTED_MODULE_6__.SimpleButton, {
-              className: "bg-rose-500 text-white hover:bg-red-500 duration-500 font-light rounded-sm",
-              icon: "simple-check",
-              onClick: confirmResetCart,
-              children: "Continue"
-            })]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)(_Components_Cart_CartSummary__WEBPACK_IMPORTED_MODULE_8__["default"], {
+            total: total
           })]
         })
-      })]
+      })
     })]
   });
 };
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Cart);
-
-/***/ }),
-
-/***/ "./resources/js/UTULITIES/compareFunction.js":
-/*!***************************************************!*\
-  !*** ./resources/js/UTULITIES/compareFunction.js ***!
-  \***************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "compareTable": () => (/* binding */ compareTable),
-/* harmony export */   "deepEqual": () => (/* binding */ deepEqual)
-/* harmony export */ });
-function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (obj) { return typeof obj; } : function (obj) { return obj && "function" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }, _typeof(obj); }
-
-function isObject(object) {
-  return object != null && _typeof(object) === "object";
-}
-
-function deepEqual(itemOne, itemTwo) {
-  var keysOne = Object.keys(itemOne);
-  var keysTwo = Object.keys(itemTwo);
-  if (keysOne.length !== keysTwo.length) return false;
-
-  for (var _i = 0, _keysOne = keysOne; _i < _keysOne.length; _i++) {
-    var key = _keysOne[_i];
-    var firstVal = itemOne[key];
-    var secondVal = itemTwo[key];
-    var areObjects = isObject(firstVal) && isObject(secondVal);
-
-    if (areObjects && !deepEqual(firstVal, secondVal) || !areObjects && firstVal !== secondVal) {
-      return false;
-    }
-  }
-
-  return true;
-}
-function compareTable(tabelOne, tableTwo) {
-  if (tableTwo.length === tabelOne.length && tabelOne.every(function (value, index) {
-    return deepEqual(value, tableTwo[index]);
-  })) return true;
-  return false;
-}
 
 /***/ }),
 

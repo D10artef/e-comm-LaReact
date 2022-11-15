@@ -19,7 +19,7 @@ const ProductsPageHeader = ({showSelect}) => {
         order: urlParams.get('order'),
       }
       
-      let index = options.findIndex(option => {
+      let index = ORDEROPTIONS.findIndex(option => {
         if(option.name === data.orderby && option.order === data.order){
           return option
         }
@@ -38,8 +38,8 @@ const ProductsPageHeader = ({showSelect}) => {
 
 
   const handleOptionSelected = (id) => {
-    const name = options[id].name
-    const order = options[id].order
+    const name = ORDEROPTIONS[id].name
+    const order = ORDEROPTIONS[id].order
     Inertia.get(url, 
       {
         orderby: name, order
@@ -52,20 +52,20 @@ const ProductsPageHeader = ({showSelect}) => {
   }
 
   return (
-    <div>
+    <div className='px-4 pt-4 pb-3 shadow bg-light'>
       <div className='ml-5 lg:ml-0 grid grid-cols-2'>
-        <span className='text-sm font-medium underline text-gray-600 justify-self-start'>{title}</span>
+        <span className='text-sm font-medium underline text-accent justify-self-start'>{title}</span>
         {
           url !== '/products' && 
-          <MemoLink className='text-sm text-accent font-medium hover:text-accent-secondary underline justify-self-end' href={route('products')} only={['products']} preserveScroll>Reset</MemoLink>
+          <MemoLink className='text-sm text-accent-secondary font-medium hover:text-accent-secondary underline justify-self-end' href={route('products')} only={['products']} preserveScroll>Reset</MemoLink>
         }
       </div>
-      <div className='border-b  border- mb-2'>
+      <div>
         {
           showSelect && 
-          <div className='flex justify-start items-center gap-x-3 w-fit py-1.5  text-gray-600'> 
+          <div className='flex justify-start items-center gap-x-3 w-fit pt-2  text-primary'> 
             <span className='text-sm'>Order by </span>     
-            <div className='w-48 text-sm'>
+            <div className='w-44 text-sm border rounded'>
               <Select optionList={ORDEROPTIONS} onOptionSelected={handleOptionSelected} selectedIndex={selectedIndex}></Select>
             </div>
           </div>
